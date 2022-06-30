@@ -1,12 +1,6 @@
-const fetch = require('cross-fetch')
+const fetch = require('isomorphic-fetch')
 require('dotenv').config({ path: __dirname + '/../.env.local' })
-const { ApolloClient, InMemoryCache, gql, HttpLink } = require('@apollo/client')
 const { exec } = require('child_process')
-
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  link: new HttpLink({ uri: process.env.NEXT_PUBLIC_GRAPHQL_URL, fetch }),
-})
 
 const createBlocks = (blockNames) => {
   blockNames.forEach((blockName) => {
@@ -24,7 +18,7 @@ const createBlocks = (blockNames) => {
   })
 }
 
-const TypeQuery = gql`
+const query = `
   query Types {
     __type(name: "Sets_Replicator") {
       possibleTypes {
@@ -35,7 +29,15 @@ const TypeQuery = gql`
 `
 
 const main = async () => {
-  const res = await client.query({ query: TypeQuery })
+  const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_URL, {
+    method: 'POST',
+    body: JSON.stringify({
+      query,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((r) => r.json())
   const types = res.data?.__type?.possibleTypes
   if (!types) {
     return console.log('type for Sets_Replicator not found')

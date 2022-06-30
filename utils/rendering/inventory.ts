@@ -3,6 +3,9 @@ import dynamic from 'next/dynamic'
 import { typename as TextImageTypename } from '../../components/blocks/text_image/text_image'
 import TextImageQuery from '../../components/blocks/text_image/text_image.graphql'
 
+import { typename as HeroBlockTypename } from '../../components/blocks/hero/hero'
+import HeroBlockQuery from '../../components/blocks/hero/hero.graphql'
+
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
 
@@ -20,6 +23,13 @@ const blocks:Block[] = [
     typename: TextImageTypename,
     extraQueries: undefined,
   },
+  {
+    component: dynamic(() => import('../../components/blocks/hero/hero')),
+    query: HeroBlockQuery,
+    typename: HeroBlockTypename,
+    extraQueries: undefined,
+  },
+
   // ##HYGEN_START##
   // do not modify the above line since its used by hygen to generate the block list
 ]
