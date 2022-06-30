@@ -1,0 +1,51 @@
+{
+  "name": "webstack-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "TAILWIND_MODE=watch next dev",
+    "build": "TAILWIND_MODE=build next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "lint": "eslint components/**/*.tsx components/**/*.ts pages/**/*.tsx utils/**/*.ts",
+    "typecheck": "tsc",
+    "hygen": "hygen",
+    "prepare": "husky install",
+    "make:block": "hygen block new",
+    "autogen:blocks": "node utils/createBlocks.js"
+  },
+  "dependencies": {
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.4.7",
+    "graphql": "^16.5.0",
+    "install": "^0.13.0",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "12.2.0",
+    "normalize.css": "^8.0.1",
+    "npm": "^8.13.2",
+    "postcss": "^8.4.14",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.53.0",
+    "tailwindcss": "^3.1.4"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
+    "@types/isomorphic-fetch": "^0.0.36",
+    "@types/react": "^18.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^12.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "hygen": "^6.2.7",
+    "typescript": "^4.7.4"
+  }
+}
