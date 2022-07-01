@@ -11,8 +11,8 @@ const <%= h.inflection.camelize(name) %>Block:FunctionComponent<{ block: <%= h.i
   <div
     className={`${styles.root} container`}
   >
-    <%= h.inflection.humanize(name) %> Block
-    {console.log(block)}
+    <%= h.inflection.humanize(name) %> Block:
+    {block.type}
   </div>
 )
 
