@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import dynamic from 'next/dynamic'
-import { typename as TextImageTypename } from '../../components/blocks/text_image/text_image'
-import TextImageQuery from '../../components/blocks/text_image/text_image.graphql'
+// import { typename as TextImageTypename } from '../../components/blocks/text_image/text_image'
+// import TextImageQuery from '../../components/blocks/text_image/text_image.graphql'
 import { typename as HeroBlockTypename } from '../../components/blocks/hero/hero'
 import HeroBlockQuery from '../../components/blocks/hero/hero.graphql'
 import { typename as QuoteSliderBlockTypename } from '../../components/blocks/quote_slider/quote_slider'
@@ -16,6 +16,8 @@ import { typename as InsightEventsTeaserSingleBlockTypename } from '../../compon
 import InsightEventsTeaserSingleBlockQuery from '../../components/blocks/insight_events_teaser_single/insight_events_teaser_single.graphql'
 import { typename as InsightEventsTeaserDoubleOrTripleBlockTypename } from '../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple'
 import InsightEventsTeaserDoubleOrTripleBlockQuery from '../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple.graphql'
+import { typename as AboutTeaserBlockTypename } from '../../components/blocks/about_teaser/about_teaser'
+import AboutTeaserBlockQuery from '../../components/blocks/about_teaser/about_teaser.graphql'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -28,12 +30,6 @@ interface Block {
 }
 
 const blocks:Block[] = [
-  {
-    component: dynamic(() => import('../../components/blocks/text_image/text_image')),
-    query: TextImageQuery,
-    typename: TextImageTypename,
-    extraQueries: undefined,
-  },
   {
     component: dynamic(() => import('../../components/blocks/hero/hero')),
     query: HeroBlockQuery,
@@ -79,6 +75,13 @@ const blocks:Block[] = [
     component: dynamic(() => import('../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple')),
     query: InsightEventsTeaserDoubleOrTripleBlockQuery,
     typename: InsightEventsTeaserDoubleOrTripleBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/about_teaser/about_teaser')),
+    query: AboutTeaserBlockQuery,
+    typename: AboutTeaserBlockTypename,
     extraQueries: undefined,
   },
 
