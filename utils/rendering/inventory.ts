@@ -8,6 +8,14 @@ import { typename as QuoteSliderBlockTypename } from '../../components/blocks/qu
 import QuoteSliderBlockQuery from '../../components/blocks/quote_slider/quote_slider.graphql'
 import { typename as LogoGridBlockTypename } from '../../components/blocks/logo_grid/logo_grid'
 import LogoGridBlockQuery from '../../components/blocks/logo_grid/logo_grid.graphql'
+import { typename as ProductTeaserBlockTypename } from '../../components/blocks/product_teaser/product_teaser'
+import ProductTeaserBlockQuery from '../../components/blocks/product_teaser/product_teaser.graphql'
+import { typename as IconsWTextBlockTypename } from '../../components/blocks/icons_w_text/icons_w_text'
+import IconsWTextBlockQuery from '../../components/blocks/icons_w_text/icons_w_text.graphql'
+import { typename as InsightEventsTeaserSingleBlockTypename } from '../../components/blocks/insight_events_teaser_single/insight_events_teaser_single'
+import InsightEventsTeaserSingleBlockQuery from '../../components/blocks/insight_events_teaser_single/insight_events_teaser_single.graphql'
+import { typename as InsightEventsTeaserDoubleOrTripleBlockTypename } from '../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple'
+import InsightEventsTeaserDoubleOrTripleBlockQuery from '../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple.graphql'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -44,6 +52,33 @@ const blocks:Block[] = [
     component: dynamic(() => import('../../components/blocks/logo_grid/logo_grid')),
     query: LogoGridBlockQuery,
     typename: LogoGridBlockTypename,
+    extraQueries: undefined,
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/product_teaser/product_teaser')),
+    query: ProductTeaserBlockQuery,
+    typename: ProductTeaserBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/icons_w_text/icons_w_text')),
+    query: IconsWTextBlockQuery,
+    typename: IconsWTextBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/insight_events_teaser_single/insight_events_teaser_single')),
+    query: InsightEventsTeaserSingleBlockQuery,
+    typename: InsightEventsTeaserSingleBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple')),
+    query: InsightEventsTeaserDoubleOrTripleBlockQuery,
+    typename: InsightEventsTeaserDoubleOrTripleBlockTypename,
     extraQueries: undefined,
   },
 
