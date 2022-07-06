@@ -1,3 +1,21 @@
+const generateSpacing = () => {
+  const spacings = [];
+  for (let i = 0; i < 32; i += 1) {
+    spacings.push(i)
+  }
+  for (let i = 32; i < 64; i += 2) {
+    spacings.push(i)
+  }
+  for (let i = 64; i <= 128; i += 4) {
+    spacings.push(i)
+  }
+  const spacingObj = {}
+  spacings.forEach((i) => {
+    spacingObj[i] = `${i / 10}rem`
+  })
+  return spacingObj
+}
+
 module.exports = {
   mode: 'jit',
   content: [
@@ -14,6 +32,19 @@ module.exports = {
       lightBlue: '#64B5F6',
       black: '#000',
       white: '#FFF',
+      'orange-100': '#F44D2E',
+      'blue-100': '#022B3C',
+      'green-100': '#03505C',
+      'green-90': '#035966',
+      'green-50': '#AAF2C6',
+      'black-100': '#000',
+      'black-70p': 'rgba(0, 0, 0, 0.7)',
+      'black-70': '#4D4D4D',
+      'black-50': '#808080',
+      'black-20': '#CCCCCC',
+      'black-10': '#EEEEEE',
+      'black-5': '#f2f2f2',
+      'red-100': '#F42E2E',
     },
     screens: {
       sm: '375px',
@@ -22,7 +53,11 @@ module.exports = {
       xl: '1440px',
       xxl: '1780px',
     },
-    extend: {},
+    extend: {
+      spacing: {
+        ...generateSpacing(),
+      },
+    },
   },
   variants: {
     extend: {},
