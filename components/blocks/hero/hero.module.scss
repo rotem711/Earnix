@@ -1,5 +1,76 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  height: 0.1rem;
+
+  &.largeVersion {
+    min-height: 80vh;
+  }
+
+  &.smallVersion {
+    min-height: 50vh;
+  }
+
+  .imageVideoWrapper,
+  .orangeGradient,
+  .blueGradient {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .imageVideoWrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .orangeGradient,
+  .blueGradient {
+    height: 100%;
+    mix-blend-mode: normal;
+  }
+
+  .orangeGradient {
+    width: 100%;
+    background: $orangeGradient;
+
+    @screen lg {
+      width: 76.56%;
+    }
+
+    @screen xl {
+      width: 68.88%;
+    }
+
+    @screen xxl {
+      width: 64.167%;
+    }
+  }
+
+  .blueGradient {
+    opacity: 0.55;
+    width: 100%;
+    background-color: theme('colors.blue-100');
+  }
+
+  .copyBackground {
+    padding: 1rem 0.8rem;
+    background-color: theme('colors.green-90');
+    border-radius: 2rem;
+
+    @screen md {
+      padding: 1rem 1.6rem;
+    }
+
+    @screen lg {
+      padding: 1.6rem 2.7rem;
+    }
+  }
 }
