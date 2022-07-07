@@ -1,5 +1,122 @@
 @import '../../../styles/variables';
 
+$sm-breakpoint: theme('screens.sm');
+$md-breakpoint: theme('screens.md');
+
 .root {
-  // add your styles here
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.headline {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.copy {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 3.5rem;
+  @media screen and (max-width: $sm-breakpoint) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  @media screen and (min-width: $md-breakpoint) {
+    margin-left: 21rem;
+    margin-right: 21rem;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+  height: auto;
+}
+
+.iconGrid {
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 3.938rem;
+
+  @media screen and (max-width: $sm-breakpoint) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $md-breakpoint) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.iconWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 3.5rem;
+}
+
+.iconImage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.iconText {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.ctaWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 6.188rem;
+  z-index: 5;
+}
+
+.background {
+  position: absolute;
+  bottom: -9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  z-index: -1;
 }
