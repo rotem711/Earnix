@@ -13,9 +13,9 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
 }) => (
   <div className={`${styles.root} container`}>
     <div className={styles.contentWrapper}>
-      <div className={styles.headline}>{block.ict_headline}</div>
+      <div className={`${styles.headline} typo-h3`}>{block.ict_headline}</div>
       <div
-        className={styles.copy}
+        className={`${styles.copy} typo-p`}
         dangerouslySetInnerHTML={{ __html: block.ict_copy }}
       />
       <div className={styles.iconGrid}>
@@ -28,7 +28,7 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
                 height={130}
               />
             </div>
-            <div className={styles.iconText}> {icon.text}</div>
+            <div className={`${styles.iconText} typo-p`}> {icon.text}</div>
           </div>
         ))}
       </div>
