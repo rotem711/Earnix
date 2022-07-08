@@ -2,6 +2,11 @@
 
 html {
 	font-size: 10px;
+
+  &,
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+  }
 }
 
 .devGrid {

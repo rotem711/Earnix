@@ -18,6 +18,10 @@ import { typename as InsightEventsTeaserDoubleOrTripleBlockTypename } from '../.
 import InsightEventsTeaserDoubleOrTripleBlockQuery from '../../components/blocks/insight_events_teaser_double_or_triple/insight_events_teaser_double_or_triple.graphql'
 import { typename as AboutTeaserBlockTypename } from '../../components/blocks/about_teaser/about_teaser'
 import AboutTeaserBlockQuery from '../../components/blocks/about_teaser/about_teaser.graphql'
+import { typename as CTABannerBlockTypename } from '../../components/blocks/cta_banner/cta_banner'
+import CTABannerBlockQuery from '../../components/blocks/cta_banner/cta_banner.graphql'
+import { typename as TextImageBlockTypename } from '../../components/blocks/text_image/text_image'
+import TextImageBlockQuery from '../../components/blocks/text_image/text_image.graphql'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -82,6 +86,19 @@ const blocks:Block[] = [
     component: dynamic(() => import('../../components/blocks/about_teaser/about_teaser')),
     query: AboutTeaserBlockQuery,
     typename: AboutTeaserBlockTypename,
+    extraQueries: undefined,
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/cta_banner/cta_banner')),
+    query: CTABannerBlockQuery,
+    typename: CTABannerBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/text_image/text_image')),
+    query: TextImageBlockQuery,
+    typename: TextImageBlockTypename,
     extraQueries: undefined,
   },
 
