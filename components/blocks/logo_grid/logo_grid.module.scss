@@ -1,5 +1,11 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  @screen sm {
+    padding-top: 6rem;
+    padding-bottom: 6.4rem;
+  }
 }

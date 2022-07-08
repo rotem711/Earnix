@@ -24,6 +24,14 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['Helvetica Neue', 'sans-serif'],
+    },
+    fontWeight: {
+      400: '400',
+      500: '500',
+      700: '700',
+    },
     spacing: {
       0: '0px',
       10: '1rem',
