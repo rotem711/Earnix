@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import styles from './text_image_divider.module.scss'
-import TextImageDividerInterface from './text_image_divider.interface'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
+
+import styles from './text_image_divider.module.scss'
+import TextImageDividerInterface from './text_image_divider.interface'
 
 export const typename = 'Set_Replicator_BlockTextImageDivider'
 
