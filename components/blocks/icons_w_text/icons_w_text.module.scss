@@ -24,15 +24,6 @@ $md-breakpoint: theme('screens.md');
   text-align: center;
   color: #000000;
   margin-bottom: 3.5rem;
-  @media screen and (max-width: $sm-breakpoint) {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-  @media screen and (min-width: $md-breakpoint) {
-    margin-left: 21rem;
-    margin-right: 21rem;
-  }
 }
 
 .contentWrapper {
@@ -45,16 +36,6 @@ $md-breakpoint: theme('screens.md');
   align-items: center;
   justify-items: center;
   margin-bottom: 3.938rem;
-
-  @media screen and (max-width: $sm-breakpoint) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media screen and (min-width: $md-breakpoint) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 .iconWrapper {

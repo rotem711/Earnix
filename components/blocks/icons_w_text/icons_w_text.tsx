@@ -15,18 +15,14 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
     <div className={styles.contentWrapper}>
       <div className={`${styles.headline} typo-h3`}>{block.ict_headline}</div>
       <div
-        className={`${styles.copy} typo-p`}
+        className={`${styles.copy} typo-p sm:ml-8 sm:mr-8 md:ml-80 md:mr-80`}
         dangerouslySetInnerHTML={{ __html: block.ict_copy }}
       />
-      <div className={styles.iconGrid}>
+      <div className={`${styles.iconGrid} sm:flex-col md:grid md:grid-cols-3`}>
         {block.ict_icons.map((icon: any, key: number) => (
           <div className={styles.iconWrapper} key={key}>
             <div className={styles.iconImage}>
-              <Image
-                src={`${icon.icon.permalink}`}
-                width={130}
-                height={130}
-              />
+              <Image src={`${icon.icon.permalink}`} width={130} height={130} />
             </div>
             <div className={`${styles.iconText} typo-p`}> {icon.text}</div>
           </div>
