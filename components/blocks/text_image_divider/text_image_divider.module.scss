@@ -1,5 +1,25 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .root {
-  // add your styles here
+  .container {
+    max-width: 1134px;
+  }
+  .image {
+    @screen md {
+      width: calc((100vw - 100%) / 2 + 100% - 37.5%);
+      left: calc((-100vw + 100%) / 2);
+    }
+    @screen lg {
+      width: calc((100vw - 100%) / 2 + 100% - 4 / 12 * 100%);
+    }
+  }
+
+  .imageWrapper {
+    height: 400px;
+  }
+  .textWrapper {
+    @screen lg {
+      max-width: 358px;
+    }
+  }
 }
