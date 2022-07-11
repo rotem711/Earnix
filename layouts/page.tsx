@@ -13,11 +13,13 @@ const Page = ({
   nav,
   seo,
   globals,
+  footer,
 }: {
   entry: Entry
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  footer: any
 }) => (
   <GlobalContextProvider
     value={{
@@ -50,7 +52,7 @@ const Page = ({
         <Repeater blocks={entry.replicator} />
       </main>
 
-      <Footer />
+      <Footer data={footer} />
     </div>
   </GlobalContextProvider>
 )
