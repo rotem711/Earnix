@@ -4,4 +4,17 @@
   .container {
     max-width: 843px;
   }
+  .bg {
+    right: 86.9%;
+    width: 658px;
+    height: 285px;
+
+    @screen lg {
+      right: 76.9%;
+    }
+
+    @screen xl {
+      right: 76.9%;
+    }
+  }
 }
