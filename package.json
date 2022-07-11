@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "yarn install",
     "dev": "TAILWIND_MODE=watch next dev",
     "build": "TAILWIND_MODE=build next build",
     "start": "next start",
@@ -21,6 +22,7 @@
     "html-react-parser": "^3.0.1",
     "install": "^0.13.0",
     "isomorphic-fetch": "^3.0.0",
+    "jest": "^28.1.2",
     "next": "12.2.0",
     "normalize.css": "^8.0.1",
     "npm": "^8.13.2",
@@ -33,6 +35,7 @@
   "devDependencies": {
     "@svgr/webpack": "^6.2.1",
     "@types/isomorphic-fetch": "^0.0.36",
+    "@types/node": "^18.0.3",
     "@types/react": "^18.0.14",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
@@ -45,7 +48,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "8.0.0",
+    "husky": "^8.0.0",
     "hygen": "^6.2.7",
     "typescript": "^4.7.4"
   }
