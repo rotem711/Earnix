@@ -6,7 +6,9 @@ fragment BlockCtaBanner on Set_Replicator_BlockCtaBanner {
     ctab_cta_url
     ctab_headline
     ctab_ctaBackground {
-      url
+      ... on Asset_Assets {
+        permalink
+      }
     }
 }
 `
