@@ -11,7 +11,7 @@ export const typename = 'Set_Replicator_BlockTextVideo'
 
 const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ block }) => (
   <div
-    className={`${styles.root} container`}
+    className={`${styles.root} container text-black`}
   >
     <div className={`${styles.container} mx-auto`}>
       <div className="lg:flex">
