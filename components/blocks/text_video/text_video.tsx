@@ -31,7 +31,7 @@ const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ bloc
               width="100%"
               height="100%"
               playIcon={(
-                <div className="relative w-32 md:w-60 lg:w-50 xl:w-64 aspect-square">
+                <div className={`${styles.play} relative w-32 md:w-60 lg:w-50 xl:w-64 aspect-square`}>
                   <Image
                     src="/images/play.svg"
                     height="50"
