@@ -1,4 +1,4 @@
-import Asset from 'interfaces/asset';
+import Asset from 'interfaces/asset'
 
 export default interface AboutTeaserInterface {
     type: string,

@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import parse from 'html-react-parser'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
 import styles from './about_teaser.module.scss'
@@ -16,10 +17,7 @@ const AboutTeaserBlock:FunctionComponent<{ block: AboutTeaserInterface }> = ({ b
           <h3>{block.at_headline}</h3>
         )}
         {(block.at_copy) && (
-          <div
-            className={`${styles.copy}`}
-            dangerouslySetInnerHTML={{ __html: block.at_copy }}
-          />
+          <div className={`${styles.copy}`}>{parse(block.at_copy)}</div>
         )}
         {(block.at_cta_url && block.at_cta_title) && (
           <div>
