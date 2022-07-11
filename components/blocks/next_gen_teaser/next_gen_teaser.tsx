@@ -22,10 +22,10 @@ const NextGenTeaserBlock: FunctionComponent<{ block: NextGenTeaserInterface }> =
             />
           </div>
         </div>
-        <h2 className="typo-h3 mb-24">
+        <h2 className="typo-h3 mb-16 lg:mb-24">
           The next generation of operations
         </h2>
-        <div className="typo-p mb-32">
+        <div className="typo-p mb-48 md:mb-28 lg:mb-32">
           Intelligent Insurance Operations drive transformation for stakeholders across your organization:
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 lg:gap-30 mb-48 md:md-56 lg:md-44">
