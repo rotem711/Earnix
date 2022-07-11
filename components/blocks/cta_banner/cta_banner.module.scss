@@ -1,5 +1,58 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  width: 100%;
+  height: auto;
+}
+
+.contentWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  z-index: 99;
+}
+
+.headline {
+  text-align: center;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  z-index: 99;
+}
+
+.copy {
+  text-align: center;
+  z-index: 99;
+  margin-bottom: 2.5rem;
+}
+
+.ctaWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  z-index: 99;
+  margin-bottom: 6rem;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  filter: grayscale(100%);
+
+}
+
+.imgFilter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 2;
+  background-color: theme('colors.blue-100');
+  mix-blend-mode: normal;
+  opacity: 0.45;
 }
