@@ -5,11 +5,15 @@ fragment BlockIconsWText on Set_Replicator_BlockIconsWText {
     ict_cta_url
     ict_headline
     ict_background {
-        url
+        ... on Asset_Assets {
+          permalink
+        }
       }
     ict_icons {
             icon {
-                    url
+                    ... on Asset_Assets {
+                      permalink
+                    }
                   }
             text
             }

@@ -23,7 +23,7 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
           <div className={styles.iconWrapper} key={key}>
             <div className={styles.iconImage}>
               <Image
-                src={`https://${process.env.NEXT_PUBLIC_ASSET_DOMAIN}${icon.icon.url}`}
+                src={`${icon.icon.permalink}`}
                 width={130}
                 height={130}
               />
@@ -37,7 +37,7 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
       </div>
       <div className={styles.background}>
         <Image
-          src={`https://${process.env.NEXT_PUBLIC_ASSET_DOMAIN}${block.ict_background.url}`}
+          src={`${block.ict_background.permalink}`}
           width={635}
           height={274}
         />
