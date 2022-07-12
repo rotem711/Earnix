@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GlobalContext } from 'pages/_app'
 import FooterInterface from './footer.interface'
 import styles from './footer.module.scss'
 
@@ -16,21 +17,23 @@ const FooterBlock = ({
     social_links,
   } = data
 
+  const Globals = useContext(GlobalContext)
+
   const ctaLinks = () => (
     (links) && (
-      <div className="grid grid-cols-2 gap-20 mb-64">
+      <ul className="grid grid-cols-2 gap-x-20 gap-y-26 md:gap-y-22 mb-64">
         {links.map((item, index) => (
-          <Link
-            href={item.cta_url}
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-          >
-            <h5>
+          <li className="typo-h5">
+            <Link
+              href={item.cta_url}
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+            >
               <a href={item.cta_url}>{item.cta_title}</a>
-            </h5>
-          </Link>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     )
   )
 
@@ -60,51 +63,58 @@ const FooterBlock = ({
 
             {(social_links) && (
               <div className="mb-32 md:mb-40">
-                <p className="mb-16">Follow us on:</p>
-                {social_links && social_links.map((item, index) => (
-                  <span className={`${index > 0 ? 'ml-30' : ''}`}>
-                    <Link
-                      href={item.url}
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={index}
-                    >
-                      <a
+                <p className="mb-16">
+                  {Globals.translations.FOLLOW}
+                  :
+                </p>
+                <ul>
+                  {social_links && social_links.map((item, index) => (
+                    <li className={`${index > 0 ? 'ml-30' : ''}`}>
+                      <Link
                         href={item.url}
-                        target="_blank"
-                        rel="noreferrer"
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
                       >
-                        <Image
-                          src={item.logo.permalink}
-                          alt={item.logo.alt}
-                          width="20"
-                          height="20"
-                        />
-                      </a>
-                    </Link>
-                  </span>
-                ))}
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Image
+                            src={item.logo.permalink}
+                            alt={item.logo.alt}
+                            width="20"
+                            height="20"
+                          />
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
             <div className={`${styles.legals} typo-tag-lower`}>
-              <span className="mr-15">
-                ©Earnix&nbsp;
-                {`${new Date().getFullYear()}`}
-              </span>
-              {legal_links && legal_links.map((item, index) => (
-                <span>
-                  <Link
-                    href={item.link_url}
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={index}
-                  >
-                    <a href={item.link_url}>{item.text}</a>
-                  </Link>
-                  {(index < legal_links.length - 1) && (
-                    <span className="mx-15">|</span>
-                  )}
-                </span>
-              ))}
+              <ul>
+                <li className="mr-15">
+                  ©Earnix&nbsp;
+                  {`${new Date().getFullYear()}`}
+                </li>
+                {legal_links && legal_links.map((item, index) => (
+                  <li>
+                    <Link
+                      href={item.link_url}
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={index}
+                    >
+                      <a href={item.link_url}>{item.text}</a>
+                    </Link>
+                    {(index < legal_links.length - 1) && (
+                      <span className="mx-15">|</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

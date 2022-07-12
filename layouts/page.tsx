@@ -14,16 +14,19 @@ const Page = ({
   seo,
   globals,
   footer,
+  translations,
 }: {
   entry: Entry
   nav: any
   seo: SEOMeta
   globals: GlobalSet
-  footer: any
+  footer: any,
+  translations: {[key: string]: string},
 }) => (
   <GlobalContextProvider
     value={{
       ...globals,
+      translations,
     }}
   >
     <div>

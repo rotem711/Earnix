@@ -53,4 +53,10 @@
       display: none;
     }
   }
+
+  :global {
+    li {
+      display: inline-block;
+    }
+  }
 }
