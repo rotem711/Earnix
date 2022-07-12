@@ -16,12 +16,12 @@ const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ bloc
   >
     <div className={`${styles.container} mx-auto`}>
       <div className="lg:flex">
-        <div className="md:w-3/4 lg:w-5/12 md:pr-8 mb-32">
-          <h2 className="typo-h2 mb-16">
+        <div className="md:w-3/4 lg:w-5/12 md:pr-8 lg:pr-12 xl:pr-15 mb-32 md:mb-60 lg:m-0">
+          <h2 className="typo-h2 mb-16 lg:mb-24">
             {block?.tv_headline}
           </h2>
           {/* eslint-disable-next-line react/no-danger */}
-          <div className="typo-p" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.tv_copy) }} />
+          <div className="typo-p md:w-5/6 lg:w-full" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.tv_copy) }} />
         </div>
         <div className="lg:grow lg:pl-8">
           <div className="relative aspect-video">
