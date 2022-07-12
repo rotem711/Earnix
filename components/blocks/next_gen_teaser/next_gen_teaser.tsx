@@ -27,7 +27,7 @@ const NextGenTeaserBlock: FunctionComponent<{ block: NextGenTeaserInterface }> =
           {block?.ngt_headline}
         </h2>
         {/* eslint-disable-next-line react/no-danger */}
-        <div className="typo-p mb-48 md:mb-28 lg:mb-32" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.ngt_copy) }} />
+        <div className="typo-h5 mb-48 md:mb-28 lg:mb-32" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.ngt_copy) }} />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 lg:gap-30 mb-48 md:md-56 lg:md-44">
           {
             block?.ngt_items.map((item) => (
