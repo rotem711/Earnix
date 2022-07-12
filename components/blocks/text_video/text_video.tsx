@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import DOMPurify from 'dompurify'
 
 import styles from './text_video.module.scss'
 import TextVideoInterface from './text_video.interface'
@@ -17,17 +18,16 @@ const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ bloc
       <div className="lg:flex">
         <div className="md:w-3/4 lg:w-5/12 md:pr-8 mb-32">
           <h2 className="typo-h2 mb-16">
-            It’s time to break free from legacy limitations
+            {block?.tv_headline}
           </h2>
-          <div className="typo-p">
-            We create dynamic, agile, and composable solutions that enable insurers and banks to challenge the status quo —incrementally innovating all aspects of their business to better serve their customers. With Earnix, insurers and banks have unparalleled clarity into revenue opportunities, and the technology, analytics, and expertise to seize them.
-          </div>
+          {/* eslint-disable-next-line react/no-danger */}
+          <div className="typo-p" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.tv_copy) }} />
         </div>
         <div className="lg:grow lg:pl-8">
           <div className="relative aspect-video">
             <ReactPlayer
               className="absolute top-0 left-0"
-              url="https://vimeo.com/3155182"
+              url={`https://vimeo.com/${block.tv_vimeo_id}`}
               width="100%"
               height="100%"
               playIcon={(
@@ -41,7 +41,7 @@ const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ bloc
                   />
                 </div>
               )}
-              light="https://via.placeholder.com/649x365.png"
+              light={`https://vumbnail.com/${block.tv_vimeo_id}.jpg`}
               playing
               controls
             />
