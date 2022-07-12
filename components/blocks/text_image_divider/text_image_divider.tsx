@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
+import DOMPurify from 'isomorphic-dompurify'
 
 import styles from './text_image_divider.module.scss'
 import TextImageDividerInterface from './text_image_divider.interface'
@@ -18,10 +19,8 @@ const TextImageDividerBlock: FunctionComponent<{
             className={`${styles.image} md:absolute md:h-full`}
           >
             <Image
-              src="https://via.placeholder.com/1066x712.jpg"
-              width={1066}
-              height={712}
-              blurDataURL="https://via.placeholder.com/1066x712.jpg"
+              src={block?.tid_image?.permalink}
+              blurDataURL={block?.tid_image?.placeholder}
               placeholder="blur"
               layout="fill"
               objectFit="cover"
@@ -31,12 +30,11 @@ const TextImageDividerBlock: FunctionComponent<{
         <div className="md:w-3/8 lg:w-1/3 md:pl-8 pb-64 xl:pb-76 md:pt-72 lg:pt-64">
           <div className={`${styles.textWrapper}`}>
             <h2 className="typo-h3 mb-16">
-              What Are Intelligent Insurance Operations?
+              {block?.tid_headline}
             </h2>
-            <div className="typo-p mb-31">
-              <b>The set of new strategies, processes, and an evolving ecosystem of technologies</b> to transform how insurance and banking businesses are run. By connecting all the components of increasingly complex systems, we enable financial institutions to enter the new era of intelligent operations—unlocking new market value and better serving end customers.
-            </div>
-            <Button href="#" title="See how we do it" />
+            {/* eslint-disable-next-line react/no-danger */}
+            <div className="typo-p mb-31" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.tid_copy) }} />
+            <Button href={block?.tid_cta_url} title={block?.tid_cta_title} />
           </div>
         </div>
       </div>
