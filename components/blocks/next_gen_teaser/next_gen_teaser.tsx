@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Button from 'components/generic/button/button'
 import Image from 'next/image'
+import DOMPurify from 'isomorphic-dompurify'
 
 import styles from './next_gen_teaser.module.scss'
 import NextGenTeaserInterface from './next_gen_teaser.interface'
@@ -23,45 +24,21 @@ const NextGenTeaserBlock: FunctionComponent<{ block: NextGenTeaserInterface }> =
           </div>
         </div>
         <h2 className="typo-h3 mb-16 lg:mb-24">
-          The next generation of operations
+          {block?.ngt_headline}
         </h2>
-        <div className="typo-p mb-48 md:mb-28 lg:mb-32">
-          Intelligent Insurance Operations drive transformation for stakeholders across your organization:
-        </div>
+        {/* eslint-disable-next-line react/no-danger */}
+        <div className="typo-p mb-48 md:mb-28 lg:mb-32" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block?.ngt_copy) }} />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 lg:gap-30 mb-48 md:md-56 lg:md-44">
-          <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border">
-            Industry leadership and
-            <br />
-            innovation
-          </div>
-          <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border">
-            Pricing
-            <br />
-            and rating
-          </div>
-          <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border">
-            Dynamic
-            <br />
-            decisioning
-          </div>
-          <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border">
-            Product
-            <br />
-            personalization
-          </div>
-          <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border">
-            Consumer
-            <br />
-            engagement
-          </div>
-          <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border">
-            IT &
-            <br />
-            technology
-          </div>
+          {
+            block?.ngt_items.map((item) => (
+              <div className="bg-white rounded-[20px] px-32 py-44 md:px-42 md:py-52 lg:px-24 lg:py-48 border-black-20 border-solid border" key={item?.copy}>
+                {item?.copy}
+              </div>
+            ))
+          }
         </div>
         <div className="text-center">
-          <Button href="#" title="See how we help your team succeed" />
+          <Button href={block?.ngt_cta_url} title={block?.ngt_cta_title} />
         </div>
       </div>
     </div>
