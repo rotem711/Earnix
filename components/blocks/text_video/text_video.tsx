@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import DOMPurify from 'dompurify'
+import DOMPurify from 'isomorphic-dompurify'
 
 import styles from './text_video.module.scss'
 import TextVideoInterface from './text_video.interface'
@@ -9,6 +9,13 @@ import TextVideoInterface from './text_video.interface'
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 export const typename = 'Set_Replicator_BlockTextVideo'
+
+function createMarkup() {
+  return {
+    __html: DOMPurify.sanitize(
+      'Hello World')
+  }
+}
 
 const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ block }) => (
   <div
@@ -34,8 +41,6 @@ const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ bloc
                 <div className={`${styles.play} relative w-32 md:w-60 lg:w-50 xl:w-64 aspect-square`}>
                   <Image
                     src="/images/play.svg"
-                    height="50"
-                    width="50"
                     layout="fill"
                     objectFit="contain"
                   />
