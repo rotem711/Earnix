@@ -1,5 +1,62 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+  background-color: theme("colors.blue-100");
+  color: theme("colors.white");
+  padding-top: 6.4rem;
+  padding-bottom: 7.8rem;
+
+  @screen md {
+    padding-top: 6.4rem;
+    padding-bottom: 9.2rem;
+  }
+
+  @screen lg {
+    padding-bottom: 4rem;
+  }
+
+  a {
+    @include linkDecoration(theme("colors.white"));
+  }
+
+  .leftBlock {
+    border-top: 1px solid theme("colors.white");
+    padding-top: 4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  .rightBlock {
+    display: none;
+
+    @screen md {
+      display: block;
+      padding-top: 4rem;
+      border-top: 1px solid theme("colors.white");
+    }
+  }
+
+  .logo {
+    img {
+      height: 3.2rem;
+      width: auto;
+    }
+  }
+
+  .mobileCtaLinks {
+    display: block;
+
+    @screen md {
+      display: none;
+    }
+  }
+
+  :global {
+    li {
+      display: inline-block;
+    }
+  }
 }
