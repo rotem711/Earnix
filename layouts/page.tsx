@@ -13,11 +13,13 @@ const Page = ({
   nav,
   seo,
   globals,
+  header,
 }: {
   entry: Entry
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  header
 }) => (
   <GlobalContextProvider
     value={{
@@ -45,7 +47,7 @@ const Page = ({
             </div>
           </div>
         )}
-        <Header nav={nav} />
+        <Header nav={nav} data={header} darkMode={false} />
         {entry.title}
         <Repeater blocks={entry.replicator} />
       </main>

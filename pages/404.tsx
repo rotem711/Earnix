@@ -12,9 +12,11 @@ import { GlobalContextProvider } from './_app'
 const Custom404 = ({
   nav,
   globalSet,
+  header,
 }: {
   nav: any
   globalSet: GlobalSet
+  header: any
 }) => {
   const TranslationString = Translation('en_GB')
   return (
@@ -22,7 +24,7 @@ const Custom404 = ({
       value={{ ...globalSet, ...{ translation: TranslationString } }}
     >
       <div>
-        <Header nav={nav} />
+        <Header nav={nav} darkMode={false} data={header} />
         404
       </div>
     </GlobalContextProvider>

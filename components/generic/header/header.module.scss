@@ -1,5 +1,54 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  .topbar {
+    background-color: theme("colors.blue-100");
+    color: theme("colors.white");
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+      cursor: pointer;
+    }
+  }
+
+  .mainHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .megaMenu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+      height: 100%;
+    }
+  }
+
+  .mobileToggle {
+    svg {
+      color: theme("colors.white");
+    }
+    line {
+      &:nth-of-type(1),
+      &:nth-of-type(4) {
+        opacity: 0;
+      }
+      &:nth-of-type(2) {
+        transform: rotate(45deg);
+      }
+      &:nth-of-type(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }

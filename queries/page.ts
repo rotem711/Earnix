@@ -1,3 +1,5 @@
+import HeaderQuery from 'components/generic/header/header.extraqueries.graphql'
+
 import blockInventory from '../utils/rendering/inventory'
 import AssetFragment from './fragments/asset'
 
@@ -12,6 +14,7 @@ export default `
   ${AssetFragment}
   ${fragments}
   query page($uri: String) {
+    ${HeaderQuery}
     entry(uri: $uri) {
       id
       title
