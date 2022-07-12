@@ -10,13 +10,6 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 export const typename = 'Set_Replicator_BlockTextVideo'
 
-function createMarkup() {
-  return {
-    __html: DOMPurify.sanitize(
-      'Hello World')
-  }
-}
-
 const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({ block }) => (
   <div
     className={`${styles.root} container text-black`}
