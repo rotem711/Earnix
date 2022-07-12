@@ -27,7 +27,7 @@ const TextImageDividerBlock: FunctionComponent<{
             />
           </div>
         </div>
-        <div className="md:w-3/8 lg:w-1/3 md:pl-8 lg:pl-12 xl:15 pb-64 xl:pb-76 md:pt-72 lg:pt-64">
+        <div className="md:w-3/8 lg:w-1/3 md:pl-8 lg:pl-12 xl:pl-15 pb-64 xl:pb-76 md:pt-72 lg:pt-64">
           <div className={`${styles.textWrapper}`}>
             <h2 className="typo-h3 mb-16">
               {block?.tid_headline}

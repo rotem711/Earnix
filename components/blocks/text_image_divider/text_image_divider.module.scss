@@ -16,6 +16,30 @@
 
   .imageWrapper {
     height: 400px;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(7, 43, 64, 0) 0%, #072b40 100%);
+
+      @screen md {
+        width: calc((100vw - 100%) / 2 + 100% - 37.5%);
+        left: calc((-100vw + 100%) / 2);
+        height: auto;
+        min-height: 100%;
+        background: linear-gradient(90deg, rgba(7, 43, 64, 0) 0%, #072b40 100%);
+        transform: translateX(1px);
+      }
+      @screen lg {
+        width: 50%;
+        left: 16.6667%;
+      }
+    }
   }
   .textWrapper {
     @screen lg {
