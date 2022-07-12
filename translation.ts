@@ -1,17 +1,16 @@
-const Translation = [
-  {
-    EXAMPLE: {
-      en_US: 'Example',
-    },
+const Translation = {
+  EXAMPLE: {
+    en_US: 'Example',
   },
-]
+  FOLLOW: {
+    en_US: 'Follow us on',
+  },
+}
 
 const translations = (lang): { [key: string]: string } => {
   const data = {}
-  Translation.forEach((e) => {
-    const key = Object.keys(e)[0]
-    const value = Object.values(e)[0][lang]
-    data[key] = value
+  Object.keys(Translation).forEach((e) => {
+    data[e] = Translation[e][lang]
   })
   return data
 }

@@ -22,6 +22,20 @@ import { typename as CTABannerBlockTypename } from '../../components/blocks/cta_
 import CTABannerBlockQuery from '../../components/blocks/cta_banner/cta_banner.graphql'
 import { typename as TextImageBlockTypename } from '../../components/blocks/text_image/text_image'
 import TextImageBlockQuery from '../../components/blocks/text_image/text_image.graphql'
+import { typename as TextIconGridBlockTypename } from '../../components/blocks/text_icon_grid/text_icon_grid'
+import TextIconGridBlockQuery from '../../components/blocks/text_icon_grid/text_icon_grid.graphql'
+import { typename as ChallengesTeaserBlockTypename } from '../../components/blocks/challenges_teaser/challenges_teaser'
+import ChallengesTeaserBlockQuery from '../../components/blocks/challenges_teaser/challenges_teaser.graphql'
+import { typename as TextImageDividerBlockTypename } from '../../components/blocks/text_image_divider/text_image_divider'
+import TextImageDividerBlockQuery from '../../components/blocks/text_image_divider/text_image_divider.graphql'
+import { typename as IconsWTextAndBackgroundBlockTypename } from '../../components/blocks/icons_w_text_and_background/icons_w_text_and_background'
+import IconsWTextAndBackgroundBlockQuery from '../../components/blocks/icons_w_text_and_background/icons_w_text_and_background.graphql'
+import { typename as TextVideoBlockTypename } from '../../components/blocks/text_video/text_video'
+import TextVideoBlockQuery from '../../components/blocks/text_video/text_video.graphql'
+import { typename as CtaBoxBlockTypename } from '../../components/blocks/cta_box/cta_box'
+import CtaBoxBlockQuery from '../../components/blocks/cta_box/cta_box.graphql'
+import { typename as NextGenTeaserBlockTypename } from '../../components/blocks/next_gen_teaser/next_gen_teaser'
+import NextGenTeaserBlockQuery from '../../components/blocks/next_gen_teaser/next_gen_teaser.graphql'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -99,6 +113,55 @@ const blocks:Block[] = [
     component: dynamic(() => import('../../components/blocks/text_image/text_image')),
     query: TextImageBlockQuery,
     typename: TextImageBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/text_icon_grid/text_icon_grid')),
+    query: TextIconGridBlockQuery,
+    typename: TextIconGridBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/challenges_teaser/challenges_teaser')),
+    query: ChallengesTeaserBlockQuery,
+    typename: ChallengesTeaserBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/text_image_divider/text_image_divider')),
+    query: TextImageDividerBlockQuery,
+    typename: TextImageDividerBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/icons_w_text_and_background/icons_w_text_and_background')),
+    query: IconsWTextAndBackgroundBlockQuery,
+    typename: IconsWTextAndBackgroundBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/text_video/text_video')),
+    query: TextVideoBlockQuery,
+    typename: TextVideoBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/cta_box/cta_box')),
+    query: CtaBoxBlockQuery,
+    typename: CtaBoxBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/next_gen_teaser/next_gen_teaser')),
+    query: NextGenTeaserBlockQuery,
+    typename: NextGenTeaserBlockTypename,
     extraQueries: undefined,
   },
 
