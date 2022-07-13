@@ -1,0 +1,66 @@
+@import '../../../styles/variables';
+
+.root {
+  .accordionTitle {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .accordionContent {
+    &::before {
+      content: "";
+      display: block;
+      width: calc(100% + 40px); // Mobile Container Padding
+      height: 0.8rem;
+      margin: 1.8rem -20px 3.2rem;
+      background-color: theme("colors.orange-100");
+    }
+  }
+
+  .column {
+    margin-bottom: 4rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid theme("colors.black-5");
+    }
+  }
+
+  .childWrapper {
+    margin-top: 1.6rem;
+
+    li {
+      &:not(:last-child) {
+        padding-left: 2.4rem;
+      }
+    }
+  }
+
+
+  :global(.submenu) {
+    li {
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  :global(p.subtitle) {
+    display: block;
+    margin-bottom: 1.6rem;
+  }
+
+  .chevron {
+    transform: rotateX(0);
+
+    &,
+    &__open {
+      transition: transform 0.5s ease;
+    }
+
+    &__open {
+      transform: rotateX(180deg);
+    }
+  }
+}
