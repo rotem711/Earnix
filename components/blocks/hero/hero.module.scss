@@ -11,6 +11,20 @@
     min-height: 50vh;
   }
 
+  :global {
+    h1 {
+      color: theme('colors.white');
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .isCentered {
+      @screen md {
+        text-align: center !important;
+      }
+    }
+  }
+
   .imageVideoWrapper,
   .orangeGradient,
   .blueGradient {
@@ -23,6 +37,7 @@
   .imageVideoWrapper {
     height: 100%;
     width: 100%;
+    z-index: -1;
   }
 
   .video {
@@ -40,6 +55,7 @@
   .orangeGradient {
     width: 100%;
     background: $orangeGradient;
+    z-index: 20;
 
     @screen lg {
       width: 76.56%;
@@ -58,6 +74,21 @@
     opacity: 0.55;
     width: 100%;
     background-color: theme('colors.blue-100');
+    z-index: 10;
+  }
+
+  .contentWrapper {
+    height: 100%;
+    position: relative;
+    z-index: 30;
+  }
+
+  .headline {
+    text-align: center;
+
+    @screen md {
+      text-align: left;
+    }
   }
 
   .copyBackground {
@@ -71,6 +102,38 @@
 
     @screen lg {
       padding: 1.6rem 2.7rem;
+    }
+  }
+
+  .copy {
+    &__default,
+    &__background {
+      text-align: center;
+      color: theme("colors.white");
+  
+      @screen md {
+        text-align: left;
+      }
+    }
+
+    &__default {
+      margin-top: 1.6rem;
+
+      @screen lg {
+        margin-top: 3.2rem;
+      }
+    }
+
+    &__background {
+      margin-top: 3.2rem;
+
+      @screen md {
+        margin-top: 2.4rem;
+      }
+  
+      @screen lg {
+        margin-top: 3.4rem;
+      }
     }
   }
 }
