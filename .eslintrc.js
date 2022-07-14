@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'linebreak-style': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     semi: [1, 'never'],
     'arrow-body-style': [

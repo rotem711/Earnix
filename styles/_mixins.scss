@@ -1,0 +1,11 @@
+@mixin linkDecoration($color : 'inherit') {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.5s ease;
+
+
+    &:hover,
+    &:focus {
+        text-decoration-color: $color;
+    }
+}
