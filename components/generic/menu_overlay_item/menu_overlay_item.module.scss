@@ -1,0 +1,136 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  :global(.subtitle) {
+    display: block;
+    margin-bottom: 1.6rem;
+    color: theme('colors.white');
+
+    @screen md {
+      color: theme('colors.green-90');
+    }
+  }
+
+  .childWrapper {
+    padding-left: 2.4rem;
+
+    @screen md {
+      padding-left: 2rem;
+    }
+  }
+
+  .mobileLayout {
+    .accordionTitle {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordionContent {
+      &::before {
+        content: '';
+        display: block;
+        height: 0.8rem;
+        margin: 1.8rem -20px 3.2rem; // Mobile Container Padding
+        background-color: theme('colors.orange-100');
+
+        @screen md {
+          margin-left: -70px; // Tablet Container Padding
+          margin-right: -70px;
+        }
+      }
+    }
+
+    .column {
+      &:not(:last-child) {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .parentLink {
+      border-bottom: none;
+
+      & > a p {
+        padding-bottom: 1.6rem;
+        border-bottom: 1px solid theme('colors.black-5');
+      }
+    }
+
+    .chevron {
+      transform: rotateX(0);
+
+      &,
+      &__open {
+        transition: transform 0.5s ease;
+      }
+
+      &__open {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  .desktopLayout {
+    position: relative;
+    height: 100%;
+    cursor: default;
+
+    :global(li) {
+      margin-left: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    :global(a) {
+      @include linkDecoration(currentColor);
+    }
+
+    // Before Element for easier mouse traversal when mega menu is open 
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 3.5rem;
+      width: 150%;
+      left: -25%;
+      bottom: -3.5rem;
+    }
+
+    .megaMenuWrapper {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    .megaMenuInner {
+      background-color: theme('colors.white');
+      border-top: 0.8rem solid theme('colors.orange-100');
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .orangeTriangle {
+      position: absolute;
+      bottom: -3.5rem;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 1.25rem solid transparent;
+      border-right: 1.25rem solid transparent;
+      border-bottom: 2rem solid theme('colors.orange-100');
+      transform: translateX(-50%);
+    }
+
+    .parentLink {
+      a {
+        display: block;
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+}

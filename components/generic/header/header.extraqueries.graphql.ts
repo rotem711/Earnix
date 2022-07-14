@@ -13,6 +13,7 @@ export default `
           columns {
             ... on Set_Links_Columns_LinkList {
               title
+              type
               links {
                 link_url
                 link_text
@@ -23,6 +24,7 @@ export default `
               }
             }
             ... on Set_Links_Columns_FeaturedInsight {
+              type
               insight {
                 permalink
                 title

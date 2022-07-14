@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   position: sticky;
   top: 0;
   transition: all 0.5s ease;
   width: 100%;
-  overflow: hidden;
   z-index: 100;
 
   &:global {
@@ -14,17 +14,21 @@
     }
 
     &.headroom--pinned {
-      background-color: theme("colors.white");
+      background-color: theme('colors.white');
     }
 
     &.headroom--not-top {
-      background-color: theme("colors.white");
+      background-color: theme('colors.white');
     }
   }
 
+  :global(.simpleLink) {
+    @include mainMenuLinkDecoration(theme('colors.orange-100'));
+  }
+
   .topbar {
-    background-color: theme("colors.blue-100");
-    color: theme("colors.white");
+    background-color: theme('colors.blue-100');
+    color: theme('colors.white');
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
@@ -48,6 +52,10 @@
     padding-bottom: 3.2rem;
     z-index: 100;
     position: relative;
+
+    @screen md {
+      overflow: initial;
+    }
   }
 
   .megaMenu {
@@ -56,15 +64,15 @@
     justify-content: flex-end;
     align-items: center;
 
-    li {
-      height: 100%;
+    & > li {
+      margin-left: 4rem;
     }
   }
 
   .mobileToggle {
     svg {
       will-change: auto;
-      color: theme("colors.white");
+      color: theme('colors.white');
       transform-box: fill-box;
       transition: color 500ms ease;
 
@@ -82,32 +90,32 @@
     left: 0;
     right: 0;
     opacity: 0;
-    background-color: theme("colors.white");
+    background-color: theme('colors.white');
     overflow: auto;
 
     li {
-      border-top: 1px solid theme("colors.black-5");
+      border-bottom: 1px solid theme('colors.black-5');
       padding: 1.6rem 0;
     }
   }
 
   &.darkMode,
   &.headerHasOpenNav {
-    background-color: theme("colors.white");
+    background-color: theme('colors.white');
 
     .mobileToggle {
       svg {
-        color: theme("colors.black-100");
+        color: theme('colors.black-100');
       }
     }
   }
 
   &.headerHasOpenNav {
-    background-color: theme("colors.white");
+    background-color: theme('colors.white');
 
     .mobileToggle {
       svg {
-        color: theme("colors.black-100");
+        color: theme('colors.black-100');
       }
 
       line {

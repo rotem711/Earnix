@@ -1,6 +1,7 @@
 import React, { createRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import Headroom from 'headroom.js'
 import cn from 'classnames'
 
@@ -9,7 +10,7 @@ import HeaderInterface from './header.interface'
 import NavInterface from '../nav/nav.interface'
 import Nav from '../nav/nav'
 import HamburgerIcon from '../icons/hamburger'
-import MobileMenuOverlayItem from '../mobile_menu_overlay_item/mobile_menu_overlay_item'
+import MenuOverlayItem from '../menu_overlay_item/menu_overlay_item'
 
 const HeaderBlock = ({
   data,
@@ -50,15 +51,17 @@ const HeaderBlock = ({
       },
     })
     headroom.init()
-
-    setHeaderHeight(headerRef.current.clientHeight)
-    setWindowHeight(window.innerHeight)
   })
 
   useEffect(() => {
-    setMobile(window.innerWidth < 768)
+    setHeaderHeight(headerRef.current.clientHeight)
+    setWindowHeight(window.innerHeight)
+  }, [])
+
+  useEffect(() => {
+    setMobile(window.innerWidth < 1024)
     window.addEventListener('orientationchange', () => {
-      setMobile(window.innerWidth < 768)
+      setMobile(window.innerWidth < 1024)
     })
     return () => {
       window.removeEventListener('orientationchange', () => {})
@@ -77,6 +80,20 @@ const HeaderBlock = ({
     setNavIsOpen(!navIsOpen)
   }
 
+  const isActiveLink = (href: string) => {
+    const router = useRouter()
+    let pathNameToCheck
+
+    if (href.indexOf('http://') === 0 || href.indexOf('https://') === 0) {
+      const urlHolder = new URL(href)
+      pathNameToCheck = urlHolder.pathname
+    } else {
+      pathNameToCheck = href
+    }
+
+    return pathNameToCheck === router.pathname
+  }
+
   const headerClass = cn(styles.root, {
     [`${styles.headerHasOpenNav}`]: isMobile && navIsOpen,
     [`${styles.darkMode}`]: !navOnTop,
@@ -89,7 +106,7 @@ const HeaderBlock = ({
   }
 
   return (
-    <div className={headerClass} ref={headerRef}>
+    <header className={headerClass} ref={headerRef} id="navHeader">
       <div className={`${styles.topbar} container typo-tag-lower`}>
         <Image
           src="/assets/search.svg"
@@ -104,9 +121,17 @@ const HeaderBlock = ({
         <Link href="/">
           <a href="/">
             <Image
-              src={navIsOpen || !navOnTop ? logo_dark.permalink : logo_light.permalink}
-              width={navIsOpen || !navOnTop ? logo_dark.width : logo_light.width}
-              height={navIsOpen || !navOnTop ? logo_dark.height : logo_light.height}
+              src={
+                navIsOpen || !navOnTop
+                  ? logo_dark.permalink
+                  : logo_light.permalink
+              }
+              width={
+                navIsOpen || !navOnTop ? logo_dark.width : logo_light.width
+              }
+              height={
+                navIsOpen || !navOnTop ? logo_dark.height : logo_light.height
+              }
             />
           </a>
         </Link>
@@ -122,28 +147,35 @@ const HeaderBlock = ({
             <HamburgerIcon className="" />
           </button>
         )}
-      </div>
 
-      {isMobile && (
-        <ul className={mobileMenuClasses} style={mobileMenuStyle}>
+        <ul className={`${isMobile ? mobileMenuClasses : styles.megaMenu}`} style={isMobile ? mobileMenuStyle : undefined}>
           {links.map((item) => (
             <li key={item.text ?? item.nav_title}>
               {item.type === 'simple_link' && (
                 <Link href={item.link}>
-                  <a href={item.link}>
-                    <p>{item.text}</p>
+                  <a
+                    href={item.link}
+                    className={`${cn('simpleLink', {
+                      active: isActiveLink(item.link),
+                    })}`}
+                  >
+                    {isMobile ? (
+                      <p>{item.text}</p>
+                    ) : (
+                      <h6>{item.text}</h6>
+                    )}
                   </a>
                 </Link>
               )}
 
               {item.type === 'overlay' && (
-                <MobileMenuOverlayItem links={item} />
+                <MenuOverlayItem links={item} isMobileLayout={isMobile} key={isMobile} />
               )}
             </li>
           ))}
         </ul>
-      )}
-    </div>
+      </div>
+    </header>
   )
 }
 

@@ -1,4 +1,5 @@
-export default interface MobileMenuOverlayItemInterface {
+export default interface MenuOverlayItemInterface {
+  isMobileLayout: boolean,
   links: {
     nav_title: string,
     columns: [{

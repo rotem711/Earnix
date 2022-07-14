@@ -1,11 +1,33 @@
-@mixin linkDecoration($color : 'inherit') {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    transition: text-decoration-color 0.5s ease;
+@mixin linkDecoration($color: 'currentColor') {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.5s ease;
 
+  &:hover,
+  &:focus {
+    text-decoration-color: $color;
+  }
+}
 
-    &:hover,
-    &:focus {
-        text-decoration-color: $color;
+@mixin mainMenuLinkDecoration($color: 'currentColor') {
+  &::after {
+    content: '';
+    display: block;
+    bottom: -0.2rem;
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    width: 0;
+    transition: width 0.5s ease;
+    background-color: $color;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    &::after {
+      width: 100%;
     }
+  }
 }
