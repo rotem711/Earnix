@@ -10,8 +10,8 @@ import styles from './header.module.scss'
 import HeaderInterface from './header.interface'
 import NavInterface from '../nav/nav.interface'
 import Nav from '../nav/nav'
-import HamburgerIcon from '../icons/hamburger'
 import MenuOverlayItem from '../menu_overlay_item/menu_overlay_item'
+import HamburgerIcon from '../icons/hamburger'
 
 const HeaderBlock = ({
   data,
@@ -46,6 +46,9 @@ const HeaderBlock = ({
         if (!darkMode && isMobile) {
           setInvertColors(!invertColors)
         }
+      },
+      onPin() {
+        setNavIsOpen(false)
       },
       onUnpin() {
         setNavIsOpen(false)

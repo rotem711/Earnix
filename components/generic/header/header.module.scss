@@ -13,10 +13,7 @@
       transform: translateY(-101%);
     }
 
-    &.headroom--pinned {
-      background-color: theme('colors.white');
-    }
-
+    &.headroom--pinned,
     &.headroom--not-top {
       background-color: theme('colors.white');
     }
@@ -36,6 +33,10 @@
       width: 2.4rem;
       height: 2.4rem;
       cursor: pointer;
+    }
+
+    a {
+      @include linkDecoration(theme('colors.white'));
     }
   }
 
