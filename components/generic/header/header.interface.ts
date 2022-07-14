@@ -23,8 +23,9 @@ export default interface HeaderInterface {
         }],
       }],
       insight: [{
-        permalink: string,
+        cover_image: Asset,
         title: string,
+        uri: string,
       }],
     }],
   }],

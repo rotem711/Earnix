@@ -26,8 +26,27 @@ export default `
             ... on Set_Links_Columns_FeaturedInsight {
               type
               insight {
-                permalink
-                title
+                ... on Entry_Insights_Insights {
+                  cover_image {
+                    ...CMSAsset
+                  }
+                  uri
+                  title
+                }
+                ... on Entry_Events_Events {
+                  cover_image {
+                    ...CMSAsset
+                  }
+                  uri
+                  title
+                }
+                ... on Entry_Blog_Blog {
+                  cover_image {
+                    ...CMSAsset
+                  }
+                  uri
+                  title
+                }
               }
             }
           }

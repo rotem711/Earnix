@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Headroom from 'headroom.js'
 import cn from 'classnames'
 
+import useIsMobile from 'utils/hooks'
 import styles from './header.module.scss'
 import HeaderInterface from './header.interface'
 import NavInterface from '../nav/nav.interface'
@@ -24,7 +25,7 @@ const HeaderBlock = ({
   const { links, logo_dark, logo_light } = data
 
   const headerRef = createRef<HTMLDivElement>()
-  const [isMobile, setMobile] = useState(false)
+  const isMobile = useIsMobile('lg')
   const [headerHeight, setHeaderHeight] = useState(0)
   const [windowHeight, setWindowHeight] = useState(0)
   const [navOnTop, setnavOnTop] = useState(true)
@@ -56,16 +57,6 @@ const HeaderBlock = ({
   useEffect(() => {
     setHeaderHeight(headerRef.current.clientHeight)
     setWindowHeight(window.innerHeight)
-  }, [])
-
-  useEffect(() => {
-    setMobile(window.innerWidth < 1024)
-    window.addEventListener('orientationchange', () => {
-      setMobile(window.innerWidth < 1024)
-    })
-    return () => {
-      window.removeEventListener('orientationchange', () => {})
-    }
   }, [])
 
   const toggleNav = () => {
@@ -169,7 +160,7 @@ const HeaderBlock = ({
               )}
 
               {item.type === 'overlay' && (
-                <MenuOverlayItem links={item} isMobileLayout={isMobile} key={isMobile} />
+                <MenuOverlayItem links={item} />
               )}
             </li>
           ))}
@@ -180,6 +171,3 @@ const HeaderBlock = ({
 }
 
 export default HeaderBlock
-function e(e: any): React.MouseEventHandler<HTMLDivElement> {
-  throw new Error('Function not implemented.')
-}

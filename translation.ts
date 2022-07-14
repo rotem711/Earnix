@@ -5,6 +5,9 @@ const Translation = {
   FOLLOW: {
     en_US: 'Follow us on',
   },
+  FEATUREDPOST: {
+    en_US: 'Featured Post',
+  },
 }
 
 const translations = (lang): { [key: string]: string } => {

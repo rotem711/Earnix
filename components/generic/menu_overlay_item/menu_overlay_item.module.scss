@@ -12,11 +12,51 @@
     }
   }
 
-  .childWrapper {
+  :global(.childWrapper) {
     padding-left: 2.4rem;
 
     @screen md {
       padding-left: 2rem;
+    }
+  }
+
+  .featuredInsight {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    h5,
+    p {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      width: 32.7rem;
+      max-width: 100%;
+      height: 21rem;
+
+      @screen lg {
+        width: 100%;
+        height: 100%;
+      }
+
+      h5 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        color: theme("colors.white");
+        margin-bottom: 0;
+        padding: 2.4rem;
+
+        screen lg {
+          padding: 3.2rem;
+        }
+      }
     }
   }
 
@@ -43,10 +83,9 @@
       }
     }
 
-    .column {
-      &:not(:last-child) {
-        margin-bottom: 4rem;
-      }
+    .column,
+    .featuredInsight {
+      margin-bottom: 4rem;
     }
 
     .parentLink {
@@ -94,10 +133,10 @@
       content: '';
       display: block;
       position: absolute;
-      height: 3.5rem;
+      height: 4rem;
       width: 150%;
       left: -25%;
-      bottom: -3.5rem;
+      bottom: -4rem;
     }
 
     .megaMenuWrapper {
@@ -116,7 +155,7 @@
 
     .orangeTriangle {
       position: absolute;
-      bottom: -3.5rem;
+      bottom: -4rem;
       left: 50%;
       width: 0;
       height: 0;

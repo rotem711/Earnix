@@ -1,3 +1,5 @@
+import Asset from 'interfaces/asset'
+
 export default interface MenuOverlayItemInterface {
   isMobileLayout: boolean,
   links: {
@@ -12,6 +14,11 @@ export default interface MenuOverlayItemInterface {
           link_url: string,
           link_text: string,
         }],
+      }],
+      insight: [{
+        cover_image: Asset,
+        uri: string,
+        title: string,
       }],
     }],
   },
