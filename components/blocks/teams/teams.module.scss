@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+
+.root {
+  text-align: center;
+  color: theme("colors.white");
+  position: relative;
+  
+  h1 {
+    margin: 8rem auto 4rem;
+
+    @screen md {
+      margin-top: 11.8rem;
+    }
+
+    @screen lg {
+      margin-top: 16rem;
+    }
+  }
+
+  & > div {
+    margin-bottom: 13.6rem;
+
+    @screen md {
+      margin-bottom: 9.6rem;
+    }
+  }
+
+  video {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .numbers {
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row wrap;
+    }
+  }
+
+  .countries {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+    & > div {
+      width: 50%;
+      margin-bottom: 2.4rem;
+
+      @screen md {
+        width: 25%;
+        margin-bottom: 6.4rem;
+      }
+    }
+  }
+}
