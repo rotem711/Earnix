@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-shadow */
 /* eslint-disable arrow-body-style */
@@ -13,14 +14,15 @@ const AnimatedLines = (props: AnimatedLinesInterface) => {
 
   useEffect(() => {
     function listenToScroll() {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop
       const initialHeight = 10
       const height = winScroll - initialHeight
       setScrolled(height)
     }
 
     window.addEventListener('scroll', listenToScroll)
-    window.removeEventListener('scroll', () => null)
+    return () => window.removeEventListener('scroll', () => listenToScroll)
   }, [])
 
   return (
@@ -31,9 +33,11 @@ const AnimatedLines = (props: AnimatedLinesInterface) => {
           className={styles.background}
           style={{
             left: scrolled
-              ? props.xInitialPosition - scrolled / 5
+              ? props.xInitialPosition + scrolled / 5
               : props.xInitialPosition,
-            bottom: scrolled ? -1 * (scrolled / 5) : 0,
+            bottom: scrolled
+              ? props.yInitialPosition + scrolled / 5
+              : props.yInitialPosition,
           }}
         >
           <Image src={`${props.imageUrl}`} width={700} height={300} />
@@ -47,7 +51,9 @@ const AnimatedLines = (props: AnimatedLinesInterface) => {
             left: scrolled
               ? props.xInitialPosition + scrolled / 3
               : props.xInitialPosition,
-            top: scrolled ? (-1 * scrolled) / 3 : 0,
+            top: scrolled
+              ? props.yInitialPosition - scrolled / 3
+              : props.yInitialPosition,
           }}
         >
           <Image src={`${props.imageUrl}`} width={700} height={300} />
