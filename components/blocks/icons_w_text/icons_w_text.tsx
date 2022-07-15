@@ -33,9 +33,11 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
         <Button href={block.ict_cta_url} title={block.ict_cta_title} />
       </div>
       <AnimatedLines
-        variant="top"
-        xInitialPosition={600}
-        yInitialPosition={-150}
+        variant="bottom"
+        xInitialPosition={150}
+        yInitialPosition={-250}
+        width={700}
+        height={300}
         imageUrl={`${block.ict_background.permalink}`}
       />
     </div>

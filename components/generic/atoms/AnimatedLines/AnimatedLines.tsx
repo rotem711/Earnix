@@ -40,7 +40,7 @@ const AnimatedLines = (props: AnimatedLinesInterface) => {
               : props.yInitialPosition,
           }}
         >
-          <Image src={`${props.imageUrl}`} width={700} height={300} />
+          <Image src={`${props.imageUrl}`} width={props.width} height={props.height} />
         </div>
       )}
       {props.variant === 'top' && (
@@ -49,14 +49,14 @@ const AnimatedLines = (props: AnimatedLinesInterface) => {
           className={styles.background}
           style={{
             left: scrolled
-              ? props.xInitialPosition + scrolled / 3
+              ? props.xInitialPosition + scrolled / 5
               : props.xInitialPosition,
             top: scrolled
-              ? props.yInitialPosition - scrolled / 3
+              ? props.yInitialPosition - scrolled / 5
               : props.yInitialPosition,
           }}
         >
-          <Image src={`${props.imageUrl}`} width={700} height={300} />
+          <Image src={`${props.imageUrl}`} width={props.width} height={props.height} />
         </div>
       )}
     </>
