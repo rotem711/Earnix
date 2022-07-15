@@ -1,22 +1,20 @@
 import React from 'react'
 
-const Hamburger = ({ className = '' }: { className: string }) => (
+const Chevron = ({ className = '' }: { className: string }) => (
   <svg
     className={className}
-    width="15"
-    height="9"
-    viewBox="0 0 15 9"
+    width="19"
+    height="12"
+    viewBox="0 0 19 12"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M13 1.49023L7.16349 7.14702L1.3269 1.49016"
-      stroke="currentColor"
+      d="M18 1.48541L9.51472 9.97069L1.02933 1.48531"
+      stroke="#808080"
       strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
     />
   </svg>
 )
 
-export default Hamburger
+export default Chevron

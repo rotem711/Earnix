@@ -11,6 +11,7 @@
   &:global {
     &.headroom--unpinned {
       transform: translateY(-101%);
+      pointer-events: none;
     }
 
     &.headroom--pinned,
