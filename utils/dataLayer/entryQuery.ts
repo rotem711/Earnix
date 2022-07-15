@@ -1,6 +1,7 @@
 import { GetStaticPropsContext, GetStaticPropsResult } from 'next'
 import blockInventory from 'utils/rendering/inventory'
 import { StatamicPreviewData } from 'pages/api/preview'
+import translations from 'translation'
 import gql from './gql'
 
 export const getStaticPropsWrapper = (
@@ -87,6 +88,7 @@ export const getStaticPropsWrapper = (
   return {
     props: {
       ...resultData,
+      translations: translations('en_US'),
       // globals: d.data,
     },
   }
