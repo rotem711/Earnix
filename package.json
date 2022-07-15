@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "yarn install",
-    "dev": "TAILWIND_MODE=watch next dev",
+    "dev": "cross-env TAILWIND_MODE=watch next dev",
     "build": "TAILWIND_MODE=build next build",
     "start": "next start",
     "export": "next build && next export",
