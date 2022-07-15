@@ -10,18 +10,21 @@
 .contentWrapper {
   height: auto;
   align-items: center;
+  justify-items: center;
   margin-bottom: 7.5rem;
   margin-top: 4rem;
-  gap:2rem;
 
   @screen sm {
-    width:100%,
+    width: 100%;
+    margin-right: 0;
+    gap: 0;
   }
   @screen md {
-    width:80rem,
+    width: 80rem;
+    gap: 2rem;
   }
   @screen xl {
-    width:85%,
+    width: 100%;
   }
 }
 
@@ -29,9 +32,17 @@
   height: auto;
   position: relative;
   top: 0;
-  margin-right: 1.5rem;
   position: relative;
   border-radius: 10px;
+
+  @screen sm {
+    margin-right: 0;
+    margin-top: 4rem;
+  }
+  @screen md {
+    margin-right: 1.5rem;
+    margin-top: 0;
+  }
 }
 
 .image {
@@ -43,19 +54,23 @@
 .textWrapper {
   display: flex;
   flex-direction: column;
-  //align-items: center;
   justify-items: center;
 }
 
 .headline {
   width: 80%;
   margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  @screen md {
+    margin-top: 0;
+  }
 }
 
 .copy {
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .ctaWrapper {
- 
 }
