@@ -27,8 +27,17 @@ $md-breakpoint: theme('screens.md');
 }
 
 .contentWrapper {
-  width: 100%;
   height: auto;
+
+  @screen sm {
+    width:100%,
+  }
+  @screen md {
+    width:80rem,
+  }
+  @screen xl {
+    width:85%,
+  }
 }
 
 .iconGrid {

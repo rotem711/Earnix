@@ -1,3 +1,4 @@
 export default interface TextImageInterface {
-    type: string
+  block: any
+  children: any
 }
