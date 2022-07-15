@@ -1,7 +1,7 @@
 export default `
 fragment BlockIconsWTextAndBackground on Set_Replicator_BlockIconsWTextAndBackground {
       itb_bgimage {
-        ... on Asset_Assets {
+        ...CMSAsset {
           id
           permalink
         }
@@ -14,7 +14,7 @@ fragment BlockIconsWTextAndBackground on Set_Replicator_BlockIconsWTextAndBackgr
       itb_icons {
         copy
         icon {
-          ... on Asset_Assets {
+          ...CMSAsset {
             id
             permalink
           }
