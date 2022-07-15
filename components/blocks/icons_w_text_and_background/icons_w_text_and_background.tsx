@@ -102,7 +102,7 @@ function IconsWTextAndBackgroundBlock(props: IconsWTextAndBackgroundInterface) {
         <div
           className={`${styles.background} sm:hidden md:block`}
           style={{
-            top: scrolled ? (-1 * scrolled) / 2 : 0,
+            top: scrolled ? (-1 * scrolled) / 3 : 0,
           }}
         >
           <Image
