@@ -40,7 +40,11 @@
     & > div {
       display: flex;
       justify-content: space-between;
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
+
+      & > div {
+        width: calc(100% / 3 - 1.5rem);
+      }
     }
   }
 
