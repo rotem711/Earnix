@@ -1,77 +1,87 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-else-return */
-/* eslint-disable react/function-component-definition */
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
-import parser from 'html-react-parser'
+import parse from 'html-react-parser'
 import styles from './text_image.module.scss'
 import TextImageInterface from './text_image.interface'
 
 export const typename = 'Set_Replicator_BlockTextImage'
 
-function TextImageBlock(props: TextImageInterface) {
-  const {
-    ti_reverse,
-    ti_copy,
-    ti_cta_title,
-    ti_cta_url,
-    ti_headline,
-    ti_image,
-    // ti_overlay_icon,
-  } = props.block
-
-  if (ti_reverse) {
-    return (
+const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
+  block,
+}) => (
+  <>
+    {block.ti_reverse && (
       <div className={`${styles.root} container`}>
         <div
           className={`${styles.contentWrapper} sm:flex-col md:grid md:grid-cols-2`}
         >
           <div className={styles.textWrapper}>
-            <div className={`${styles.headline} typo-h2`}>{ti_headline}</div>
-            <div className={styles.copy}>{parser(ti_copy)}</div>
-            <div className={styles.ctaWrapper}>
-              <Button href={ti_cta_url} title={ti_cta_title} />
+            {block.ti_headline && (
+              <div className={`${styles.headline} typo-h2`}>
+                {block.ti_headline}
+              </div>
+            )}
+            {block.ti_copy && (
+              <div className={styles.copy}>{parse(block.ti_copy)}</div>
+            )}
+            {block.ti_cta_url && block.ti_cta_title && (
+              <div className={styles.ctaWrapper}>
+                <Button href={block.ti_cta_url} title={block.ti_cta_title} />
+              </div>
+            )}
+          </div>
+          {block.ti_image && (
+            <div className={styles.imageWrapper}>
+              <Image
+                src={block.ti_image.permalink}
+                width={650}
+                height={650}
+                objectFit="cover"
+                className={styles.image}
+              />
             </div>
-          </div>
-          <div className={styles.imageWrapper}>
-            <Image
-              src={ti_image.permalink}
-              width={650}
-              height={650}
-              objectFit="cover"
-              className={styles.image}
-            />
-          </div>
+          )}
         </div>
       </div>
-    )
-  } else {
-    return (
+    )}
+    {!block.ti_reverse && (
       <div className={`${styles.root} container`}>
         <div
           className={`${styles.contentWrapper} sm:flex-col md:grid md:grid-cols-2`}
         >
-          <div className={styles.imageWrapper}>
-            <Image
-              src={ti_image.permalink}
-              width={650}
-              height={650}
-              objectFit="cover"
-              className={styles.image}
-            />
-          </div>
-          <div className={styles.textWrapper}>
-            <div className={`${styles.headline} typo-h2`}>{ti_headline}</div>
-            <div className={styles.copy}>{parser(ti_copy)}</div>
-            <div className={styles.ctaWrapper}>
-              <Button href={ti_cta_url} title={ti_cta_title} />
+          {block.ti_image && (
+            <div className={styles.imageWrapper}>
+              <Image
+                src={block.ti_image.permalink}
+                width={650}
+                height={650}
+                objectFit="cover"
+                className={styles.image}
+              />
             </div>
+          )}
+          <div className={styles.textWrapper}>
+            {block.ti_headline && (
+              <div className={`${styles.headline} typo-h2`}>
+                {block.ti_headline}
+              </div>
+            )}
+            {block.ti_copy && (
+              <div className={styles.copy}>{parse(block.ti_copy)}</div>
+            )}
+            {block.ti_cta_url && block.ti_cta_title && (
+              <div className={styles.ctaWrapper}>
+                <Button href={block.ti_cta_url} title={block.ti_cta_title} />
+              </div>
+            )}
           </div>
         </div>
       </div>
-    )
-  }
-}
+    )}
+  </>
+)
 
 export default TextImageBlock
