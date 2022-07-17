@@ -3,4 +3,18 @@
 .root {
   // add your styles here
   background-color: theme('colors.green-90');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headline {
+  color: #ffffff;
+}
+
+.contentWrapper {
+  width: 90rem;
+  height: auto;
+  display: flex;
+  flex-direction: row;
 }
