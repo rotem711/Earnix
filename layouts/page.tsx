@@ -34,10 +34,10 @@ const Page = ({
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="icon" href="/favicon.ico" />
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-        />
+        /> */}
       </Head>
       <main>
         {true && process.env.NODE_ENV === 'development' && (

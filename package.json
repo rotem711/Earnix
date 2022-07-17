@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "test": "yarn install",
-    "dev": "TAILWIND_MODE=watch next dev",
-    "build": "TAILWIND_MODE=build next build",
+    "dev": "cross-env TAILWIND_MODE=watch next dev",
+    "build": "cross-env TAILWIND_MODE=build next build",
     "start": "next start",
     "export": "next build && next export",
     "lint": "eslint components/**/*.tsx components/**/*.ts pages/**/*.tsx utils/**/*.ts",
