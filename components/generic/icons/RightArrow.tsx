@@ -1,7 +1,7 @@
 /* eslint-disable react/function-component-definition */
 import React from 'react'
 
-function RightArrow() {
+function rightArrow() {
   return (
     <svg
       width="21"
@@ -19,4 +19,4 @@ function RightArrow() {
   )
 }
 
-export default RightArrow
+export default rightArrow
