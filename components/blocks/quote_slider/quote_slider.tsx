@@ -20,7 +20,6 @@ const QuoteSliderBlock: FunctionComponent<{ block: QuoteSliderInterface }> = ({
         slidesPerView={1}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
-        navigation
       >
         {block.qs_quotes.map((item: any, key: number) => {
           return (
