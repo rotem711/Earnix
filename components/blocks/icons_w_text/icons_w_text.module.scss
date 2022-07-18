@@ -1,5 +1,87 @@
 @import '../../../styles/variables';
 
+$sm-breakpoint: theme('screens.sm');
+$md-breakpoint: theme('screens.md');
+
 .root {
-  // add your styles here
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.headline {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.copy {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 3.5rem;
+}
+
+.contentWrapper {
+  width: 100%;
+  height: auto;
+}
+
+.iconGrid {
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 3.938rem;
+}
+
+.iconWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 3.5rem;
+}
+
+.iconImage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.iconText {
+  text-align: center;
+  color: #000000;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.ctaWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 6.188rem;
+  z-index: 5;
+}
+
+.background {
+  position: absolute;
+  bottom: -9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  z-index: -1;
 }

@@ -13,15 +13,20 @@ const Page = ({
   nav,
   seo,
   globals,
+  footer,
+  translations,
 }: {
   entry: Entry
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  footer: any
+  translations: { [key: string]: string }
 }) => (
   <GlobalContextProvider
     value={{
       ...globals,
+      translations,
     }}
   >
     <div>
@@ -29,6 +34,10 @@ const Page = ({
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+        />
       </Head>
       <main>
         {true && process.env.NODE_ENV === 'development' && (
@@ -50,7 +59,7 @@ const Page = ({
         <Repeater blocks={entry.replicator} />
       </main>
 
-      <Footer />
+      <Footer data={footer} />
     </div>
   </GlobalContextProvider>
 )

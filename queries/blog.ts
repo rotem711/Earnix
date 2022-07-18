@@ -1,8 +1,10 @@
+import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
 import AssetFragment from './fragments/asset'
 
 export default `
   ${AssetFragment}
   query blog($slug: String) {
+    ${FooterQuery},
     entry(collection: "blog", slug: $slug) {
       id
       title

@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: -1;
+}
+

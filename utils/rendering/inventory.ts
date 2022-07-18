@@ -36,7 +36,6 @@ import { typename as CtaBoxBlockTypename } from '../../components/blocks/cta_box
 import CtaBoxBlockQuery from '../../components/blocks/cta_box/cta_box.graphql'
 import { typename as NextGenTeaserBlockTypename } from '../../components/blocks/next_gen_teaser/next_gen_teaser'
 import NextGenTeaserBlockQuery from '../../components/blocks/next_gen_teaser/next_gen_teaser.graphql'
-
 import { typename as TeamsBlockTypename } from '../../components/blocks/teams/teams'
 import TeamsBlockQuery from '../../components/blocks/teams/teams.graphql'
 import { typename as ThreeCardsBlockTypename } from '../../components/blocks/three_cards/three_cards'
@@ -180,7 +179,6 @@ const blocks:Block[] = [
     typename: TeamsBlockTypename,
     extraQueries: undefined,
   },
-
   {
     component: dynamic(() => import('../../components/blocks/three_cards/three_cards')),
     query: ThreeCardsBlockQuery,
@@ -201,7 +199,6 @@ const blocks:Block[] = [
     typename: FullbleedTextImageWIconBlockTypename,
     extraQueries: undefined,
   },
-
   // ##HYGEN_START##
   // do not modify the above line since its used by hygen to generate the block list
 ]
