@@ -3,4 +3,62 @@
 .root {
   // add your styles here
   background-color: theme('colors.green-90');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --swiper-theme-color: theme('colors.green-50');
+}
+
+.headline {
+  margin-top: 4.5rem;
+  margin-bottom: 3rem;
+  color: theme('colors.white');
+  opacity: 0.51;
+  text-align: center;
+}
+
+.desktopContentWrapper {
+  width: 100rem;
+  height: auto;
+}
+
+.mobileContentWrapper {
+  width: 100%;
+  height: auto;
+}
+
+.quoteWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.quoteText {
+  color: theme('colors.white');
+  text-align: center;
+  margin-bottom: 2rem;
+  @screen sm {
+    width: 100%;
+  }
+  @screen md {
+    width: 80%;
+  }
+}
+
+.quoteAuthor {
+  color: theme('colors.white');
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ctaWrapper {
+  color: theme('colors.green-50');
+  text-decoration: underline;
+  margin-bottom: 4rem;
+}
+
+.mobileControls {
+  gap: 3rem;
+  margin-bottom: 6rem;
 }
