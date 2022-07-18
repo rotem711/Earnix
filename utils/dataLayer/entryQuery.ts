@@ -92,7 +92,7 @@ export const getStaticPropsWrapper = (
   }
 }
 
-export const getStaticPathsWrapper = (collection: string[]) => async () => {
+export const getStaticPathsWrapper = (collection: string) => async () => {
   if (!process.env.NEXT_PUBLIC_GRAPHQL_URL) {
     throw new Error('Failed to load the graphql endpoint. Please make sure it is defined in your .env.local file')
   }
@@ -121,7 +121,7 @@ export const getStaticPathsWrapper = (collection: string[]) => async () => {
   }
   const paths = res.data.entries.data.map((e) => {
     return {
-      params: { slug: e.uri?.substring(1).split('/') || e.slug },
+      params: { slug: collection === 'pages' ? e.uri?.substring(1).split('/') || e.slug : e.slug },
     }
   })
 
