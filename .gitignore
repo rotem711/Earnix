@@ -33,7 +33,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-#editors
+# editor
 .idea
 
 tsconfig.tsbuildinfo
