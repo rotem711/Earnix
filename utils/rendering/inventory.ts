@@ -37,6 +37,15 @@ import CtaBoxBlockQuery from '../../components/blocks/cta_box/cta_box.graphql'
 import { typename as NextGenTeaserBlockTypename } from '../../components/blocks/next_gen_teaser/next_gen_teaser'
 import NextGenTeaserBlockQuery from '../../components/blocks/next_gen_teaser/next_gen_teaser.graphql'
 
+import { typename as TeamsBlockTypename } from '../../components/blocks/teams/teams'
+import TeamsBlockQuery from '../../components/blocks/teams/teams.graphql'
+import { typename as ThreeCardsBlockTypename } from '../../components/blocks/three_cards/three_cards'
+import ThreeCardsBlockQuery from '../../components/blocks/three_cards/three_cards.graphql'
+import { typename as ConnectWithUsBlockTypename } from '../../components/blocks/connect_with_us/connect_with_us'
+import ConnectWithUsBlockQuery from '../../components/blocks/connect_with_us/connect_with_us.graphql'
+import { typename as FullbleedTextImageWIconBlockTypename } from '../../components/blocks/fullbleed_text_image_w_icon/fullbleed_text_image_w_icon'
+import FullbleedTextImageWIconBlockQuery from '../../components/blocks/fullbleed_text_image_w_icon/fullbleed_text_image_w_icon.graphql'
+
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
 
@@ -162,6 +171,34 @@ const blocks:Block[] = [
     component: dynamic(() => import('../../components/blocks/next_gen_teaser/next_gen_teaser')),
     query: NextGenTeaserBlockQuery,
     typename: NextGenTeaserBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/teams/teams')),
+    query: TeamsBlockQuery,
+    typename: TeamsBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/three_cards/three_cards')),
+    query: ThreeCardsBlockQuery,
+    typename: ThreeCardsBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/connect_with_us/connect_with_us')),
+    query: ConnectWithUsBlockQuery,
+    typename: ConnectWithUsBlockTypename,
+    extraQueries: undefined,
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/fullbleed_text_image_w_icon/fullbleed_text_image_w_icon')),
+    query: FullbleedTextImageWIconBlockQuery,
+    typename: FullbleedTextImageWIconBlockTypename,
     extraQueries: undefined,
   },
 
