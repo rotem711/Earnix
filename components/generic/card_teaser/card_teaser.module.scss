@@ -4,6 +4,7 @@
 .root {
   box-shadow: 0 0.4rem 0.4rem 0 theme('colors.black-20');
   position: relative;
+  height: 100%;
 
   &,
   &::before {
@@ -33,6 +34,12 @@
     }
 
     a {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-flow: column nowrap;
+      height: 100%;
+
       &:hover,
       &:focus {
         .cta {
@@ -70,6 +77,7 @@
 
   .content {
     padding: 1.6rem 2.4rem 2.4rem;
+    height: calc(100% - 25rem);
   }
 
   .dateLocationWrapper {

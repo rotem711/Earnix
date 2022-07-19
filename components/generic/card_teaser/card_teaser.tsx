@@ -46,54 +46,56 @@ const CardTeaser = (data: CardTeaserInterface) => {
       <div className={`${styles.content}`}>
         <Link href={ctaLink.href}>
           <a href={ctaLink.href}>
-            <div
-              className={`${styles.headline} ${
-                cardType === 'event' ? 'typo-h3' : 'typo-h5'
-              }`}
-            >
-              {headline}
-            </div>
-
-            {(date || location) && (
-              <div className={`${styles.dateLocationWrapper}`}>
-                {date && (
-                  <div
-                    className={`${
-                      cardType === 'event' ? 'typo-h5' : 'typo-p-small'
-                    }`}
-                  >
-                    {Globals.translations.MONTHS[date.getMonth()]}
-                    &nbsp;
-                    {date.getDate()}
-                    ,&nbsp;
-                    {date.getFullYear()}
-                  </div>
-                )}
-
-                {location && (
-                  <div className={`${styles.location} typo-h6`}>{location}</div>
-                )}
-              </div>
-            )}
-
-            {cardType !== 'event' && blurb.length > 0 && (
+            <div>
               <div
-                className={`${styles.blurb} typo-p-small`}
-                style={{ WebkitLineClamp: `${maxBlurbLines}` }}
+                className={`${styles.headline} ${
+                  cardType === 'event' ? 'typo-h3' : 'typo-h5'
+                }`}
               >
-                {blurb}
+                {headline}
               </div>
-            )}
 
-            {categories.length > 0 && (
-              <div className={`${styles.categories}`}>
-                {categories.map((cat) => (
-                  <div key={cat.title} className="typo-tag">
-                    {cat.title}
-                  </div>
-                ))}
-              </div>
-            )}
+              {(date || location) && (
+                <div className={`${styles.dateLocationWrapper}`}>
+                  {date && (
+                    <div
+                      className={`${
+                        cardType === 'event' ? 'typo-h5' : 'typo-p-small'
+                      }`}
+                    >
+                      {Globals.translations.MONTHS[date.getMonth()]}
+                      &nbsp;
+                      {date.getDate()}
+                      ,&nbsp;
+                      {date.getFullYear()}
+                    </div>
+                  )}
+
+                  {location && (
+                    <div className={`${styles.location} typo-h6`}>{location}</div>
+                  )}
+                </div>
+              )}
+
+              {cardType !== 'event' && blurb.length > 0 && (
+                <div
+                  className={`${styles.blurb} typo-p-small`}
+                  style={{ WebkitLineClamp: `${maxBlurbLines}` }}
+                >
+                  {blurb}
+                </div>
+              )}
+
+              {categories.length > 0 && (
+                <div className={`${styles.categories}`}>
+                  {categories.map((cat) => (
+                    <div key={cat.title} className="typo-tag">
+                      {cat.title}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <span className="cta typo-p-bold">{ctaLink.title}</span>
           </a>

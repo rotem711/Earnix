@@ -1,11 +1,21 @@
-@mixin linkDecoration($color : 'inherit') {
+@mixin linkDecoration($color : 'inherit', $invert : false) {
+    color: $color;
     text-decoration: underline;
-    text-decoration-color: transparent;
     transition: text-decoration-color 0.5s ease;
 
-
-    &:hover,
-    &:focus {
+    @if $invert {
         text-decoration-color: $color;
+    
+        &:hover,
+        &:focus {
+            text-decoration-color: transparent;
+        }
+    } @else {
+        text-decoration-color: transparent;
+    
+        &:hover,
+        &:focus {
+            text-decoration-color: $color;
+        }
     }
 }
