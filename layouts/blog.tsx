@@ -20,6 +20,7 @@ const Blog = ({
   author_title,
   author_about,
   author_image,
+  content,
   entry,
   linkedin_profile,
   nav,
@@ -32,6 +33,7 @@ const Blog = ({
   author_title: string
   author_about: string
   author_image: Asset
+  content: any
   entry: Entry
   linkedin_profile: string
   nav: any
@@ -70,15 +72,29 @@ const Blog = ({
         <Header nav={nav} />
         <div className="container grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30">
           <div className="col-span-4 md:col-span-7 lg:col-span-8">
-            {entry.content.map((blogItem, blogItemIndex) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={blogItem.type + blogItemIndex} className="blogContentItem">
+            {content.map((blogItem, blogItemIndex) => (
+              <div
+                // eslint-disable-next-line react/no-array-index-key
+                key={blogItem.type + blogItemIndex}
+                className="blogContentItem"
+              >
                 {
                   {
                     quote: <Quote quote={blogItem.quote} />,
-                    image: <BlogImage image={blogItem.image} caption={blogItem.caption} />,
-                    cta_divider: <Cta />,
-                    text: <Content />,
+                    image: (
+                      <BlogImage
+                        image={blogItem.image}
+                        caption={blogItem.caption}
+                      />
+                    ),
+                    cta_divider: (
+                      <Cta
+                        copy={blogItem.copy}
+                        link_title={blogItem.cta_title}
+                        link_url={blogItem.cta_url}
+                      />
+                    ),
+                    text: <Content content={blogItem.text} />,
                   }[blogItem.type]
                 }
               </div>

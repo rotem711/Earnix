@@ -1,25 +1,13 @@
 import React from 'react'
-import Link from 'next/link'
+import parse from 'html-react-parser'
+
 import styles from './content.module.scss'
 import ContentInterface from './content.interface'
 
-const Content = (data : ContentInterface) => {
-  const {
-    href = '',
-    title = '',
-  } = data
+const Content = (data: ContentInterface) => {
+  const { content = '' } = data
 
-  return (
-    <Link href={href || ''}>
-      <a
-        href={href}
-        className={`${styles.root}`}
-        rel="noreferrer"
-      >
-        {title}
-      </a>
-    </Link>
-  )
+  return <div className={`${styles.root}`}>{parse(content)}</div>
 }
 
 export default Content

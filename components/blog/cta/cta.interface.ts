@@ -1,3 +1,5 @@
 export default interface QuoteInterface {
-    quote: string,
+    copy: string,
+    link_title: string,
+    link_url: string,
 }

@@ -1,3 +1,3 @@
 export default interface QuoteInterface {
-    quote: string,
+    content: string,
 }

@@ -1,22 +1,25 @@
 @import '../../../styles/variables';
 
 .root {
-  display: inline-block;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2.2rem;
-  background-color: theme('colors.orange-100');
-  color: theme('colors.white');
-  font-weight: 700;
-  border: 0.1rem solid theme('colors.orange-100');
-  transition: border 500ms ease, padding 500ms ease;
-  border-radius: 2rem;
-  padding: 0.9rem 2.4rem;
+  margin-bottom: 4rem;
 
-  &:hover {
-    background-color: transparent;
-    color: theme('colors.orange-100');
-    border-width: 0.4rem;
-    padding: 0.6rem 2.1rem;
+  @screen md {
+    margin-bottom: 5.6rem;
+  }
+
+  p {
+    margin-bottom: 1.875em;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      color: theme('colors.green-90');
+      margin-bottom: 0.5em;
+      text-align: center;
+      
+      @screen md{
+        text-align: left;
+      } 
+    }
   }
 }
