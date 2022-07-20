@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import parse from 'html-react-parser'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -13,23 +13,26 @@ export const typename = 'Set_Replicator_BlockInsightEventsTeaserDoubleOrTriple'
 const InsightEventsTeaserDoubleOrTripleBlock: FunctionComponent<{
   block: InsightEventsTeaserDoubleOrTripleInterface
 }> = ({ block }) => (
-  <div className={`${styles.root} container grid grid-cols-12 gap-30`}>
+  <div className={`${styles.root} container grid grid-cols-12 xxl:gap-30`}>
     <div className="col-span-12 xxl:col-span-8 xxl:col-start-3">
       {!block.ietd_first_item_is_content && (
         <h3 className="text-center">{block.ietd_headline}</h3>
       )}
+
       <Swiper
         spaceBetween={16}
         slidesPerView={1.2}
         breakpoints={{
           768: {
             slidesPerView: 2.25,
+            spaceBetween: 16,
           },
           1024: {
             slidesPerView: 3,
             spaceBetween: 24,
           },
           1440: {
+            slidesPerView: 3,
             spaceBetween: 30,
           },
         }}
@@ -62,9 +65,17 @@ const InsightEventsTeaserDoubleOrTripleBlock: FunctionComponent<{
       </Swiper>
 
       {block.ietd_further_infos_link && block.ietd_further_infos_text && (
-        <div className={`${block.ietd_first_item_is_content ? styles.ctaLink__inBox : styles.ctaLink} typo-h5`}>
+        <div
+          className={`${
+            block.ietd_first_item_is_content
+              ? styles.ctaLink__inBox
+              : styles.ctaLink
+          } typo-h5`}
+        >
           <Link href={block.ietd_further_infos_link}>
-            <a href={block.ietd_further_infos_link}>{block.ietd_further_infos_text}</a>
+            <a href={block.ietd_further_infos_link}>
+              {block.ietd_further_infos_text}
+            </a>
           </Link>
         </div>
       )}
