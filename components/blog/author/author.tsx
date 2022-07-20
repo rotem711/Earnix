@@ -7,7 +7,13 @@ import styles from './author.module.scss'
 import AuthorInterface from './author.interface'
 
 const Author = (data: AuthorInterface) => {
-  const { name, title, about, image, linkedin } = data
+  const {
+    name,
+    title,
+    about,
+    image,
+    linkedin,
+  } = data
 
   const Globals = useContext(GlobalContext)
 
@@ -34,11 +40,16 @@ const Author = (data: AuthorInterface) => {
       </div>
       <div className={`${styles.about} col-span-6 md:col-span-3 xl:col-span-4`}>
         <p>
-          <b>{Globals.translations.ABOUT_AUTHOR}:</b>
+          <b>
+            {Globals.translations.ABOUT_AUTHOR}
+            :
+          </b>
         </p>
         <p>{about}</p>
         <Link href={linkedin}>
-          <a href={linkedin} className="typo-p-bold">LinkedIn</a>
+          <a href={linkedin} className="typo-p-bold">
+            LinkedIn
+          </a>
         </Link>
       </div>
     </div>

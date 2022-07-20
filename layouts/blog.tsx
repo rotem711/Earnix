@@ -10,19 +10,30 @@ import BlogImage from 'components/blog/blog_image/blog_image'
 import Cta from 'components/blog/cta/cta'
 import Content from 'components/blog/content/content'
 
+import Asset from 'interfaces/asset'
 import Entry from '../interfaces/entry'
 import Header from '../components/generic/header/header'
 import Footer from '../components/generic/footer/footer'
 
 const Blog = ({
+  author_name,
+  author_title,
+  author_about,
+  author_image,
   entry,
+  linkedin_profile,
   nav,
   seo,
   globals,
   footer,
   translations,
 }: {
+  author_name: string
+  author_title: string
+  author_about: string
+  author_image: Asset
   entry: Entry
+  linkedin_profile: string
   nav: any
   seo: SEOMeta
   globals: GlobalSet
@@ -74,11 +85,11 @@ const Blog = ({
             ))}
 
             <Author
-              name={entry.author_name}
-              title={entry.author_title}
-              about={entry.author_about}
-              image={entry.author_image}
-              linkedin={entry.linkedin_profile}
+              name={author_name}
+              title={author_title}
+              about={author_about}
+              image={author_image}
+              linkedin={linkedin_profile}
             />
           </div>
         </div>
