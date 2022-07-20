@@ -3,11 +3,16 @@ import SEOMeta from 'interfaces/seoMeta'
 import Head from 'next/head'
 import { GlobalSet } from 'interfaces/globals'
 import { GlobalContextProvider } from 'pages/_app'
-import Entry from '../interfaces/entry'
 
+import Author from 'components/blog/author/author'
+import Quote from 'components/blog/quote/quote'
+import BlogImage from 'components/blog/blog_image/blog_image'
+import Cta from 'components/blog/cta/cta'
+import Content from 'components/blog/content/content'
+
+import Entry from '../interfaces/entry'
 import Header from '../components/generic/header/header'
 import Footer from '../components/generic/footer/footer'
-import Author from 'components/blog/author/author'
 
 const Blog = ({
   entry,
@@ -54,6 +59,20 @@ const Blog = ({
         <Header nav={nav} />
         <div className="container grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30">
           <div className="col-span-4 md:col-span-7 lg:col-span-8">
+            {entry.content.map((blogItem, blogItemIndex) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <div key={blogItem.type + blogItemIndex} className="blogContentItem">
+                {
+                  {
+                    quote: <Quote quote={blogItem.quote} />,
+                    image: <BlogImage image={blogItem.image} caption={blogItem.caption} />,
+                    cta_divider: <Cta />,
+                    text: <Content />,
+                  }[blogItem.type]
+                }
+              </div>
+            ))}
+
             <Author
               name={entry.author_name}
               title={entry.author_title}
