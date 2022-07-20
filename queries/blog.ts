@@ -65,6 +65,7 @@ export default `
             type
           }
         }
+        linkedin_profile
       }
     }
     nav(handle: "main_nav") {
