@@ -1,14 +1,27 @@
 import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
+
+import blockInventory from '../utils/rendering/inventory'
 import AssetFragment from './fragments/asset'
+
+const fragments = Object.values(blockInventory)
+  .filter((i) => i.layouts.includes('spotlight'))
+  .map((i) => i.query.replace('Set_Replicator_', 'Set_SpotlightReplicator_'))
+  .join('')
+const fragmentDestructor = Object.values(blockInventory)
+  .filter((i) => i.layouts.includes('spotlight'))
+  .map((i) => `...${i.typename.replace('Set_Replicator_', '')}`)
+  .join('\n')
 
 export default `
   ${AssetFragment}
-  query blog($slug: String) {
+  ${fragments}
+  query spotlight($slug: String) {
     ${FooterQuery},
-    entry(collection: "blog", slug: $slug) {
+    entry(collection: "customer_spotlights", slug: $slug) {
       id
       title
       slug
+      uri
       seo {
         description
         og_description
@@ -28,44 +41,15 @@ export default `
         twitter_site
         twitter_title
       }
-      ... on Entry_Blog_Blog {
-        id
-        author_about
-        author_image {
+      ... on Entry_CustomerSpotlights_CustomerSpotlights {
+        customer_logo {
           ...CMSAsset
         }
-        author_name
-        author_title
-        blurb
-        cover_image {
-          ...CMSAsset
+        description
+        spotlight_replicator {
+          __typename
+          ${fragmentDestructor}
         }
-        content {
-          ... on Set_Content_Image {
-            caption
-            image {
-              ...CMSAsset
-            }
-            type
-          }
-          ... on BardText {
-            text
-            type
-          }
-          ... on Set_Content_CtaDivider {
-            __typename
-            copy
-            cta_title
-            cta_url
-            type
-          }
-          ... on Set_Content_Quote {
-            __typename
-            quote
-            type
-          }
-        }
-        linkedin_profile
       }
     }
     nav(handle: "main_nav") {
