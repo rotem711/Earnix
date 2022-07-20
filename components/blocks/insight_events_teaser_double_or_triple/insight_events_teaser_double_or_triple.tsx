@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent } from 'react'
 import parse from 'html-react-parser'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
