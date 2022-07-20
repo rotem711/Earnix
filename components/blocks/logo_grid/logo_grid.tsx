@@ -6,12 +6,12 @@ import LogoGridInterface from './logo_grid.interface'
 
 export const typename = 'Set_Replicator_BlockLogoGrid'
 
-const LogoGridBlock:FunctionComponent<{ block: LogoGridInterface }> = ({ block }) => (
-  <div
-    className={`${styles.root} container grid grid-cols-6`}
-  >
-    <div className="col-start-1 col-span-6 md:col-start-2 md:col-span-4">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-20 justify-items-center items-center mb-40">
+const LogoGridBlock: FunctionComponent<{ block: LogoGridInterface }> = ({
+  block,
+}) => (
+  <div className={`${styles.root} container grid grid-cols-12 xxl:gap-30`}>
+    <div className="col-span-12 xxl:col-start-3 xxl:col-span-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 lg:gap-24 xl:gap-30 justify-items-center items-center mb-40">
         {block.lg_logos.map((item, index) => (
           <Image
             // eslint-disable-next-line react/no-array-index-key
