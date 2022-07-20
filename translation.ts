@@ -1,4 +1,7 @@
 const Translation = {
+  ABOUT_AUTHOR: {
+    en_US: 'About the author',
+  },
   EXAMPLE: {
     en_US: 'Example',
   },
