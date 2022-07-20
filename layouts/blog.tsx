@@ -4,11 +4,12 @@ import Head from 'next/head'
 import { GlobalSet } from 'interfaces/globals'
 import { GlobalContextProvider } from 'pages/_app'
 import Entry from '../interfaces/entry'
-import Repeater from '../utils/rendering/repeater'
+
 import Header from '../components/generic/header/header'
 import Footer from '../components/generic/footer/footer'
+import Author from 'components/blog/author/author'
 
-const Page = ({
+const Blog = ({
   entry,
   nav,
   seo,
@@ -34,10 +35,6 @@ const Page = ({
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-        />
       </Head>
       <main>
         {true && process.env.NODE_ENV === 'development' && (
@@ -55,8 +52,18 @@ const Page = ({
           </div>
         )}
         <Header nav={nav} />
-        {entry.title}
-        <Repeater blocks={entry.replicator} />
+        <div className="container grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30">
+          <div className="col-span-4 md:col-span-7 lg:col-span-8">
+            <Author
+              name={entry.author_name}
+              title={entry.author_title}
+              about={entry.author_about}
+              image={entry.author_image}
+              linkedin={entry.linkedin_profile}
+            />
+          </div>
+        </div>
+        {/* <Repeater blocks={entry.replicator} /> */}
       </main>
 
       <Footer data={footer} />
@@ -64,4 +71,4 @@ const Page = ({
   </GlobalContextProvider>
 )
 
-export default Page
+export default Blog
