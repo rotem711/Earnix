@@ -1,5 +1,180 @@
 @import '../../../styles/variables';
 
 .root {
-//
+  margin-bottom: 4rem;
+
+  .imageWrapper {
+    position: relative;
+    background-color: theme("colors.black-20");
+    box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);
+    padding-bottom: 91%;
+    overflow: hidden;
+    cursor: pointer;
+
+    @screen md {
+      padding-bottom: 0;
+      height: 48.8rem;
+    }
+
+    &,
+    & > div {
+      border-radius: 1.6rem;
+      overflow: hidden;
+    }
+
+    & > div {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      right: 0;
+      width: calc(100% - 3.6rem);
+      height: calc(100% - 2rem);
+
+      @screen md {
+        width: calc(100% - 5.6rem);
+        height: calc(100% - 3.2rem);
+      }
+
+      @screen md {
+        width: calc(100% - 6rem);
+      }
+
+      @screen lg {
+        width: calc(100% - 8rem);
+      }
+    }
+
+    p {
+      color: theme("colors.white");
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 6.4rem 1.2rem 3rem;
+      background: linear-gradient(180deg, transparent, theme("colors.black-100"));
+
+      @screen md {
+        padding: 6.4rem 25% 1.6rem 1.8rem;
+      }
+    }
+  }
+
+  .lightbox {
+    position: fixed;
+    z-index: 1000;
+
+    &,
+    &Background {
+      height: 100%;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    &,
+    &Background,
+    &Content {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &Background,
+    &Content {
+      position: absolute;
+    }
+
+    &Background {
+      background-color: theme("colors.black-100");
+      opacity: 0.7;
+      z-index: 999;
+    }
+
+    &Content {
+      margin: auto;
+      max-height: calc(100% - 2rem);
+      max-width: calc(100% - 2rem);
+      height: fit-content;
+      width: fit-content;
+      background-color: theme("colors.white");
+      padding: 2.6rem 1.2rem 1.2rem;
+      z-index: 1000;
+      border-radius: 1.6rem;
+
+      @screen md {
+        max-height: calc(100% - 4rem);
+        max-width: calc(100% - 4rem);
+        padding: 4.8rem 2.2rem 2.2rem;
+      }
+
+      @screen lg {
+        padding: 7rem 3.2rem 3.2rem;
+      }
+
+      @screen xl {
+        padding: 9rem 4rem 4rem;
+      }
+
+      button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        svg {
+          width: 0.9rem;
+          height: 0.9rem;
+        }
+
+        @screen md {
+          top: 1.8rem;
+          right: 1.8rem;
+  
+          svg {
+            width: 1.4rem;
+            height: 1.4rem;
+          }
+        }
+
+        @screen lg {
+          top: 2.5rem;
+          right: 2.5rem;
+  
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+
+        @screen xl {
+          top: 3.2rem;
+          right: 3.2rem;
+  
+          svg {
+            width: 2.6rem;
+            height: 2.6rem;
+          }
+        }
+      }
+
+      img {
+        max-height: calc(100vh - 5.8rem) !important;
+        max-width: calc(100vw - 4.4rem) !important;
+
+        @screen md {
+          max-height: calc(100vh - 11rem) !important;
+          max-width: calc(100vw - 8.4rem) !important;
+        }
+  
+        @screen lg {
+          max-height: calc(100vh - 14.2rem) !important;
+          max-width: calc(100vw - 10.4rem) !important;
+        }
+  
+        @screen xl {
+          max-height: calc(100vh - 17rem) !important;
+          max-width: calc(100vw - 12rem) !important;
+        }
+      }
+    }
+  }
 }
