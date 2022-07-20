@@ -1,5 +1,138 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  height: auto;
+}
+
+.contentWrapper {
+  padding: 6.4rem 0;
+
+  @screen sm {
+    padding: 8.6rem 0;
+  }
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 3.3rem;
+
+  @screen sm {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  @screen lg {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 3.7rem;
+  }
+}
+
+.itemsWrapper {
+  display: grid;
+  grid-row-gap: 2.4rem;
+  grid-column-gap: 2rem;
+
+  @screen md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @screen lg {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2.4rem;
+  }
+
+  @screen xl {
+    grid-row-gap: 3rem;
+    grid-column-gap: 3rem;
+  }
+}
+
+.tigItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 2.4rem 2.4rem 2.4rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.160784);
+  border-radius: 2rem;
+
+  @screen md {
+    position: relative;
+    min-height: 49.1rem;
+    padding-bottom: 8.4rem;
+  }
+
+  @screen xl {
+    padding: 7.2rem 4.8rem 3.6rem 4.8rem;
+    min-height: 50rem;
+  }
+}
+
+.iconWrapper {
+  min-height: 16.66rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  color: theme("colors.green-90");
+  margin-bottom: 1.6rem;
+  text-align: center;
+
+  @screen sm {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  @screen xl {
+    margin-top: 1.5rem;
+  }
+}
+
+.linkAnchorTop {
+  display: none;
+
+  @screen xl {
+    margin-left: 1.7rem;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.copy {
+  text-align: center;
+  letter-spacing: 0.05rem;
+  margin-bottom: 2.4rem;
+
+  @screen md {
+    margin-bottom: 0;
+    p {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      letter-spacing: 0;
+    }
+  }
+
+  @screen xl {
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.linkAnchorBottom {
+  margin-bottom: 1.4rem;
+
+  @screen md {
+    position: absolute;
+    bottom: 2.6rem;
+    left: calc(50% - 1.15rem);
+  }
+
+  @screen xl {
+    display: none;
+  }
 }

@@ -20,8 +20,8 @@ const Page = ({
   nav: any
   seo: SEOMeta
   globals: GlobalSet
-  footer: any,
-  translations: {[key: string]: string},
+  footer: any
+  translations: { [key: string]: string }
 }) => (
   <GlobalContextProvider
     value={{
@@ -34,11 +34,15 @@ const Page = ({
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+        />
       </Head>
       <main>
         {true && process.env.NODE_ENV === 'development' && (
           <div className="devGrid w-full container">
-            <div className="grid grid-cols-4 md:grid-cols-12 gap-x-16 h-full">
+            <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30 xxl:24 h-full">
               {Array(12)
                 .fill({})
                 .map(() => (

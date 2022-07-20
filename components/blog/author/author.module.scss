@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  background-color: theme("colors.black-5");
+  border-radius: 1.6rem;
+  padding: 4.5rem 5.4rem;
+  text-align: center;
+
+  @screen md {
+    text-align: left;
+    padding: 4rem;
+  }
+
+  .imageWrapper {
+    margin-bottom: 2.4rem;
+
+    @screen md {
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 0.8rem;
+    }
+  }
+
+  .image {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto 1.6rem;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .about {
+    a {
+      @include linkDecoration(theme("colors.orange-100"));
+
+      margin-top: 3rem;
+      display: inline-block;
+    }
+  }
+}
