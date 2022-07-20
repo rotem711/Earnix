@@ -12,7 +12,7 @@ const TeamsBlock: FunctionComponent<{ block: TeamsInterface }> = ({
 
   return (
     <div
-      className={`${styles.root} container grid grid-cols-8 md:grid-cols-12 gap-x-15`}
+      className={`${styles.root}`}
     >
       <video
         playsInline
@@ -37,28 +37,30 @@ const TeamsBlock: FunctionComponent<{ block: TeamsInterface }> = ({
           }
         />
       </video>
-      <div
-        className={`${styles.numbers} col-span-8 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4`}
-      >
-        <h1>{block.gt_headline}</h1>
-        <div>
-          {block.gt_highlight_numbers.map((gtNumber) => (
-            <div key={gtNumber.label}>
-              <h2>{gtNumber.text_value}</h2>
-              <p>{gtNumber.label}</p>
+      <div className="container grid grid-cols-8 md:grid-cols-12 gap-x-16 lg:gap-x-24 xl:gap-x-30">
+        <div
+          className={`${styles.numbers} col-span-8 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4`}
+        >
+          <h1>{block.gt_headline}</h1>
+          <div>
+            {block.gt_highlight_numbers.map((gtNumber) => (
+              <div key={gtNumber.label}>
+                <h2>{gtNumber.text_value}</h2>
+                <p>{gtNumber.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={`${styles.countries} col-span-8 md:col-span-12`}>
+          {block.gt_locations.map((gtLocation) => (
+            <div key={gtLocation.street_name}>
+              <h5>{gtLocation.country_label}</h5>
+              <p className="typo-small">{gtLocation.street_name}</p>
+              <p className="typo-small">{gtLocation.city_and_region}</p>
             </div>
           ))}
         </div>
-      </div>
-
-      <div className={`${styles.countries} col-span-8 md:col-span-12`}>
-        {block.gt_locations.map((gtLocation) => (
-          <div key={gtLocation.street_name}>
-            <h5>{gtLocation.country_label}</h5>
-            <p className="typo-small">{gtLocation.street_name}</p>
-            <p className="typo-small">{gtLocation.city_and_region}</p>
-          </div>
-        ))}
       </div>
     </div>
   )
