@@ -1,4 +1,3 @@
-
 export default `
 fragment BlockInsightEventsTeaserDoubleOrTriple on Set_Replicator_BlockInsightEventsTeaserDoubleOrTriple {
   ietd_first_item_is_content

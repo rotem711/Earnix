@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import parse from 'html-react-parser'
+import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Button from 'components/generic/button/button'
 import CardTeaser from 'components/generic/card_teaser/card_teaser'
 
 import styles from './insight_events_teaser_double_or_triple.module.scss'
 import InsightEventsTeaserDoubleOrTripleInterface from './insight_events_teaser_double_or_triple.interface'
-import Link from 'next/link'
 
 export const typename = 'Set_Replicator_BlockInsightEventsTeaserDoubleOrTriple'
 
