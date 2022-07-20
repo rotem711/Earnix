@@ -4,20 +4,20 @@ import blockInventory from '../utils/rendering/inventory'
 import AssetFragment from './fragments/asset'
 
 const fragments = Object.values(blockInventory)
-  .filter((i) => i.layouts.includes('page'))
-  .map((i) => i.query)
+  .filter((i) => i.layouts.includes('spotlight'))
+  .map((i) => i.query.replace('Set_Replicator_', 'Set_SpotlightReplicator_'))
   .join('')
 const fragmentDestructor = Object.values(blockInventory)
-  .filter((i) => i.layouts.includes('page'))
+  .filter((i) => i.layouts.includes('spotlight'))
   .map((i) => `...${i.typename.replace('Set_Replicator_', '')}`)
   .join('\n')
 
 export default `
   ${AssetFragment}
   ${fragments}
-  query page($uri: String) {
+  query spotlight($slug: String) {
     ${FooterQuery},
-    entry(uri: $uri) {
+    entry(collection: "customer_spotlights", slug: $slug) {
       id
       title
       slug
@@ -41,8 +41,12 @@ export default `
         twitter_site
         twitter_title
       }
-      ... on Entry_Pages_Pages {
-        replicator {
+      ... on Entry_CustomerSpotlights_CustomerSpotlights {
+        customer_logo {
+          ...CMSAsset
+        }
+        description
+        spotlight_replicator {
           __typename
           ${fragmentDestructor}
         }

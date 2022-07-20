@@ -12,7 +12,7 @@ const gql = async (query: string, variables: { [x: string]: string | number | st
     method: 'POST',
   })
   if (!res.ok) {
-    throw new Error('E')
+    throw new Error(JSON.stringify(await res.text()))
   }
   return res.json()
 }

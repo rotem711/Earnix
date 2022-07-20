@@ -44,6 +44,14 @@ import { typename as ConnectWithUsBlockTypename } from '../../components/blocks/
 import ConnectWithUsBlockQuery from '../../components/blocks/connect_with_us/connect_with_us.graphql'
 import { typename as FullbleedTextImageWIconBlockTypename } from '../../components/blocks/fullbleed_text_image_w_icon/fullbleed_text_image_w_icon'
 import FullbleedTextImageWIconBlockQuery from '../../components/blocks/fullbleed_text_image_w_icon/fullbleed_text_image_w_icon.graphql'
+import { typename as ObjectiveOrChallengeBlockTypename } from '../../components/blocks/objective_or_challenge/objective_or_challenge'
+import ObjectiveOrChallengeBlockQuery from '../../components/blocks/objective_or_challenge/objective_or_challenge.graphql'
+import { typename as QuoteBlockTypename } from '../../components/blocks/quote/quote'
+import QuoteBlockQuery from '../../components/blocks/quote/quote.graphql'
+import { typename as ImpactBlockTypename } from '../../components/blocks/impact/impact'
+import ImpactBlockQuery from '../../components/blocks/impact/impact.graphql'
+import { typename as SolutionBlockTypename } from '../../components/blocks/solution/solution'
+import SolutionBlockQuery from '../../components/blocks/solution/solution.graphql'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -52,7 +60,8 @@ interface Block {
   component: FunctionComponent | React.ComponentType<any>,
   query: string,
   extraQueries: string[],
-  typename: string
+  typename: string,
+  layouts: string[],
 }
 
 const blocks:Block[] = [
@@ -61,6 +70,7 @@ const blocks:Block[] = [
     query: HeroBlockQuery,
     typename: HeroBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -68,6 +78,7 @@ const blocks:Block[] = [
     query: QuoteSliderBlockQuery,
     typename: QuoteSliderBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -75,12 +86,14 @@ const blocks:Block[] = [
     query: LogoGridBlockQuery,
     typename: LogoGridBlockTypename,
     extraQueries: undefined,
+    layouts: ['page', 'spotlight'],
   },
   {
     component: dynamic(() => import('../../components/blocks/product_teaser/product_teaser')),
     query: ProductTeaserBlockQuery,
     typename: ProductTeaserBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -88,6 +101,7 @@ const blocks:Block[] = [
     query: IconsWTextBlockQuery,
     typename: IconsWTextBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -95,6 +109,7 @@ const blocks:Block[] = [
     query: InsightEventsTeaserSingleBlockQuery,
     typename: InsightEventsTeaserSingleBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -102,6 +117,7 @@ const blocks:Block[] = [
     query: InsightEventsTeaserDoubleOrTripleBlockQuery,
     typename: InsightEventsTeaserDoubleOrTripleBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -109,12 +125,14 @@ const blocks:Block[] = [
     query: AboutTeaserBlockQuery,
     typename: AboutTeaserBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
   {
     component: dynamic(() => import('../../components/blocks/cta_banner/cta_banner')),
     query: CTABannerBlockQuery,
     typename: CTABannerBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -122,6 +140,7 @@ const blocks:Block[] = [
     query: TextImageBlockQuery,
     typename: TextImageBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -129,6 +148,7 @@ const blocks:Block[] = [
     query: TextIconGridBlockQuery,
     typename: TextIconGridBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -136,6 +156,7 @@ const blocks:Block[] = [
     query: ChallengesTeaserBlockQuery,
     typename: ChallengesTeaserBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -143,6 +164,7 @@ const blocks:Block[] = [
     query: TextImageDividerBlockQuery,
     typename: TextImageDividerBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -150,6 +172,7 @@ const blocks:Block[] = [
     query: IconsWTextAndBackgroundBlockQuery,
     typename: IconsWTextAndBackgroundBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -157,6 +180,7 @@ const blocks:Block[] = [
     query: TextVideoBlockQuery,
     typename: TextVideoBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -164,6 +188,7 @@ const blocks:Block[] = [
     query: CtaBoxBlockQuery,
     typename: CtaBoxBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -171,6 +196,7 @@ const blocks:Block[] = [
     query: NextGenTeaserBlockQuery,
     typename: NextGenTeaserBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -178,12 +204,14 @@ const blocks:Block[] = [
     query: TeamsBlockQuery,
     typename: TeamsBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
   {
     component: dynamic(() => import('../../components/blocks/three_cards/three_cards')),
     query: ThreeCardsBlockQuery,
     typename: ThreeCardsBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -191,6 +219,7 @@ const blocks:Block[] = [
     query: ConnectWithUsBlockQuery,
     typename: ConnectWithUsBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
 
   {
@@ -198,7 +227,39 @@ const blocks:Block[] = [
     query: FullbleedTextImageWIconBlockQuery,
     typename: FullbleedTextImageWIconBlockTypename,
     extraQueries: undefined,
+    layouts: ['page'],
   },
+  {
+    component: dynamic(() => import('../../components/blocks/objective_or_challenge/objective_or_challenge')),
+    query: ObjectiveOrChallengeBlockQuery,
+    typename: ObjectiveOrChallengeBlockTypename,
+    extraQueries: undefined,
+    layouts: ['spotlight'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/quote/quote')),
+    query: QuoteBlockQuery,
+    typename: QuoteBlockTypename,
+    extraQueries: undefined,
+    layouts: ['spotlight'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/impact/impact')),
+    query: ImpactBlockQuery,
+    typename: ImpactBlockTypename,
+    extraQueries: undefined,
+    layouts: ['spotlight'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/solution/solution')),
+    query: SolutionBlockQuery,
+    typename: SolutionBlockTypename,
+    extraQueries: undefined,
+    layouts: ['spotlight'],
+  },
+
   // ##HYGEN_START##
   // do not modify the above line since its used by hygen to generate the block list
 ]
