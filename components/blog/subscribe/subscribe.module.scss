@@ -1,0 +1,83 @@
+@import '../../../styles/variables';
+
+.root {
+  background-color: theme('colors.blue-100');
+  color: theme('colors.white');
+  border-radius: 2rem;
+  padding: 3.2rem 3.2rem 2.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-bottom: 4.2rem;
+
+  @screen lg {
+    padding: 2.4rem;
+    margin-bottom: 5.6rem;
+  }
+
+  h5 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.6rem;
+    
+    @screen lg {      
+      width: calc(25% - 2.4rem);
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .inputWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-flow: row nowrap;
+
+    @screen lg {
+      width: calc(75% + 0.8rem);
+    }
+
+    & > div {
+      position: relative;
+      width: 100%;
+    }
+
+    input,
+    .placeholder {
+      color: theme('colors.black-100');
+    }
+
+    input {
+      padding: 1.2rem 1.6rem;
+      width: 100%;
+    }
+
+    .placeholder {
+      position: absolute;
+      left: 1.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+      span {
+        color: theme('colors.red-100');
+      }
+    }
+
+    button {
+      padding: 1.2rem 2rem 1.2rem 1.6rem;
+      background-color: theme('colors.orange-100');
+      border-top-right-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  }
+
+  .message {
+    text-align: center;
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+}
