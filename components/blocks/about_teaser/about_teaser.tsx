@@ -11,8 +11,8 @@ const AboutTeaserBlock:FunctionComponent<{ block: AboutTeaserInterface }> = ({ b
   <div
     className={`${styles.root}`}
   >
-    <div className="container grid grid-cols-12 gap-15">
-      <div className={`${styles.textWrapper} col-span-12 md:col-span-6 lg:col-span-5 xxl:col-span-3 xxl:col-start-3`}>
+    <div className="container grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30">
+      <div className={`${styles.textWrapper} col-span-4 md:col-span-4 lg:col-span-5 xxl:col-span-3 xxl:col-start-3`}>
         {(block.at_headline) && (
           <h3>{block.at_headline}</h3>
         )}
@@ -25,7 +25,7 @@ const AboutTeaserBlock:FunctionComponent<{ block: AboutTeaserInterface }> = ({ b
           </div>
         )}
       </div>
-      <div className="col-span-12 md:col-span-6 lg:col-start-7 xxl:col-span-4 xxl:col-start-7">
+      <div className="col-span-4 md:col-span-4 lg:col-start-7 xxl:col-span-4 xxl:col-start-7">
         {(block.at_image) && (
           <Image
             src={block.at_image.permalink}
