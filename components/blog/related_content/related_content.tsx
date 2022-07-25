@@ -6,7 +6,7 @@ import CardTeaser from 'components/generic/card_teaser/card_teaser'
 import styles from './related_content.module.scss'
 import RelatedContentInterface from './related_content.interface'
 
-const RelatedContent = ({ data }: { data: RelatedContentInterface }) => {
+const RelatedContent = ({ data }: RelatedContentInterface) => {
   const Globals = useContext(GlobalContext)
 
   return (
