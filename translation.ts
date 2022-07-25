@@ -21,10 +21,13 @@ const Translation = {
     en_US: 'Latest Insight',
   },
   READMORETEASERSINGLE: {
-    en_US: 'Link to highlight', 
+    en_US: 'Link to highlight',
   },
   MONTHS: {
     en_US: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
+  },
+  SEARCHPLACEHOLDER: {
+    en_US: 'Search',
   },
 }
 

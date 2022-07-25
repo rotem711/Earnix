@@ -57,7 +57,6 @@ const Page = ({
           </div>
         )}
         <Header nav={nav} data={header} darkMode={false} />
-        {entry.title}
         <Repeater blocks={entry.replicator} />
       </main>
 
