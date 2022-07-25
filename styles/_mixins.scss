@@ -1,21 +1,39 @@
-@mixin linkDecoration($color : 'inherit', $invert : false) {
-    color: $color;
-    text-decoration: underline;
-    transition: text-decoration-color 0.5s ease;
+@mixin linkDecoration($color: 'inherit', $invert: false) {
+  color: $color;
+  text-decoration: underline;
+  transition: text-decoration-color 0.5s ease;
 
-    @if $invert {
-        text-decoration-color: $color;
-    
-        &:hover,
-        &:focus {
-            text-decoration-color: transparent;
-        }
-    } @else {
-        text-decoration-color: transparent;
-    
-        &:hover,
-        &:focus {
-            text-decoration-color: $color;
-        }
+  @if $invert {
+    text-decoration-color: $color;
+
+    &:hover,
+    &:focus {
+      text-decoration-color: transparent;
     }
+  } @else {
+    text-decoration-color: transparent;
+
+    &:hover,
+    &:focus {
+      text-decoration-color: $color;
+    }
+  }
+}
+
+@mixin swiperBoxshadowFix {
+  margin: -3.2rem -2rem;
+  overflow: hidden;
+
+  @screen md {
+    margin: -3.2rem;
+  }
+
+  :global(.swiper) {
+    overflow: visible;
+    padding: 3.2rem 2rem;
+
+    @screen md {
+      padding: 3.2rem;
+    }
+  }
 }

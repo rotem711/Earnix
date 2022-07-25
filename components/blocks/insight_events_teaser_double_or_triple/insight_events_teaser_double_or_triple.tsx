@@ -19,50 +19,52 @@ const InsightEventsTeaserDoubleOrTripleBlock: FunctionComponent<{
         <h3 className="text-center">{block.ietd_headline}</h3>
       )}
 
-      <Swiper
-        spaceBetween={16}
-        slidesPerView={1.2}
-        breakpoints={{
-          768: {
-            slidesPerView: 2.25,
-            spaceBetween: 16,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-          },
-          1440: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        }}
-      >
-        {block.ietd_first_item_is_content && (
-          <SwiperSlide className={`${styles.firstItemText} lg:col-span-4`}>
-            <h3>{block.ietd_headline}</h3>
-            <div>{parse(block.ietd_copy)}</div>
-            <Button href={block.ietd_cta_link} title={block.ietd_cta_text} />
-          </SwiperSlide>
-        )}
+      <div className={`${styles.swiperWrapper}`}>
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={1.2}
+          breakpoints={{
+            768: {
+              slidesPerView: 2.25,
+              spaceBetween: 16,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+            1440: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {block.ietd_first_item_is_content && (
+            <SwiperSlide className={`${styles.firstItemText}`}>
+              <h3>{block.ietd_headline}</h3>
+              <div>{parse(block.ietd_copy)}</div>
+              <Button href={block.ietd_cta_link} title={block.ietd_cta_text} />
+            </SwiperSlide>
+          )}
 
-        {block.ietd_entries.map((entry) => (
-          <SwiperSlide className={`${styles.singleCard} lg:col-span-4`}>
-            <CardTeaser
-              key={entry.id}
-              cardType={entry.collection.handle}
-              headline={entry.title}
-              image={entry.cover_image}
-              blurb={entry.blurb}
-              maxBlurbLines={3}
-              ctaLink={{ title: 'Read more', href: entry.uri }}
-              date={new Date(entry.date)}
-              label="" // TO-DO: If taxonomies are added we have to pass them here
-              location=""
-              categories={[]}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          {block.ietd_entries.map((entry) => (
+            <SwiperSlide className={`${styles.singleCard}`}>
+              <CardTeaser
+                key={entry.id}
+                cardType={entry.collection.handle}
+                headline={entry.title}
+                image={entry.cover_image}
+                blurb={entry.blurb}
+                maxBlurbLines={3}
+                ctaLink={{ title: 'Read more', href: entry.uri }}
+                date={new Date(entry.date)}
+                label="" // TO-DO: If taxonomies are added we have to pass them here
+                location=""
+                categories={[]}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       {block.ietd_further_infos_link && block.ietd_further_infos_text && (
         <div
