@@ -1,5 +1,121 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  background-color: theme('colors.black-5');
+}
+
+.contentWrapper {
+  padding: 6.4rem 0 6.3rem 0;
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 2.4rem;
+
+  @screen sm {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  @screen md {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    letter-spacing: -0.05rem;
+    margin-bottom: 4.8rem;
+  }
+}
+
+.itemsWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.9rem;
+
+  @screen md {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @screen lg {
+    padding: 0 1.4rem;
+    margin-bottom: 0.9rem;
+  }
+
+  @screen xl {
+    padding: 0 0.8rem;
+  }
+
+  @screen xxl {
+    padding: 0 2.3rem;
+  }
+}
+
+.ctItem {
+  display: flex;
+  justify-content: center;
+  background-color: theme('colors.white');
+  padding: 5.1rem 8rem;
+  border-radius: 2rem;
+  filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.15));
+  margin-bottom: 2.4rem;
+  min-height: 15.1rem;
+
+  @screen sm {
+      &:last-child{
+        margin-bottom: 0;
+      }
+  }
+
+  @screen md {
+    width: calc(50% - 1.2rem);
+    margin-right: 2.4rem;
+    margin-bottom: 3rem;
+    padding: 5.1rem 7.8rem;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @screen lg {
+    padding: 4.7rem 4rem;
+
+    width: calc((100% / 3) - 2rem);
+
+    &:nth-child(3n+1) {
+      margin-right: 3rem;
+    }
+
+    &:nth-child(3n) {
+      margin-left: 3rem;
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.copy {
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  max-width: 16rem;
+
+  @screen lg {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    max-width: 18.66rem;
+  }
+}
+
+.buttonWrapper {
+  text-align: center;
 }

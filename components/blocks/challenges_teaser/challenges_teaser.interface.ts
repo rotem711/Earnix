@@ -3,7 +3,7 @@ export default interface ChallengesTeaserInterface {
     ct_cta_title: string
     ct_cta_url: string
     ct_headline: string
-    ct_items: {
+    ct_items: Array<{
       copy: string
-    }
+    }>
 }
