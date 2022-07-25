@@ -1,3 +1,4 @@
+import HeaderQuery from 'components/generic/header/header.extraqueries.graphql'
 import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
 
 import blockInventory from '../utils/rendering/inventory'
@@ -16,6 +17,7 @@ export default `
   ${AssetFragment}
   ${fragments}
   query spotlight($slug: String) {
+    ${HeaderQuery},
     ${FooterQuery},
     entry(collection: "customer_spotlights", slug: $slug) {
       id

@@ -18,8 +18,8 @@
   "dependencies": {
     "@tailwindcss/jit": "^0.1.18",
     "autoprefixer": "^10.4.7",
-    "eslint-plugin-risxss": "^2.1.0",
     "classnames": "^2.3.1",
+    "eslint-plugin-risxss": "^2.1.0",
     "graphql": "^16.5.0",
     "headroom.js": "^0.12.0",
     "html-react-parser": "^3.0.1",

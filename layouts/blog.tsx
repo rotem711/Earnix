@@ -19,6 +19,7 @@ const Blog = ({
   nav,
   seo,
   globals,
+  header,
   footer,
   translations,
 }: {
@@ -31,6 +32,7 @@ const Blog = ({
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  header: any
   footer: any
   translations: { [key: string]: string }
 }) => (
@@ -61,7 +63,7 @@ const Blog = ({
             </div>
           </div>
         )}
-        <Header nav={nav} />
+        <Header nav={nav} data={header} darkMode />
         <div className="container grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30">
           <div className="col-span-4 md:col-span-7 lg:col-span-8">
             <Author

@@ -22,11 +22,11 @@ export default interface HeaderInterface {
           link_text: string,
         }],
       }],
-      insight: [{
+      insight: {
         cover_image: Asset,
         title: string,
         uri: string,
-      }],
+      },
     }],
   }],
 }

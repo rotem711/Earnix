@@ -14,11 +14,11 @@ export default interface MenuOverlayItemInterface {
           link_text: string,
         }],
       }],
-      insight: [{
+      insight: {
         cover_image: Asset,
         uri: string,
         title: string,
-      }],
+      },
     }],
   },
 }
