@@ -66,6 +66,33 @@ export default `
           }
         }
         linkedin_profile
+        related_articles {
+          id
+          title
+          uri
+          date
+          collection {
+            handle
+          }
+          ... on Entry_Blog_Blog {
+            cover_image {
+              ...CMSAsset
+            }
+            blurb
+          }
+          ... on Entry_Events_Events {
+            cover_image {
+              ...CMSAsset
+            }
+            blurb
+          }
+          ... on Entry_Insights_Insights {
+            cover_image {
+              ...CMSAsset
+            }
+            blurb
+          }
+        }
       }
     }
     nav(handle: "main_nav") {
