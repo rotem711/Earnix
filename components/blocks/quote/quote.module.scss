@@ -1,5 +1,46 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  background-color: theme('colors.black-5');
+
+  &Colored {
+    background-color: theme('colors.green-90');
+    color: theme('colors.white');
+  }
+}
+
+.contentWrapper {
+  padding: 6.4rem 0;
+
+  @screen lg {
+    padding: 7.2rem 0;
+  }
+
+  @screen xxl {
+    padding: 9.2rem 0;
+  }
+}
+
+.quote {
+  margin-bottom: 1.6rem;
+
+  p {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.05rem;
+    font-weight: 400;
+
+    @screen md {
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.authorName {
+  margin-bottom: 0.4rem;
+
+  @screen lg {
+    margin-bottom: 0;
+  }
 }
