@@ -2,6 +2,7 @@ import React from 'react'
 import SEOMeta from 'interfaces/seoMeta'
 import Head from 'next/head'
 import { GlobalSet } from 'interfaces/globals'
+import DevGrid from 'components/generic/dev_grid/dev_grid'
 import { GlobalContextProvider } from 'pages/_app'
 import Entry from '../interfaces/entry'
 import Repeater from '../utils/rendering/repeater'
@@ -13,6 +14,7 @@ const Page = ({
   nav,
   seo,
   globals,
+  header,
   footer,
   translations,
 }: {
@@ -20,8 +22,9 @@ const Page = ({
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  header
   footer: any
-  translations: { [key: string]: string }
+  translations: {[key: string]: string}
 }) => (
   <GlobalContextProvider
     value={{
@@ -40,22 +43,8 @@ const Page = ({
         />
       </Head>
       <main>
-        {true && process.env.NODE_ENV === 'development' && (
-          <div className="devGrid w-full container">
-            <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-16 lg:gap-24 xl:gap-30 xxl:24 h-full">
-              {Array(12)
-                .fill({})
-                .map(() => (
-                  <div
-                    className="col col-span-1"
-                    key={new Date().getTime() + Math.random()}
-                  />
-                ))}
-            </div>
-          </div>
-        )}
-        <Header nav={nav} />
-        {entry.title}
+        <DevGrid />
+        <Header nav={nav} data={header} darkMode={false} />
         <Repeater blocks={entry.replicator} />
       </main>
 

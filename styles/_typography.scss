@@ -1,148 +1,37 @@
-@tailwind utilities;
+@import "mixins";
 
-@layer utilities {
-  .typo-h1 {
-    font-size: 4rem;
-    line-height: 4.8rem;
-    letter-spacing: -0.05rem;
-    font-weight: 700;
+.typo-h1, h1 {
+  @include typo-h1;
+}
 
-    @screen md {
-      font-size: 5.6rem;
-      line-height: 6.4rem;
-      letter-spacing: -0.1rem;
-    }
-  }
+.typo-h2, h2 {
+  @include typo-h2;
+}
 
-  .typo-h2 {
-    font-size: 3.2rem;
-    line-height: 4rem;
-    letter-spacing: -0.1rem;
-    font-weight: 700;
+.typo-h3, h3 {
+  @include typo-h3;
+}
 
-    @screen md {
-      font-size: 4rem;
-      line-height: 4.8rem;
-    }
+.typo-h4, h4 {
+  @include typo-h4;
+}
 
-    @screen lg {
-      font-size: 4.8rem;
-      line-height: 5.6rem;
-    }
-  }
+.typo-h5, h5 {
+  @include typo-h5;
+}
 
-  .typo-h3 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    letter-spacing: -0.05rem;
-    font-weight: 700;
+.typo-h6, h6 {
+  @include typo-h6;
+}
 
-    @screen lg {
-      font-size: 3.2rem;
-      line-height: 4rem;
-    }
-  }
+.typo-p {
+  @include typo-p;
+}
 
-  .typo-h4 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    letter-spacing: -0.05rem;
-    font-weight: 400;
+.typo-tag {
+  @include typo-tag;
+}
 
-    @screen md {
-      font-size: 3.2rem;
-      line-height: 4rem;
-    }
-  }
-
-  .typo-h5 {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    font-weight: 700;
-
-    @screen lg {
-      font-size: 2rem;
-      line-height: 2.8rem;
-    }
-  }
-
-  .typo-h6 {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    font-weight: 400;
-
-    @screen md {
-      font-size: 2rem;
-      line-height: 2.8rem;
-    }
-  }
-
-  .typo-p {
-    font-weight: 400;
-
-    &,
-    &-bold,
-    b {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
-
-      @screen md {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-      }
-    }
-    
-    &-bold,
-    b {
-      font-weight: 700;
-    }
-
-    &-small {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
-      font-weight: 400;
-    }
-  }
-
-  .typo-tag {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    font-weight: 500;
-    letter-spacing: 0.06rem;
-    text-transform: uppercase;
-
-    &-lower {
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-      font-weight: 400;
-    }
-  }
-
-  .typo-caption {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    font-weight: 400;
-  }
-
-  h1 {
-    @apply typo-h1;
-  }
-  h2 {
-    @apply typo-h2;
-  }
-  h3 {
-    @apply typo-h3;
-  }
-  h4 {
-    @apply typo-h4;
-  }
-  h5 {
-    @apply typo-h5;
-  }
-  h6 {
-    @apply typo-h6;
-  }
-  p {
-    @apply typo-p;
-  }
+.typo-caption {
+  @include typo-caption;
 }

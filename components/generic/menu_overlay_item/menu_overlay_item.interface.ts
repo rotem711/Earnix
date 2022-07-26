@@ -1,15 +1,7 @@
 import Asset from 'interfaces/asset'
-import NavInterface from '../nav/nav.interface'
 
-export default interface HeaderInterface {
-  nav: NavInterface,
-  darkMode: Boolean,
-  logo_dark: Asset,
-  logo_light: Asset,
-  links: [{
-    type: string,
-    link: string,
-    text: string,
+export default interface MenuOverlayItemInterface {
+  links: {
     nav_title: string,
     columns: [{
       title: string,
@@ -24,9 +16,9 @@ export default interface HeaderInterface {
       }],
       insight: {
         cover_image: Asset,
-        title: string,
         uri: string,
+        title: string,
       },
     }],
-  }],
+  },
 }
