@@ -15,4 +15,12 @@ export interface OverviewArticle {
   author_name: string
   date: string
   blurb: string
+  blog_topic: {
+    title: string
+    id: string
+  }
+  blog_industry: {
+    id: string
+    title: string
+  }
 }
