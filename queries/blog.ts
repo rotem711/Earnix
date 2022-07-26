@@ -1,5 +1,6 @@
 import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
 import AssetFragment from './fragments/asset'
+import nav from './fragments/nav'
 
 export default `
   ${AssetFragment}
@@ -114,4 +115,71 @@ export default `
       }
     }
   }
+`
+
+const articleDetailFragment = `
+  fragment ArticleDetail on Entry_Blog_Blog {
+    id
+    uri
+    slug
+    # industry {
+    #   title
+    #   id
+    # }
+    # topic {
+    #   title
+    #   id
+    # }
+    cover_image {
+      ...CMSAsset
+    }
+    author_name
+    date
+    blurb
+  }
+`
+
+export const blogOverviewQuery = `
+${AssetFragment}
+${articleDetailFragment}
+query page {
+  ${FooterQuery}
+  ${nav}
+  entry(slug: "blog", collection: "pages") {
+    id
+    title
+    slug
+    uri
+    seo {
+      description
+      og_description
+      og_locale
+      og_site_name
+      og_type
+      og_title
+      og_url
+      rel_author
+      rel_canonical
+      rel_home
+      rel_next_
+      rel_prev
+      title
+      twitter_card
+      twitter_description
+      twitter_site
+      twitter_title
+    }
+    ... on Entry_Pages_PageBlog {
+      id
+      main_featured_item {
+        ...ArticleDetail
+      }
+    }
+  }
+  articles: entries(collection: "blog") {
+    data {
+      ...ArticleDetail
+    }
+  }
+}
 `
