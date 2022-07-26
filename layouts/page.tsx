@@ -2,12 +2,12 @@ import React from 'react'
 import SEOMeta from 'interfaces/seoMeta'
 import Head from 'next/head'
 import { GlobalSet } from 'interfaces/globals'
+import DevGrid from 'components/generic/dev_grid/dev_grid'
 import { GlobalContextProvider } from 'pages/_app'
 import Entry from '../interfaces/entry'
 import Repeater from '../utils/rendering/repeater'
 import Header from '../components/generic/header/header'
 import Footer from '../components/generic/footer/footer'
-import DevGrid from 'components/generic/dev_grid/dev_grid'
 
 const Page = ({
   entry,
@@ -45,7 +45,6 @@ const Page = ({
       <main>
         <DevGrid />
         <Header nav={nav} data={header} darkMode={false} />
-        {entry.title}
         <Repeater blocks={entry.replicator} />
       </main>
 

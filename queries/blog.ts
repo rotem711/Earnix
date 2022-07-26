@@ -145,6 +145,7 @@ export const blogOverviewQuery = `
 ${AssetFragment}
 ${articleDetailFragment}
 query page {
+  ${HeaderQuery}
   ${FooterQuery}
   ${nav}
   entry(slug: "blog", collection: "pages") {
