@@ -18,7 +18,10 @@ const Translation = {
     en_US: 'Latest Insight',
   },
   READMORETEASERSINGLE: {
-    en_US: 'Link to highlight', 
+    en_US: 'Link to highlight',
+  },
+  RELATEDCONTENT: {
+    en_US: 'Related content',
   },
   MONTHS: {
     en_US: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),

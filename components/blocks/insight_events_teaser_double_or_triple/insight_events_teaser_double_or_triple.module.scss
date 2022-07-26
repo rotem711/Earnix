@@ -6,10 +6,6 @@
   padding-top: 6.4rem;
 
   :global {
-    .swiper {
-      overflow: visible;
-    }
-
     h3 {
       margin-bottom: 2.4rem;
 
@@ -75,6 +71,26 @@
 
       a {
         @include linkDecoration(theme('colors.orange-100'), true);
+      }
+    }
+  }
+
+  .swiperWrapper {
+    @include swiperBoxshadowFix;
+
+    @screen md {
+      margin: -3.2rem -7rem;
+
+      :global(.swiper) {
+        padding: 3.2rem 7rem;
+      }
+    }
+
+    @screen lg {
+      margin: -3.2rem;
+
+      :global(.swiper) {
+        padding: 3.2rem;
       }
     }
   }
