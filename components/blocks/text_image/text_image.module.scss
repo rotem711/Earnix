@@ -1,5 +1,84 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reverse {
+  @screen md {
+    direction: ltr !important;
+  }
+  .overlay_image {
+    right: -12%;
+    left: auto;
+  }
+}
+.contentWrapper {
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7.5rem;
+  margin-top: 4rem;
+  @screen md {
+    direction: rtl;
+  }
+  @screen lg {
+  }
+  @screen xl {
+  }
+}
+
+.imageWrapper {
+  height: auto;
+  position: relative;
+  border-radius: 1rem;
+  & > span {
+    width: 100% !important;
+    @screen lg {
+      aspect-ratio: 649 / 417;
+    }
+  }
+  .image {
+    border-radius: 1rem;
+  }
+}
+
+.overlay_image {
+  position: absolute;
+  left: -12%;
+  bottom: -12%;
+  width: 18.6rem;
+  height: 18.6rem;
+  @screen lg {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 7rem;
+  direction: ltr;
+  @screen md {
+    margin-bottom: 0;
+  }
+}
+
+.headline {
+  width: 80%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  @screen md {
+    margin-top: 0;
+  }
+}
+
+.copy {
+  margin-bottom: 2rem;
+  width: 100%;
 }

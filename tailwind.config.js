@@ -1,5 +1,5 @@
 const generateSpacing = () => {
-  const spacings = [];
+  const spacings = []
   for (let i = 0; i < 32; i += 1) {
     spacings.push(i)
   }
@@ -77,6 +77,18 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
+        '.default-grid': {
+          // grid grid-cols-4 md:grid-cols-12 gap-x-16
+          display: 'grid',
+          'grid-template-columns': 'repeat(4, minmax(0, 1fr))',
+          'column-gap': '2.4rem',
+          '@screen md': {
+            'grid-template-columns': 'repeat(8, minmax(0, 1fr))',
+          },
+          '@screen lg': {
+            'grid-template-columns': 'repeat(12, minmax(0, 1fr))',
+          },
+        },
         '.container': {
           maxWidth: '100%',
           padding: '0 20px',
