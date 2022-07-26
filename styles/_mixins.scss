@@ -39,6 +39,24 @@
   &.active {
     &::after {
       width: 100%;
+      }
+  }
+}
+
+@mixin swiperBoxshadowFix {
+  margin: -3.2rem -2rem;
+  overflow: hidden;
+
+  @screen md {
+    margin: -3.2rem;
+  }
+
+  :global(.swiper) {
+    overflow: visible;
+    padding: 3.2rem 2rem;
+
+    @screen md {
+      padding: 3.2rem;
     }
   }
 }
