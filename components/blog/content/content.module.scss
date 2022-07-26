@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.root {
+  margin-bottom: 4rem;
+
+  @screen md {
+    margin-bottom: 5.6rem;
+  }
+
+  p {
+    margin-bottom: 1.875em;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      color: theme('colors.green-90');
+      margin-bottom: 0.5em;
+      text-align: center;
+      
+      @screen md{
+        text-align: left;
+      } 
+    }
+  }
+}

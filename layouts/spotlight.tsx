@@ -14,6 +14,7 @@ const Spotlight = ({
   nav,
   seo,
   globals,
+  header,
   footer,
   translations,
 }: {
@@ -21,6 +22,7 @@ const Spotlight = ({
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  header: any
   footer: any
   translations: { [key: string]: string }
 }) => (
@@ -38,7 +40,7 @@ const Spotlight = ({
       </Head>
       <main>
         <DevGrid />
-        <Header nav={nav} />
+        <Header nav={nav} data={header} darkMode />
         {/* {"TODO: ADD HEADER COMPONENT HERE"} */}
         <Repeater blocks={entry.spotlight_replicator} />
       </main>

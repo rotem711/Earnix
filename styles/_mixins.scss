@@ -21,6 +21,49 @@
 }
 
 
+@mixin mainMenuLinkDecoration($color: 'currentColor') {
+  &::after {
+    content: '';
+    display: block;
+    bottom: -0.2rem;
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    width: 0;
+    transition: width 0.5s ease;
+    background-color: $color;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    &::after {
+      width: 100%;
+      }
+  }
+}
+
+
+@mixin swiperBoxshadowFix {
+  margin: -3.2rem -2rem;
+  overflow: hidden;
+
+  @screen md {
+    margin: -3.2rem;
+  }
+
+  :global(.swiper) {
+    overflow: visible;
+    padding: 3.2rem 2rem;
+
+    @screen md {
+      padding: 3.2rem;
+    }
+  }
+}
+
+
 // fonts
 @mixin typo-h1 {
   font-size: 4rem;
@@ -144,3 +187,5 @@
   line-height: 1.6rem;
   font-weight: 400;
 }
+
+

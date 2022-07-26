@@ -17,4 +17,4 @@ export const getStaticProps = getStaticPropsWrapper(
     }
   },
 )
-export const getStaticPaths = getStaticPathsWrapper('pages')
+export const getStaticPaths = getStaticPathsWrapper('pages', { blueprint: 'pages' })
