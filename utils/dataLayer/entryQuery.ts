@@ -94,14 +94,14 @@ export const getStaticPropsWrapper = (
   }
 }
 
-export const getStaticPathsWrapper = (collection: string) => async () => {
+export const getStaticPathsWrapper = (collection: string, filter: any = undefined) => async () => {
   if (!process.env.NEXT_PUBLIC_GRAPHQL_URL) {
     throw new Error('Failed to load the graphql endpoint. Please make sure it is defined in your .env.local file')
   }
   const res = await gql(
     `
-      query pages($collection: [String]) {
-        entries(collection: $collection) {
+      query pages($collection: [String], $filter: JsonArgument) {
+        entries(collection: $collection, filter: $filter) {
           data {
             id
             title
@@ -113,6 +113,7 @@ export const getStaticPathsWrapper = (collection: string) => async () => {
     `,
     {
       collection,
+      filter,
     },
   )
   if (!res) {

@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  margin-bottom: 8rem;
+
+  h6 {
+    margin-bottom: 2.4rem;
+  }
+
+  .swiperWrapper {
+    @include swiperBoxshadowFix;
+  }
+}
