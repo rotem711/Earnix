@@ -8,6 +8,9 @@ const Translation = {
   FOLLOW: {
     en_US: 'Follow us on',
   },
+  FEATUREDPOST: {
+    en_US: 'Featured Post',
+  },
   LATESTNEWS: {
     en_US: 'Latest News',
   },
@@ -25,6 +28,9 @@ const Translation = {
   },
   MONTHS: {
     en_US: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
+  },
+  SEARCHPLACEHOLDER: {
+    en_US: 'Search',
   },
 }
 

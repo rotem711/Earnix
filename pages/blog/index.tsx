@@ -16,6 +16,7 @@ const Blog = ({
   entry,
   nav,
   seo,
+  header,
   globals,
   footer,
   translations,
@@ -25,6 +26,7 @@ const Blog = ({
   nav: any
   seo: SEOMeta
   globals: GlobalSet
+  header
   footer: any
   translations: { [key: string]: string }
   articles: OverviewArticle[]
@@ -49,7 +51,7 @@ const Blog = ({
         </Head>
         <main>
           <DevGrid />
-          <Header nav={nav} />
+          <Header nav={nav} data={header} darkMode={false} />
           {entry.title}
         </main>
 

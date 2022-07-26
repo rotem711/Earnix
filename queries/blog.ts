@@ -1,3 +1,4 @@
+import HeaderQuery from 'components/generic/header/header.extraqueries.graphql'
 import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
 import AssetFragment from './fragments/asset'
 import nav from './fragments/nav'
@@ -5,6 +6,7 @@ import nav from './fragments/nav'
 export default `
   ${AssetFragment}
   query blog($slug: String) {
+    ${HeaderQuery},
     ${FooterQuery},
     entry(collection: "blog", slug: $slug) {
       id
@@ -143,6 +145,7 @@ export const blogOverviewQuery = `
 ${AssetFragment}
 ${articleDetailFragment}
 query page {
+  ${HeaderQuery}
   ${FooterQuery}
   ${nav}
   entry(slug: "blog", collection: "pages") {

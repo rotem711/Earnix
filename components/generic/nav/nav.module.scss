@@ -1,5 +1,12 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  li {
+    margin-left: 2rem;
+  }
 }

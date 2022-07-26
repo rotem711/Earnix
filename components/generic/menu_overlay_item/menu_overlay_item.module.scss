@@ -1,0 +1,176 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  :global(.subtitle) {
+    display: block;
+    margin-bottom: 1.6rem;
+    color: theme('colors.black-100');
+
+    @screen md {
+      color: theme('colors.green-90');
+    }
+  }
+
+  :global(.childWrapper) {
+    padding-left: 2.4rem;
+
+    @screen md {
+      padding-left: 2rem;
+    }
+  }
+
+  .mobileLayout {
+    .accordionTitle {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordionContent {
+      &::before {
+        content: '';
+        display: block;
+        height: 0.8rem;
+        margin: 1.8rem -20px 3.2rem; // Mobile Container Padding
+        background-color: theme('colors.orange-100');
+
+        @screen md {
+          margin-left: -70px; // Tablet Container Padding
+          margin-right: -70px;
+        }
+      }
+    }
+
+    .column,
+    .featuredInsight {
+      margin-bottom: 4rem;
+    }
+
+    .parentLink {
+      border-bottom: none;
+
+      & > a p {
+        padding-bottom: 1.6rem;
+        border-bottom: 1px solid theme('colors.black-5');
+      }
+    }
+
+    .chevron {
+      transform: rotateX(0);
+
+      &,
+      &__open {
+        transition: transform 0.5s ease;
+      }
+
+      &__open {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  .desktopLayout {
+    position: relative;
+    height: 100%;
+    cursor: default;
+
+    :global(li) {
+      margin-left: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    :global(a) {
+      @include linkDecoration(theme('colors.orange-100'));
+      color: theme('colors.black-100');
+    }
+
+    // Before Element for easier mouse traversal when mega menu is open
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 4rem;
+      width: 150%;
+      left: -25%;
+      bottom: -4rem;
+    }
+
+    .megaMenuWrapper {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      right: 0;
+      background-color: theme('colors.white');
+      border-top: 0.8rem solid theme('colors.orange-100');
+      padding: 3.2rem;
+    }
+
+    .megaMenuInner {
+      background-color: theme('colors.white');
+    }
+
+    .orangeTriangle {
+      position: absolute;
+      bottom: -4rem;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 1.25rem solid transparent;
+      border-right: 1.25rem solid transparent;
+      border-bottom: 2rem solid theme('colors.orange-100');
+      transform: translateX(-50%);
+    }
+
+    .parentLink {
+      a {
+        display: block;
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+
+  .featuredInsight {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    h5,
+    p {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      width: 32.7rem;
+      max-width: 100%;
+      height: 21rem;
+
+      @screen lg {
+        width: 100%;
+        height: 100%;
+      }
+
+      h5 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        color: theme('colors.white');
+        margin-bottom: 0;
+        padding: 2.4rem;
+
+        screen lg {
+          padding: 3.2rem;
+        }
+      }
+    }
+  }
+}
