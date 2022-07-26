@@ -122,14 +122,14 @@ const articleDetailFragment = `
     id
     uri
     slug
-    # industry {
-    #   title
-    #   id
-    # }
-    # topic {
-    #   title
-    #   id
-    # }
+    blog_topic {
+      title
+      id
+    }
+    blog_industry {
+      id
+      title
+    }
     cover_image {
       ...CMSAsset
     }
