@@ -26,6 +26,12 @@ const Translation = {
   RELATEDCONTENT: {
     en_US: 'Related content',
   },
+  SIGNUP: {
+    en_US: 'Sign up',
+  },
+  SUBSCRIBEBLOG: {
+    en_US: 'Subscribe to our blog',
+  },
   MONTHS: {
     en_US: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
   },

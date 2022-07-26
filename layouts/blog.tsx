@@ -15,6 +15,7 @@ import Entry from '../interfaces/entry'
 import Header from '../components/generic/header/header'
 import Footer from '../components/generic/footer/footer'
 import RelatedContent from 'components/blog/related_content/related_content'
+import Subscribe from 'components/blog/subscribe/subscribe'
 
 const Blog = ({
   author_name,
@@ -115,6 +116,7 @@ const Blog = ({
               image={author_image}
               linkedin={linkedin_profile}
             />
+            <Subscribe />
             <RelatedContent data={related_articles} />
           </div>
         </div>
