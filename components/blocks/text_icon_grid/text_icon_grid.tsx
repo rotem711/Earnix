@@ -13,7 +13,7 @@ const TextIconGridBlock:FunctionComponent<{ block: TextIconGridInterface }> = ({
     className={`${styles.root} container grid grid-cols-12`}
   >
     <div className={`${styles.contentWrapper} col-start-1 col-span-12 xxl:col-start-3 xxl:col-span-8`}>
-      <div className={`typo-h3 ${styles.headline}`}>
+      <div className={`${styles.headline} typo-h3`}>
         {block.tig_headline}
       </div>
       <div className={styles.itemsWrapper}>
@@ -37,7 +37,7 @@ const TextIconGridBlock:FunctionComponent<{ block: TextIconGridInterface }> = ({
                 </a>
               </Link>
             </div>
-            <div className={`typo-p ${styles.copy}`}>
+            <div className={`${styles.copy}`}>
               {parse(copy)}
             </div>
             <Link href={link}>

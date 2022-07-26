@@ -10,14 +10,14 @@ const ChallengesTeaserBlock: FunctionComponent<{
 }> = ({ block }) => (
   <div className={`${styles.root}`}>
     <div className="container grid grid-cols-12">
-      <div className={`${styles.contentWrapper} col-start-1 col-span-12 xl:col-start-3 xl:col-span-8 xxl:col-start-4 xxl:col-span-6`}>
-        <div className={`typo-h3 ${styles.headline}`}>
+      <div className={`${styles.contentWrapper} col-start-1 col-span-12`}>
+        <div className={`${styles.headline} typo-h3`}>
           {block.ct_headline}
         </div>
         <div className={styles.itemsWrapper}>
           {block.ct_items.map(({ copy }) => (
             <div key={copy} className={styles.ctItem}>
-              <div className={`typo-p-bold ${styles.copy}`}>{copy}</div>
+              <div className={`${styles.copy} typo-h5`}>{copy}</div>
             </div>
           ))}
         </div>

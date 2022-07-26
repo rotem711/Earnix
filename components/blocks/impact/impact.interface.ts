@@ -7,9 +7,9 @@ export default interface ImpactInterface {
     im_cta_url: string
     im_eyebrow: string
     im_headline: string
-    im_icons: {
-      icon: Asset
+    im_icons: Array<{
+      icon: Array<Asset>
       stat_headline: string
       statistic: string
-    }
+    }>
 }
