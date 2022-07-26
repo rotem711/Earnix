@@ -1,22 +1,11 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
-  padding: 0 2rem 6.4rem 2rem;
-
-  @screen md {
-    padding: 0 7rem 6.4rem 7rem;
-  }
+  padding-bottom: 6.4rem;
 
   @screen xl {
     padding-bottom: 7.2rem;
-  }
-
-  @screen xxl {
-    padding-right: 0;
-    padding-left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: theme('screens.xxl');
   }
 }
 
@@ -54,25 +43,17 @@
 .headline {
   text-align: center;
   color: theme('colors.white');
-  margin-bottom: 2.6rem;
+  margin-bottom: 2.4rem;
 
   @screen md {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    letter-spacing: -0.05rem;
     margin-bottom: 1.6rem;
-  }
-
-  @screen lg {
-    font-size: 3.2rem;
-    line-height: 4rem;
   }
 }
 
 .cb_copy {
   text-align: center;
   color: theme('colors.white');
-  margin-bottom: 2.1rem;
+  margin-bottom: 2.3rem;
 
   @screen md {
     margin-bottom: 3.4rem;
@@ -83,22 +64,16 @@
   }
 
   p {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    @include typo-p;
+
     max-width: 27.9rem;
 
     @screen md {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
       max-width: 40rem;
-      letter-spacing: -0.03rem;
     }
 
     @screen lg {
-      font-size: 1.6rem;
-      line-height: 2.4rem;
       max-width: 45rem;
-      letter-spacing: -0.007rem;
     }
   }
 }

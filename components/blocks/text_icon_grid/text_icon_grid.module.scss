@@ -7,14 +7,11 @@
 .contentWrapper {
   padding: 6.4rem 0;
 
-  @screen sm {
-    padding: 8.6rem 0;
-  }
 }
 
 .headline {
   text-align: center;
-  margin-bottom: 3.3rem;
+  margin-bottom: 3.2rem;
 
   @screen sm {
     font-size: 2.4rem;
@@ -64,7 +61,7 @@
   }
 
   @screen xl {
-    padding: 7.2rem 4.8rem 3.6rem 4.8rem;
+    padding: 7.2rem 4.2rem 3.6rem;
     min-height: 50rem;
   }
 }
@@ -81,11 +78,6 @@
   color: theme("colors.green-90");
   margin-bottom: 1.6rem;
   text-align: center;
-
-  @screen sm {
-    font-size: 2rem;
-    line-height: 2.8rem;
-  }
 
   @screen xl {
     margin-top: 1.5rem;
@@ -107,12 +99,16 @@
   letter-spacing: 0.05rem;
   margin-bottom: 2.4rem;
 
+  p {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    font-weight: 300;
+  }
+
   @screen md {
     margin-bottom: 0;
     p {
       font-size: 1.4rem;
-      line-height: 2.2rem;
-      letter-spacing: 0;
     }
   }
 

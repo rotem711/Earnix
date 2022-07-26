@@ -1,4 +1,5 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   background-color: theme('colors.black-5');
@@ -12,15 +13,7 @@
   text-align: center;
   margin-bottom: 2.4rem;
 
-  @screen sm {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-  }
-
   @screen md {
-    font-size: 3.2rem;
-    line-height: 4rem;
-    letter-spacing: -0.05rem;
     margin-bottom: 4.8rem;
   }
 }
@@ -28,7 +21,7 @@
 .itemsWrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.9rem;
+  margin: 0 auto 3.9rem;
 
   @screen md {
     flex-direction: row;
@@ -37,16 +30,8 @@
   }
 
   @screen lg {
-    padding: 0 1.4rem;
     margin-bottom: 0.9rem;
-  }
-
-  @screen xl {
-    padding: 0 0.8rem;
-  }
-
-  @screen xxl {
-    padding: 0 2.3rem;
+    max-width: 84.3rem;
   }
 }
 
@@ -104,14 +89,11 @@
 }
 
 .copy {
+  @include typo-h5;
   text-align: center;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
   max-width: 16rem;
 
   @screen lg {
-    font-size: 2rem;
-    line-height: 2.8rem;
     max-width: 18.66rem;
   }
 }

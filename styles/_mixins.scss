@@ -4,21 +4,22 @@
   transition: text-decoration-color 0.5s ease;
 
   @if $invert {
-    text-decoration-color: $color;
-
-    &:hover,
-    &:focus {
-      text-decoration-color: transparent;
-    }
-  } @else {
-    text-decoration-color: transparent;
-
-    &:hover,
-    &:focus {
       text-decoration-color: $color;
-    }
+
+      &:hover,
+      &:focus {
+          text-decoration-color: transparent;
+      }
+  } @else {
+      text-decoration-color: transparent;
+
+      &:hover,
+      &:focus {
+          text-decoration-color: $color;
+      }
   }
 }
+
 
 @mixin swiperBoxshadowFix {
   margin: -3.2rem -2rem;
@@ -36,4 +37,129 @@
       padding: 3.2rem;
     }
   }
+}
+
+
+// fonts
+@mixin typo-h1 {
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: -0.05rem;
+  font-weight: 700;
+
+  @screen md {
+    font-size: 5.6rem;
+    line-height: 6.4rem;
+    letter-spacing: -0.1rem;
+  }
+}
+
+@mixin typo-h2 {
+  font-size: 3.2rem;
+  line-height: 4rem;
+  letter-spacing: -0.1rem;
+  font-weight: 700;
+
+  @screen md {
+    font-size: 4rem;
+    line-height: 4.8rem;
+  }
+
+  @screen lg {
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+}
+
+@mixin typo-h3 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.05rem;
+  font-weight: 700;
+
+  @screen lg {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}
+
+@mixin typo-h4 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.05rem;
+  font-weight: 400;
+
+  @screen md {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}
+
+@mixin typo-h5 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+
+  @screen lg {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+}
+
+@mixin typo-h6 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 400;
+
+  @screen md {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+}
+
+@mixin typo-p {
+  font-weight: 400;
+
+  &,
+  &-bold,
+  b {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    @screen md {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+
+  &-bold,
+  b {
+    font-weight: 700;
+  }
+
+  &-small {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+  }
+}
+
+@mixin typo-tag {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+
+  &-lower {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+  }
+}
+
+@mixin typo-caption {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 400;
 }
