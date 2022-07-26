@@ -1,0 +1,116 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  box-shadow: 0 0.4rem 0.4rem 0 theme('colors.black-20');
+  position: relative;
+  height: 100%;
+
+  &,
+  &::before {
+    border-radius: 2rem;
+  }
+
+  &::before {
+    content: '';
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0 0 3.2rem 0 theme('colors.black-20');
+  }
+
+  :global {
+    .cta {
+      @include linkDecoration(theme('colors.orange-100'));
+
+      color: theme('colors.orange-100');
+      margin-top: 0.8rem;
+      display: inline-block;
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-flow: column nowrap;
+      height: 100%;
+
+      &:hover,
+      &:focus {
+        .cta {
+          text-decoration-color: theme('colors.orange-100');
+        }
+      }
+    }
+  }
+
+  .headline {
+    margin-bottom: 0.8rem;
+
+    &:global(.typo-h3) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .image {
+    position: relative;
+    height: 25rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    overflow: hidden;
+  }
+
+  .label {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    background-color: theme('colors.black-70p');
+    color: theme('colors.white');
+    padding: 0.7rem 1.6rem;
+    border-radius: 2rem;
+  }
+
+  .content {
+    padding: 1.6rem 2.4rem 2.4rem;
+    height: calc(100% - 25rem);
+  }
+
+  .dateLocationWrapper {
+    margin-bottom: 0.8rem;
+  }
+
+  .blurb {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1.6rem;
+  }
+
+  .location {
+    margin-bottom: 2.4rem;
+  }
+
+  .categories {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-bottom: 1.6rem;
+
+    & > div {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      color: theme('colors.black-50');
+      border: 0.1rem solid theme('colors.black-50');
+      border-radius: 2rem;
+
+      &:not(:first-child) {
+        margin-left: 0.8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import '../../../styles/variables';
+
+.root {
+  background-color: theme("colors.black-5");
+  position: relative;
+
+  .contentWrapper {
+    padding-top: 6.4rem;
+    padding-bottom: 3.2rem;
+
+    @screen md {
+      padding-bottom: 6.4rem;
+    }
+
+    h3 {
+      margin-bottom: 1.6rem;
+
+      @screen md {
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    height: 30.6rem;
+    width: 100%;
+
+    @screen md {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: calc(50% - 0.8rem);
+    }
+
+    @screen lg {
+      width: calc(50% - 1.2rem);
+    }
+
+    @screen xl {
+      width: calc(50% - 1.5rem);
+    }
+
+    @screen xxl {
+      width: calc(50% + 12.75rem);
+    }
+  }
+
+  .icon {
+    display: none;
+    position: absolute;
+
+    @screen lg {
+      display: block;
+      width: 23.8rem;
+      right: 2.8rem;
+      bottom: 4rem;
+    }
+
+    @screen xl {
+      right: 6.5%;
+    }
+
+    @screen xl {
+      right: 17.3%;
+    }
+  }
+}

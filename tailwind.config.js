@@ -65,10 +65,14 @@ module.exports = {
       spacing: {
         ...generateSpacing(),
       },
+      width: {
+        '3/8': '37.5%',
+      }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [
     function ({ addComponents }) {
@@ -92,8 +96,12 @@ module.exports = {
             margin: '0 auto',
             padding: '0 70px',
           },
+          '@screen xl': {
+            maxWidth: '1134px',
+            padding: '0',
+          },
           '@screen xxl': {
-            maxWidth: '1780px',
+            maxWidth: '1680px',
             padding: '0',
           },
         },

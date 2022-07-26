@@ -1,6 +1,7 @@
 import React from 'react'
 import blockInventory from './inventory'
 
+const cleanName = (name) => name.replace(/Set_.*_/g, '')
 interface BlockInterface {
   __typename: string
   [key: string]: any
@@ -10,7 +11,7 @@ const Repeater = ({ blocks }: { blocks: BlockInterface[] }) => (
   <React.Fragment key="blocks">
     {blocks.map((block, index) => {
       const blockItem = Object.values(blockInventory).find(
-        (b) => b.typename === block.__typename,
+        (b) => cleanName(b.typename) === cleanName(block.__typename),
       )
       if (blockItem) {
         return React.createElement(

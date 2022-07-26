@@ -1,12 +1,16 @@
+import HeaderQuery from 'components/generic/header/header.extraqueries.graphql'
 import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
 
 import blockInventory from '../utils/rendering/inventory'
 import AssetFragment from './fragments/asset'
+import nav from './fragments/nav'
 
 const fragments = Object.values(blockInventory)
+  .filter((i) => i.layouts.includes('page'))
   .map((i) => i.query)
   .join('')
 const fragmentDestructor = Object.values(blockInventory)
+  .filter((i) => i.layouts.includes('page'))
   .map((i) => `...${i.typename.replace('Set_Replicator_', '')}`)
   .join('\n')
 
@@ -14,6 +18,7 @@ export default `
   ${AssetFragment}
   ${fragments}
   query page($uri: String) {
+    ${HeaderQuery}
     ${FooterQuery},
     entry(uri: $uri) {
       id
@@ -46,23 +51,6 @@ export default `
         }
       }
     }
-    nav(handle: "main_nav") {
-      tree {
-        page {
-          id
-          url
-          title
-        }
-        depth
-        children {
-          depth
-          page {
-            id
-            url
-            title
-          }
-        }
-      }
-    }
+    ${nav}
   }
 `
