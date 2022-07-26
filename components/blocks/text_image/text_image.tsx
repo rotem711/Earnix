@@ -49,7 +49,7 @@ const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
             className={styles.image}
           />
           {block.ti_overlay_icon && (
-            <div className={styles.overlay_image} >
+            <div className={styles.overlay_image}>
               <Image
                 src={block.ti_overlay_icon.permalink}
                 width={block.ti_overlay_icon.width}
