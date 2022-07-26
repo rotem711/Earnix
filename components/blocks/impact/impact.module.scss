@@ -1,5 +1,145 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+}
+
+.contentWrapper {
+  padding: 5.6rem 0;
+
+  @screen md {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      "e e e e e e e e"
+      "h h h h h i i i"
+      "c c c c c i i i"
+      "b b b b b b b b";
+  }
+
+  @screen lg {
+    padding: 7.2rem 0 4.8rem 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "e e e e e e e e e e e e"
+      "h h h h h h . i i i i i"
+      "c c c c c c . i i i i i"
+      "b b b b b b b b b b b b";
+  }
+
+  @screen xl {
+    padding: 9.6rem 0 4rem 0;
+  }
+}
+
+.icons {
+  grid-area: i;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 4rem;
+
+  @screen md {
+    margin-left: 2.4rem;
+    justify-content: space-between;
+  }
+
+  @screen lg {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  @screen xl {
+    margin-bottom: 0;
+    justify-content: flex-start;
+    padding-left: 0.8rem;
+  }
+
+  @screen xxl {
+    padding-left: 2.5rem;
+  }
+}
+
+.iconItem {
+  width: 50%;
+  padding: 0 2rem;
+
+  @screen md {
+    width: calc(50% - 0.6rem);
+    padding: 0;
+  }
+
+  @screen lg {
+    width: calc(50% - 2rem);
+  }
+
+  @screen xl {
+    max-width: 20rem;
+    margin-right: 0.9rem;
+  }
+
+  @screen xxl {
+    margin-right: 0.8rem;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  max-width: 100%;
+  min-height: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 2.4rem;
+
+  @screen lg {
+    align-items: center;
+  }
+}
+
+.statistic {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.statHeadline {
+  text-align: center;
+}
+
+.eyebrow {
+  grid-area: e;
+  margin-bottom: 0.8rem;
+  color: theme('colors.green-90');
+}
+
+.headline {
+  grid-area: h;
+  margin-bottom: 1.6rem;
+}
+
+.copy {
+  grid-area: c;
+  margin-bottom: 3.2rem;
+
+  @screen md {
+    margin-bottom: 4rem;
+  }
+
+  @screen lg {
+    margin-bottom: 3.2rem;
+  }
+
+  @screen lg {
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    @include typo-h6;
+  }
+}
+
+.buttonWrapper {
+  grid-area: b;
 }
