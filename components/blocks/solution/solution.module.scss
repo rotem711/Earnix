@@ -1,5 +1,127 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5.6rem 0 0;
+
+  @screen lg {
+    flex-direction: row-reverse;
+    padding-top: 7.2rem;
+  }
+
+  @screen xl {
+    padding-top: 9.6rem;
+  }
+
+  @screen xxl {
+    justify-content: space-between;
+  }
+}
+
+.firstBlock {
+  @screen md {
+    width: calc(100% / 8 * 7);
+  }
+
+  @screen lg {
+    max-width: calc(100% / 12 * 5);
+  }
+
+  @screen xl {
+    padding-top: 0.6rem;
+  }
+
+  @screen xxl {
+    min-width: 45.5rem;
+    max-width: calc(100% / 12 * 4);
+    margin-right: 9.4rem;
+  }
+}
+
+.eyebrow {
+  color: theme('colors.green-90');
+  margin-bottom: 0.8rem;
+}
+
+.headline {
+  margin-bottom: 1.6rem;
+}
+
+.description {
+  p {
+    @include typo-h6
+  }
+}
+
+.secondBlock {
+  border-radius: 1.6rem;
+  background-color: theme('colors.black-5');
+  margin-top: 2.4rem;
+  padding: 3.2rem 1.6rem 7.6rem;
+
+  @screen md {
+    padding: 2.7rem 5.6rem 3.1rem;
+  }
+
+  @screen lg {
+    margin-top: 0;
+    max-width: calc(100% / 12 * 6);
+    margin-right: 9.9rem;
+    padding: 3.2rem 3.2rem 5.2rem;
+  }
+
+  @screen xl {
+    min-width: 55.2rem;
+    margin-right: 12.7rem;
+    padding-bottom: 4rem;
+  }
+
+  @screen xxl {
+    max-width: calc(100% / 12 * 4);
+    min-width: 54.4rem;
+  }
+}
+
+.listHeadline {
+  text-align: left;
+}
+
+.listItems {
+  margin-top: 2.4rem;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.4rem;
+
+  @screen lg {
+    margin-bottom: 3.6rem;
+  }
+
+  @screen xl {
+    margin-bottom: 2.4rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.iconWrapper {
+  margin-top: 0.2rem;
+}
+
+.listCopy {
+  margin-left: 0.8rem;
+
+  @screen lg {
+    margin-left: 2.8rem;
+  }
 }
