@@ -143,29 +143,30 @@
 
 @mixin typo-p {
   font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
 
-  &,
-  &-bold,
-  b {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-
-    @screen md {
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-    }
+  @screen md {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
+}
 
-  &-bold,
-  b {
-    font-weight: 700;
-  }
+@mixin typo-p-bold {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
 
-  &-small {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    font-weight: 400;
+  @screen md {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
+}
+
+@mixin typo-p-small {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 400;
 }
 
 @mixin typo-tag {
@@ -174,12 +175,12 @@
   font-weight: 500;
   letter-spacing: 0.06rem;
   text-transform: uppercase;
+}
 
-  &-lower {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    font-weight: 400;
-  }
+@mixin typo-tag-lower {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 400;
 }
 
 @mixin typo-caption {

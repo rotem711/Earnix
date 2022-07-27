@@ -1,5 +1,55 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  padding-top: 6.4rem;
+  padding-bottom: 6.2rem;
+  position: relative;
+
+  .card {
+    border-radius: 2rem;
+    margin-bottom: 4rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.160784);
+    overflow: hidden;
+    background-color: theme("colors.white");
+  }
+
+  .imageWrapper {
+    background-color: theme("colors.blue-100");
+    padding: 4rem 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @screen md {
+      padding: 4rem;
+    }
+
+    & > div {
+      width: 100%;
+    }
+  }
+
+  .textWrapper {
+    padding: 2.4rem 2.2rem;
+    min-height: 26.4rem;
+
+    @screen md {
+      padding: 2.4rem 2.6rem;
+      min-height: unset;
+    }
+
+    @screen lg {
+      padding: 2.4rem 3.2rem;
+    }
+
+    h3,
+    h5 {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .buttonWrapper {
+    text-align: center;
+    margin-top: 6.4rem;
+  }
 }

@@ -24,12 +24,24 @@
   @include typo-h6;
 }
 
-.typo-p {
+.typo-p, p {
   @include typo-p;
+}
+
+.typo-p-bold, p b {
+  @include typo-p-bold;
+}
+
+.typo-p-small {
+  @include typo-p-small;
 }
 
 .typo-tag {
   @include typo-tag;
+}
+
+.typo-tag-lower {
+  @include typo-tag-lower;
 }
 
 .typo-caption {
