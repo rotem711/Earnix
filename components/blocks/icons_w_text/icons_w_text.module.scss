@@ -1,96 +1,56 @@
 @import '../../../styles/variables';
 
-$sm-breakpoint: theme('screens.sm');
-$md-breakpoint: theme('screens.md');
-
 .root {
   position: relative;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
   overflow: hidden;
+  padding-bottom: 9rem;
 }
 
 .headline {
   text-align: center;
-  color: #000000;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
+  
+  @screen lg {
+    margin-bottom: 2.4rem;
+  }
 }
 
 .copy {
   text-align: center;
-  color: #000000;
-  margin-bottom: 3.5rem;
-}
+  margin-bottom: 4rem;
 
-.contentWrapper {
-  height: auto;
-
-  @screen sm {
-    width:100%,
-  }
   @screen md {
-    width:80rem,
+    margin-bottom: 4.8rem;
   }
-  @screen xl {
-    width:100%,
+
+  @screen lg {
+    margin-bottom: 5.6rem;
   }
 }
 
 .iconGrid {
-  width: 100%;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 3.938rem;
+  margin-bottom: 0.6rem;
 }
 
 .iconWrapper {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  padding-bottom: 3.5rem;
+  margin-bottom: 5.6rem;
 }
 
 .iconImage {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 2.5rem;
+  width: 12.2rem;
+  height: 12.2rem;
+  max-width: 100%;
+  margin: 0 auto 2.4rem;
+
+  @screen md {
+    margin-bottom: 3.2rem;
+  }
 }
 
 .iconText {
   text-align: center;
-  color: #000000;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .ctaWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 6.188rem;
-  z-index: 5;
-}
-
-.background {
-  position: absolute;
-  bottom: -9rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  z-index: -1;
+  text-align: center;
 }
