@@ -7,6 +7,7 @@
   align-items: center;
   justify-items: center;
   overflow: hidden;
+  background-color: theme('colors.green-90');
 }
 
 .contentWrapper {
@@ -91,21 +92,12 @@
 .background {
   position: absolute;
   width: 100%;
-  height: auto;
-  background-color: theme('colors.green-90');
   mix-blend-mode: multiply;
-  opacity: 5;
-  z-index: -1;
-}
-
-.backgroundMobile {
-  position: absolute;
-  width: 100vw;
-  height: 100%;
-  background-color: theme('colors.green-90');
-  mix-blend-mode: multiply;
-  opacity: 5;
-  z-index: -1;
+  opacity: 1;
+  height: 140%;
+  @screen md {
+    height: 120%;
+  }
 }
 
 .bgImage {

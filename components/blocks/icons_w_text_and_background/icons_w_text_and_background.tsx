@@ -1,35 +1,27 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable react/function-component-definition */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable consistent-return */
-/* eslint-disable array-callback-return */
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable react/destructuring-assignment */
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
 import parse from 'html-react-parser'
 import styles from './icons_w_text_and_background.module.scss'
+import BackgroundImage from '../../../public/assets/backgroundlines.png'
 import IconsWTextAndBackgroundInterface from './icons_w_text_and_background.interface'
 
 export const typename = 'Set_Replicator_BlockIconsWTextAndBackground'
 
-function IconsWTextAndBackgroundBlock(props: IconsWTextAndBackgroundInterface) {
+const IconsWTextAndBackgroundBlock = ({ block }: { block: IconsWTextAndBackgroundInterface }) => {
   const {
     itb_headline,
     itb_copy,
     itb_icons,
     itb_cta_url,
     itb_cta_title,
-    itb_bgimage,
-  } = props.block
+  } = block
 
   const [scrolled, setScrolled] = useState<number>()
 
   useEffect(() => {
     function listenToScroll() {
-      const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop
       const initialHeight = 10
       const height = winScroll - initialHeight
       setScrolled(height)
@@ -46,7 +38,7 @@ function IconsWTextAndBackgroundBlock(props: IconsWTextAndBackgroundInterface) {
         <div
           className={`${styles.copy} typo-p sm:ml-8 sm:mr-8 md:ml-80 md:mr-80`}
         >
-          {parse(itb_copy)}
+          {parse(itb_copy || '')}
         </div>
         <div className={styles.gridWrapper}>
           <div
@@ -100,24 +92,18 @@ function IconsWTextAndBackgroundBlock(props: IconsWTextAndBackgroundInterface) {
           <Button href={itb_cta_url} title={itb_cta_title} />
         </div>
         <div
-          className={`${styles.background} sm:hidden md:block`}
+          className={`${styles.background} block`}
           style={{
             top: scrolled ? (-1 * scrolled) / 3 : 0,
           }}
         >
           <Image
-            src={`${itb_bgimage.permalink}`}
-            width={6000}
-            height={6000}
-            objectFit="fill"
-            className={styles.bdImage}
-          />
-        </div>
-        <div className={`${styles.backgroundMobile} sm:block md:hidden`}>
-          <Image
-            src={`${itb_bgimage.permalink}`}
-            layout="fill"
+            src={BackgroundImage}
+            width={5291}
+            height={2862}
             objectFit="cover"
+            layout="fill"
+            className={styles.bdImage}
           />
         </div>
       </div>
