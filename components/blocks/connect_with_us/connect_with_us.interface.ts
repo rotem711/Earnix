@@ -1,3 +1,4 @@
 export default interface ConnectWithUsInterface {
-    type: string
+    cwu_headline: string
+    cwu_copy: string
 }

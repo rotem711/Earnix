@@ -8,6 +8,18 @@ const Translation = {
   FOLLOW: {
     en_US: 'Follow us on',
   },
+  FORM_SUBMIT: {
+    en_US: 'Submit',
+  },
+  FORMPLACEHOLDER_SELECT: {
+    en_US: 'Select Placeholder',
+  },
+  FORMPLACEHOLDER_MESSAGE: {
+    en_US: 'Message Placeholder',
+  },
+  FORM_OPTIN: {
+    en_US: 'Opt-in text area with checkbox adjacent',
+  },
   FEATUREDPOST: {
     en_US: 'Featured Post',
   },

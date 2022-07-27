@@ -1,5 +1,148 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  padding-top: 6.4rem;
+  padding-bottom: 12.5rem;
+
+  @screen md {
+    padding-bottom: 6.4rem;
+  }
+
+  h3,
+  p {
+    text-align: center;
+  }
+
+  h3 {
+    margin-bottom: 1.6rem;
+  }
+
+  p {
+    margin-bottom: 4rem;
+
+    @screen md {
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  :global(.halfWidth) {
+    width: 100%;
+
+    @screen md {
+      width: calc((100% - 2.4rem) / 2) !important;
+    }
+  }
+
+  input:not([type='submit']):not([type='checkbox']),
+  select,
+  textarea {
+    background-color: theme("colors.black-5");
+    border: 1px solid theme("colors.black-5");
+    padding: 1.6rem;
+    width: 100%;
+    margin-bottom: 3.2rem;
+
+    &:focus,
+    &:global(.filled) {
+      background-color: theme("colors.white");
+    }
+
+    &::placeholder {
+      color: theme("colors.black-100");
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  .customSelect {
+    position: relative;
+
+    svg {
+      position: absolute;
+      pointer-events: none;
+      top: calc((100% - 3.2rem) / 2 - 0.6rem);
+      right: 1.6rem;
+      height: 1.2rem;
+      width: auto;
+    }
+
+    select {
+      appearance: none;
+    }
+  }
+
+  .customCheckbox {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    & > div {
+      position: relative;
+      margin-right: 1.5rem;
+
+      &,
+      input,
+      span {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      input,
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+      }
+
+      span {
+        background-color: theme("colors.white");
+        border: 1px solid theme("colors.black-50");
+        transition: background-color 0.5s ease;
+        pointer-events: none;
+      }
+
+      input {
+        opacity: 0;
+
+        &:checked {
+          & + span {
+            background-color: theme("colors.black-50");
+          }
+        }
+      }
+    }
+  }
+
+  input[type='submit'] {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    background-color: theme('colors.orange-100');
+    color: theme('colors.white');
+    font-weight: 700;
+    border: 0.1rem solid theme('colors.orange-100');
+    transition: border 500ms ease, padding 500ms ease;
+    border-radius: 2rem;
+    padding: 0.9rem 2.4rem;
+    cursor: pointer;
+    margin: 0 auto;
+
+    &:hover {
+      background-color: transparent;
+      color: theme('colors.orange-100');
+      border-width: 0.4rem;
+      padding: 0.6rem 2.1rem;
+    }
+  }
 }
