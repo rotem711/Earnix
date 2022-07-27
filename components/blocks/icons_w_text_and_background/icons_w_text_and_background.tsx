@@ -62,6 +62,7 @@ const IconsWTextAndBackgroundBlock = ({ block }: { block: IconsWTextAndBackgroun
                   </div>
                 )
               }
+              return null
             })}
           </div>
           <div
@@ -85,6 +86,7 @@ const IconsWTextAndBackgroundBlock = ({ block }: { block: IconsWTextAndBackgroun
                   </div>
                 )
               }
+              return null
             })}
           </div>
         </div>
