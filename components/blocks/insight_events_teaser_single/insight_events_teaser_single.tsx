@@ -20,9 +20,9 @@ const InsightEventsTeaserSingleBlock: FunctionComponent<{
   }
 
   return (
-    <div className={`${styles.root} container grid grid-cols-6 gap-x-15`}>
+    <div className={`${styles.root} container grid grid-cols-6 gap-x-24`}>
       <h3 className="col-span-6">{block.iets_headline}</h3>
-      <div className={`${styles.card} col-span-6 xxl:col-span-4 xxl:col-start-2 grid grid-cols-2 gap-x-15`}>
+      <div className={`${styles.card} col-span-6 xxl:col-span-4 xxl:col-start-2 grid grid-cols-2 gap-x-24`}>
         <div className={`${styles.content} col-span-2 md:col-span-1`}>
           <span className="typo-tag">
             {insightTypeText[block.iets_entry.collection.handle]}
