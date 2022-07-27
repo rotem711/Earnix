@@ -1,5 +1,254 @@
 @import '../../../styles/variables';
 
+$ferris_duration: 30s;
+
+@keyframes ferris-wheel {
+	0% {
+    transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes gear {
+  0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes cabin {
+  0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
 .root {
-  // add your styles here
+  overflow: hidden;
+  padding: 8.8rem 0;
+
+  @screen md {
+    padding: 8rem 0;
+  }
+
+  @screen lg {
+    padding: 12rem 0 6.2rem;
+  }
+
+  .backgroundImage {
+    z-index: -1;
+
+    &::before {
+      content: "";
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: theme("colors.blue-100");
+      opacity: 0.75;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  .contentWrapper,
+  .button {
+    position: relative;
+    z-index: 10;
+  }
+
+  .contentWrapper {
+    margin-bottom: 8rem;
+
+    @screen sm {
+      margin-bottom: 6.7rem;
+    }
+  }
+
+  .text {
+    display: grid;
+    align-content: center;
+    color: theme("colors.white");
+
+    h2 {
+      margin-bottom: 1.6rem;
+
+      @screen sm {
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    p {
+      margin-bottom: 8rem;
+
+      @screen md {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  .ferrisColumn {
+    padding: 7.2%;
+  }
+
+  .ferrisWrapper {
+    position: relative;
+    padding-bottom: 100%;
+
+    &:hover {
+      .wheel,
+      .cabin,
+      .gear {
+        animation-play-state: paused;      
+      }
+    }
+  }
+
+  .wheel,
+  .gear,
+  .ferrisCenter,
+  .cabin {
+    position: absolute;
+  }
+  
+  .wheel {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 0.6rem solid #335e75; //color from design
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: ferris-wheel $ferris_duration linear infinite;
+    transform-origin: 50%;
+  }
+
+  .ferrisCenter,
+  .gear {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .gear {
+    width: 8rem;
+    height: 8rem;
+    animation: gear $ferris_duration linear infinite;
+    transform-origin: 50%;
+    min-width: 30%;
+    min-height: 30%;
+
+    @screen md {
+      min-width: unset;
+      min-height: unset;
+    }
+
+    @screen lg {
+      width: 12rem;
+      height: 12rem;
+    }
+
+    span,
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .ferrisCenter {
+    width: 4rem;
+    height: 4rem;
+    min-width: 20%;
+    min-height: 20%;
+
+    @screen md {
+      min-width: unset;
+      min-height: unset;
+    }
+
+    @screen lg {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .cabin {
+    text-align: center;
+    transform-origin: 50%;
+    animation: cabin $ferris_duration linear infinite;
+    width: 6rem;
+    height: 6rem;
+    min-width: 20%;
+    min-height: 20%;
+
+    @screen md {
+      min-width: unset;
+      min-height: unset;
+    }
+
+    @screen lg {
+      width: 8rem;
+      height: 8rem;
+    }
+    
+    &:nth-of-type(1) {
+      left: 50%;
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      left: 89.09%;
+      top: 18.83%;
+    }
+    &:nth-of-type(3) {
+      left: 98.75%;
+      top: 61.13%;
+    }
+    &:nth-of-type(4) {
+      left: 71.69%;
+      top: 95.05%;
+    }
+    &:nth-of-type(5) {
+      left: 28.31%;
+      top: 95.05%;
+    }
+    &:nth-of-type(6) {
+      left: 1.25%;
+      top: 61.13%;
+    }
+    &:nth-of-type(7) {
+      left: 10.91%;
+      top: 18.83%;
+    }
+
+    img {
+      border-radius: 0.6rem;
+    }
+
+    span {
+      display: inline-block;
+      margin: 0 -2rem;
+      color: theme("colors.white");
+      font-weight: 700;
+      text-overflow: unset;
+    }
+  }
 }
