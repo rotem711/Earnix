@@ -8,15 +8,16 @@
   background-color: theme('colors.orange-100');
   color: theme('colors.white');
   font-weight: 700;
-  border: 0.1rem solid theme('colors.orange-100');
-  transition: border 500ms ease, padding 500ms ease;
+  border: 0.4rem solid theme('colors.orange-100');
+  transition: color 200ms linear, background-color 200ms linear;
   border-radius: 2rem;
-  padding: 0.9rem 2.4rem;
+  padding: 0.6rem 2.1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &:hover {
     background-color: transparent;
     color: theme('colors.orange-100');
-    border-width: 0.4rem;
     padding: 0.6rem 2.1rem;
   }
 }
