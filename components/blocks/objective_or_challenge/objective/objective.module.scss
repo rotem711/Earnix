@@ -1,0 +1,92 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.root {
+  // add your styles here
+}
+
+.contentWrapper {
+  padding-top: 5.6rem;
+
+  @screen md {
+    padding-top: 6.4rem;
+  }
+
+  @screen lg {
+    padding-top: 7.2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @screen xl {
+    padding-top: 8.4rem;
+  }
+}
+
+.videoWrapper {
+  @screen lg {
+    width: calc((100% / 12 * 6) - 1.2rem);
+  }
+
+  @screen xxl {
+    width: calc((100% / 9 * 4) - 1.2rem);
+  }
+}
+
+.playerWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 6.9rem;
+}
+
+.videoLabel {
+  color: theme('colors.white');
+  background-color: theme('colors.orange-100');
+  padding: 1.1rem 1.4rem;
+
+  @screen md {
+    padding: 2rem 2.7rem;
+  }
+
+  @screen lg {
+    padding: 1.6rem 1.9rem;
+  }
+
+  @screen xl {
+    padding: 1.6rem 2.4rem;
+  }
+}
+
+.text {
+  margin-top: 2.4rem;
+
+  @screen md {
+    margin-top: 5.6rem;
+  }
+
+  @screen lg {
+    margin-top: 0;
+    width: calc((100% / 12 * 5) - 1.3rem);
+  }
+
+  @screen xxl {
+    width: calc((100% / 9 * 4) - 1.2rem);
+    max-width: 45.5rem;
+    margin-right: 8.9rem;
+  }
+}
+
+.eyebrow {
+  color: theme('colors.green-90');
+}
+
+.headline {
+  margin-top: 0.8rem;
+}
+
+.copy {
+  margin-top: 1.6rem;
+  p {
+    @include typo-h6
+  }
+}

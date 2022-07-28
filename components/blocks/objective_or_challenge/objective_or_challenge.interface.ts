@@ -3,6 +3,7 @@ import Asset from 'interfaces/asset'
 export default interface ObjectiveOrChallengeInterface {
   type: string
   oc_video_file: string
+  oc_video_label: string
   oc_copy: string
   oc_eyebrow: string
   oc_headline: string

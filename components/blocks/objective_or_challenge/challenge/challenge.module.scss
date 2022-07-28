@@ -1,0 +1,85 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.root {
+  // add your styles here
+}
+
+.contentWrapper {
+  padding-top: 5.6rem;
+
+  @screen md {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @screen lg {
+    padding-top: 7.2rem;
+  }
+
+  @screen xl {
+    padding-top: 8.4rem;
+  }
+}
+
+.imageWrapper {
+  margin-bottom: 2.4rem;
+
+  @screen md {
+    margin-top: 8.2rem;
+    width: calc((100% / 8 * 3) - 1.2rem);
+  }
+
+  @screen lg {
+    margin-top: 7.6rem;
+    order: 1;
+    width: calc((100% / 12 * 5) - 1.2rem);
+  }
+
+  @screen xl {
+    margin-top: 7.8rem;
+    width: calc((100% / 12 * 4) + 1.2rem);
+    margin-right: calc((100% / 12) - 2.4rem);
+  }
+
+  @screen xxl {
+    width: calc((100% / 8 * 3) - 2.7rem);
+    margin-right: 1.2rem;
+  }
+}
+
+.text {
+  @screen md {
+    margin-left: 2.4rem;
+    width: calc((100% / 8 * 5) - 1.2rem);
+  }
+
+  @screen lg {
+    margin-left: 0;
+    width: calc((100% / 12 * 6) - 1.2rem);
+  }
+
+  @screen xl {
+    width: calc((100% / 12 * 5) - 1.2rem);
+  }
+
+  @screen xxl {
+    width: calc((100% / 8 * 4) - 1.2rem);
+    max-width: 45.5rem;
+  }
+}
+
+.eyebrow {
+  color: theme('colors.green-90');
+  margin-bottom: 0.8rem;
+}
+
+.headline {
+  margin-bottom: 1.6rem;
+}
+
+.copy {
+  p {
+    @include typo-h6
+  }
+}
