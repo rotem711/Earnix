@@ -8,5 +8,4 @@ export default interface TextImageInterface {
   ti_headline: string
   ti_image: Asset
   ti_overlay_icon: Asset
-  type: string
 }
