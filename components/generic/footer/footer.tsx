@@ -22,12 +22,11 @@ const FooterBlock = ({
   const ctaLinks = () => (
     (links) && (
       <ul className="grid grid-cols-2 gap-x-20 gap-y-26 md:gap-y-22 mb-64">
-        {links.map((item, index) => (
+        {links.map((item) => (
           <li className="typo-h5">
             <Link
               href={item.cta_url}
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
+              key={item.cta_title}
             >
               <a href={item.cta_url}>{item.cta_title}</a>
             </Link>
@@ -101,11 +100,9 @@ const FooterBlock = ({
                   {`${new Date().getFullYear()}`}
                 </li>
                 {legal_links && legal_links.map((item, index) => (
-                  <li>
+                  <li key={item.text}>
                     <Link
                       href={item.link_url}
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={index}
                     >
                       <a href={item.link_url}>{item.text}</a>
                     </Link>
