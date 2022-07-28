@@ -17,7 +17,7 @@ const TextVideoBlock: FunctionComponent<{ block: TextVideoInterface }> = ({
     <div className={`${styles.root} container default-grid`}>
       <div className="col-span-full md:col-span-6 lg:col-span-5 xxl:col-span-3 xxl:col-start-3">
         <h2 className="typo-h2 col-span-full">{block.tv_headline}</h2>
-        <p className="typo-p">{parse(block.tv_copy)}</p>
+        <div className="typo-p">{parse(block.tv_copy)}</div>
       </div>
       <div className="col-span-full mt-32 md:mt-60 lg:mt-0 lg:col-span-7 xxl:col-span-5">
         <div className="relative aspect-video">
