@@ -34,6 +34,7 @@ $ferris_duration: 30s;
 .root {
   overflow: hidden;
   padding: 8.8rem 0;
+  color: theme("colors.white");
 
   @screen md {
     padding: 8rem 0;
@@ -78,7 +79,6 @@ $ferris_duration: 30s;
   .text {
     display: grid;
     align-content: center;
-    color: theme("colors.white");
 
     h2 {
       margin-bottom: 1.6rem;
@@ -94,6 +94,15 @@ $ferris_duration: 30s;
       @screen md {
         margin-bottom: 0;
       }
+    }
+  }
+
+  h6 {
+    text-align: center;
+    margin-top: 8rem;
+
+    @screen sm {
+      margin-top: 6.7rem;
     }
   }
 

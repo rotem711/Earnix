@@ -4,6 +4,9 @@ fragment BlockCtaBox on Set_Replicator_BlockCtaBox {
     cb_background_image {
       ...CMSAsset
     }
+    cb_bg_image_filter {
+      value
+    }
     cb_copy
     cb_cta_title
     cb_headline

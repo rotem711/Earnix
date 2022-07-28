@@ -72,6 +72,14 @@ const HeaderBlock = ({
     setWindowHeight(window.innerHeight)
   }, [])
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.style.paddingTop = `${((headerHeight + 56) / 10).toString()}rem`
+    } else {
+      document.body.style.paddingTop = '0'
+    }
+  }, [headerHeight])
+
   const toggleNav = () => {
     if (!navIsOpen) {
       document.body.style.overflow = 'hidden'
@@ -110,7 +118,7 @@ const HeaderBlock = ({
 
   const headerClass = cn(styles.root, {
     [`${styles.headerHasOpenNav}`]: isMobile && navIsOpen,
-    [`${styles.darkMode}`]: !navOnTop,
+    [`${styles.darkMode}`]: !navOnTop || darkMode,
   })
   const mobileMenuClasses = cn('container', styles.mobileMenu)
 
@@ -150,15 +158,15 @@ const HeaderBlock = ({
           <a href="/">
             <Image
               src={
-                navIsOpen || !navOnTop
+                navIsOpen || !navOnTop || darkMode
                   ? logo_dark.permalink
                   : logo_light.permalink
               }
               width={
-                navIsOpen || !navOnTop ? logo_dark.width : logo_light.width
+                navIsOpen || !navOnTop || darkMode ? logo_dark.width : logo_light.width
               }
               height={
-                navIsOpen || !navOnTop ? logo_dark.height : logo_light.height
+                navIsOpen || !navOnTop || darkMode ? logo_dark.height : logo_light.height
               }
             />
           </a>

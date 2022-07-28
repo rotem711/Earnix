@@ -1,7 +1,11 @@
 @import '../../../styles/variables';
 
 .root {
-  height: 0.1rem;
+  padding-top: 15rem;
+  padding-bottom: 5.6rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 
   &.largeVersion {
     min-height: 80vh;
@@ -93,8 +97,7 @@
 
   .copyBackground {
     padding: 1rem 0.8rem;
-    background-color: theme('colors.green-90');
-    border-radius: 2rem;
+    position: relative;
 
     @screen md {
       padding: 1rem 1.6rem;
@@ -103,14 +106,27 @@
     @screen lg {
       padding: 1.6rem 2.7rem;
     }
+
+    &::before {
+      content: '';
+      position: absolute;
+      opacity: 0.72;
+      background-color: theme('colors.green-90');
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      border-radius: 2rem;
+    }
   }
 
   .copy {
     &__default,
     &__background {
       text-align: center;
-      color: theme("colors.white");
-  
+      color: theme('colors.white');
+
       @screen md {
         text-align: left;
       }
@@ -130,7 +146,7 @@
       @screen md {
         margin-top: 2.4rem;
       }
-  
+
       @screen lg {
         margin-top: 3.4rem;
       }

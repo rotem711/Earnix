@@ -11,9 +11,8 @@ const TeamsBlock: FunctionComponent<{ block: TeamsInterface }> = ({
   const isMobile = useIsMobile()
 
   return (
-    <div
-      className={`${styles.root}`}
-    >
+    <div className={`${styles.root}`}>
+      <div className={`${styles.filter}`} />
       <video
         playsInline
         preload="auto"
@@ -37,9 +36,9 @@ const TeamsBlock: FunctionComponent<{ block: TeamsInterface }> = ({
           }
         />
       </video>
-      <div className="container grid grid-cols-8 md:grid-cols-12 gap-x-16 lg:gap-x-24 xl:gap-x-30">
+      <div className={`${styles.contentWrapper} container default-grid`}>
         <div
-          className={`${styles.numbers} col-span-8 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4`}
+          className={`${styles.numbers} col-span-full md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4`}
         >
           <h1>{block.gt_headline}</h1>
           <div>
@@ -52,7 +51,7 @@ const TeamsBlock: FunctionComponent<{ block: TeamsInterface }> = ({
           </div>
         </div>
 
-        <div className={`${styles.countries} col-span-8 md:col-span-12`}>
+        <div className={`${styles.countries} col-span-full`}>
           {block.gt_locations.map((gtLocation) => (
             <div key={gtLocation.street_name}>
               <h5>{gtLocation.country_label}</h5>

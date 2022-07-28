@@ -71,6 +71,9 @@ const ProductTeaserBlock: FunctionComponent<{
             </div>
           </div>
         </div>
+        {block.pt_extra_text && (
+          <h6 className="col-span-full xl:col-span-8 xl:col-start-3 xxl:col-span-6 xxl:col-start-4">{block.pt_extra_text}</h6>
+        )}
       </div>
     </div>
     <div className={`${styles.button}`}>

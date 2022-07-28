@@ -8,8 +8,8 @@ import Button from '../../generic/button/button'
 export const typename = 'Set_Replicator_BlockCtaBox'
 
 const CtaBoxBlock:FunctionComponent<{ block: CtaBoxInterface }> = ({ block }) => (
-  <div className={`${styles.root} container grid grid-cols-12`}>
-    <div className={`${styles.contentWrapper} col-start-1 col-span-12 xxl:col-start-3 xxl:col-span-8`}>
+  <div className={`${styles.root} ${block.cb_bg_image_filter.value || ''} container default-grid`}>
+    <div className={`${styles.contentWrapper} col-span-full xxl:col-start-3 xxl:col-span-8`}>
       <div className={styles.imageWrapper}>
         <Image
           layout="fill"
@@ -19,6 +19,9 @@ const CtaBoxBlock:FunctionComponent<{ block: CtaBoxInterface }> = ({ block }) =>
           placeholder="blur"
           blurDataURL={block.cb_background_image.placeholder}
         />
+        {block.cb_bg_image_filter && (
+          <div className={`${styles.filter} ${block.cb_bg_image_filter.value}`} />
+        )}
       </div>
       <div className={`${styles.innerContentWrapper}`}>
         <div className={`${styles.headline} typo-h3`}>

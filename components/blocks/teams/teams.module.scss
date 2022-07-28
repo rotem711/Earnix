@@ -25,15 +25,29 @@
     }
   }
 
-  video {
+  .filter,
+  .video {
     pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+  }
+
+  .filter {
+    background: $greenGradient;
+    z-index: 1;
+  }
+
+  .video {
     z-index: -1;
     object-fit: cover;
+  }
+
+  .contentWrapper {
+    position: relative;
+    z-index: 10;
   }
 
   .numbers {

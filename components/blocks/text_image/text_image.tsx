@@ -19,7 +19,7 @@ const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
       } default-grid`}
     >
       <div
-        className={`${styles.textWrapper} col-span-full md:col-span-4 lg:col-span-5 xl:col-span-3 xl:col-start-3`}
+        className={`${styles.textWrapper} col-span-full md:col-span-4 lg:col-span-5 xxl:col-span-3 xxl:col-start-3`}
       >
         {block.ti_headline && (
           <div className={`${styles.headline} typo-h2`}>
@@ -37,7 +37,7 @@ const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
       </div>
       {block.ti_image && (
         <div
-          className={`${styles.imageWrapper} col-span-full md:col-span-4 lg:col-span-7 xl:col-span-5`}
+          className={`${styles.imageWrapper} col-span-full md:col-span-4 lg:col-span-7 xxl:col-span-5`}
         >
           <Image
             src={block.ti_image.permalink}
@@ -45,7 +45,7 @@ const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
             height={block.ti_image.height}
             blurDataURL={block.ti_image.placeholder}
             placeholder="blur"
-            objectFit="cover"
+            objectFit="contain"
             className={styles.image}
           />
           {block.ti_overlay_icon && (
@@ -54,8 +54,8 @@ const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
                 src={block.ti_overlay_icon.permalink}
                 width={block.ti_overlay_icon.width}
                 height={block.ti_overlay_icon.height}
-                blurDataURL={block.ti_overlay_icon.placeholder}
-                placeholder="blur"
+                // blurDataURL={block.ti_overlay_icon.placeholder}
+                // placeholder="blur"
                 objectFit="cover"
               />
             </div>

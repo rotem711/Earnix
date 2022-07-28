@@ -1,64 +1,75 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
-  // add your styles here
   background-color: theme('colors.green-90');
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   --swiper-theme-color: theme('colors.green-50');
+  text-align: center;
+  color: theme('colors.white');
+  padding: 10.6rem 0 19.6rem;
+  position: relative;
+
+  @screen md {
+    padding: 6.4rem 0;
+  }
 }
 
 .headline {
-  margin-top: 4.5rem;
-  margin-bottom: 3rem;
-  color: theme('colors.white');
+  margin-bottom: 3.2rem;
   opacity: 0.51;
-  text-align: center;
-}
 
-.desktopContentWrapper {
-  width: 100rem;
-  height: auto;
-}
-
-.mobileContentWrapper {
-  width: 100%;
-  height: auto;
+  @screen md {
+    margin-bottom: 4.8rem;
+  }
 }
 
 .quoteWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
+  text-align: center;
 }
 
 .quoteText {
-  color: theme('colors.white');
-  text-align: center;
   margin-bottom: 2rem;
-  @screen sm {
-    width: 100%;
-  }
-  @screen md {
-    width: 80%;
-  }
 }
 
 .quoteAuthor {
-  color: theme('colors.white');
-  text-align: center;
   margin-bottom: 4rem;
 }
 
 .ctaWrapper {
-  color: theme('colors.green-50');
-  text-decoration: underline;
+  @include linkDecoration(theme('colors.green-50'));
   margin-bottom: 4rem;
 }
 
-.mobileControls {
-  gap: 3rem;
-  margin-bottom: 6rem;
+.swiperNavigation {
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    top: unset;
+    bottom: 10rem;
+    position: absolute;
+
+    @screen md {
+      top: 50%;
+      bottom: unset;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  :global(.swiper-button-prev) {
+    left: calc(50% - 4rem);
+
+    @screen md {
+      left: 5.2rem;
+    }
+  }
+
+  :global(.swiper-button-next) {
+    right: calc(50% - 4rem);
+
+    @screen md {
+      right: 5.2rem;
+    }
+  }
 }

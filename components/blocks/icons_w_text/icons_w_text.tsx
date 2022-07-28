@@ -1,9 +1,8 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
 import AnimatedLines from 'components/generic/atoms/AnimatedLines/AnimatedLines'
+import parse from 'html-react-parser'
 import styles from './icons_w_text.module.scss'
 import IconsWTextInterface from './icons_w_text.interface'
 
@@ -12,20 +11,34 @@ export const typename = 'Set_Replicator_BlockIconsWText'
 const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
   block,
 }) => (
-  <div className={`${styles.root} container`}>
-    <div className={styles.contentWrapper}>
-      <div className={`${styles.headline} typo-h3`}>{block.ict_headline}</div>
+  <div className={`${styles.root} container default-grid`}>
+    <div className={`${styles.headline} typo-h3 col-span-full`}>
+      {block.ict_headline}
+    </div>
+    {block.ict_copy && (
       <div
-        className={`${styles.copy} typo-p sm:ml-8 sm:mr-8 md:ml-80 md:mr-80`}
-        dangerouslySetInnerHTML={{ __html: block.ict_copy }}
-      />
-      <div className={`${styles.iconGrid} sm:flex-col md:grid md:grid-cols-3`}>
-        {block.ict_icons.map((icon: any, key: number) => (
-          <div className={styles.iconWrapper} key={key}>
+        className={`${styles.copy} typo-p col-span-full lg:col-span-10 lg:col-start-2 xl:col-span-8 xl:col-start-3 xxl:col-span-6 xxl:col-start-4`}
+      >
+        {parse(block.ict_copy)}
+      </div>
+    )}
+    <div className="col-span-full xxl:col-span-8 xxl:col-start-3">
+      <div
+        className={`${styles.iconGrid} md:grid md:gap-x-24 md:grid-cols-${block.ict_icons.length} lg:grid-cols-${block.ict_icons.length}`}
+      >
+        {block.ict_icons.map((icon) => (
+          <div className={`${styles.iconWrapper} col-span-1`} key={icon.text}>
             <div className={styles.iconImage}>
-              <Image src={`${icon.icon.permalink}`} width={130} height={130} />
+              <Image
+                src={icon.icon.permalink}
+                alt={icon.icon.alt}
+                width={icon.icon.width}
+                height={icon.icon.height}
+                objectFit="contain"
+                layout="responsive"
+              />
             </div>
-            <div className={`${styles.iconText} typo-p`}> {icon.text}</div>
+            <div className={`${styles.iconText} typo-p`}>{icon.text}</div>
           </div>
         ))}
       </div>
@@ -34,8 +47,8 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
       </div>
       <AnimatedLines
         variant="bottom"
-        xInitialPosition={150}
-        yInitialPosition={-250}
+        xInitialPosition={0}
+        yInitialPosition={0}
         width={700}
         height={300}
         imageUrl={`${block.ict_background.permalink}`}

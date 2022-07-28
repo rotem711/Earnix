@@ -13,8 +13,8 @@ export const typename = 'Set_Replicator_BlockInsightEventsTeaserDoubleOrTriple'
 const InsightEventsTeaserDoubleOrTripleBlock: FunctionComponent<{
   block: InsightEventsTeaserDoubleOrTripleInterface
 }> = ({ block }) => (
-  <div className={`${styles.root} container grid grid-cols-12 xxl:gap-30`}>
-    <div className="col-span-12 xxl:col-span-8 xxl:col-start-3">
+  <div className={`${styles.root} container default-grid`}>
+    <div className="col-span-full xxl:col-span-8 xxl:col-start-3">
       {!block.ietd_first_item_is_content && (
         <h3 className="text-center">{block.ietd_headline}</h3>
       )}
