@@ -23,7 +23,7 @@ const FooterBlock = ({
     (links) && (
       <ul className="grid grid-cols-2 gap-x-20 gap-y-26 md:gap-y-22 mb-64">
         {links.map((item) => (
-          <li className="typo-h5">
+          <li key={item.cta_title} className="typo-h5">
             <Link
               href={item.cta_url}
               key={item.cta_title}
