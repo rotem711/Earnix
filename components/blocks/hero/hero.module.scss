@@ -1,7 +1,11 @@
 @import '../../../styles/variables';
 
 .root {
-  height: 0.1rem;
+  padding-top: 15rem;
+  padding-bottom: 5.6rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 
   &.largeVersion {
     min-height: 80vh;
