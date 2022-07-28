@@ -6,6 +6,7 @@ fragment BlockProductTeaser on Set_Replicator_BlockProductTeaser {
         ...CMSAsset
     }
     pt_copy
+    pt_extra_text
     pt_cta_title
     pt_cta_url
     pt_ferris_wheel_center_icon {
