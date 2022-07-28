@@ -8,7 +8,11 @@ import IconsWTextAndBackgroundInterface from './icons_w_text_and_background.inte
 
 export const typename = 'Set_Replicator_BlockIconsWTextAndBackground'
 
-const IconsWTextAndBackgroundBlock = ({ block }: { block: IconsWTextAndBackgroundInterface }) => {
+const IconsWTextAndBackgroundBlock = ({
+  block,
+}: {
+  block: IconsWTextAndBackgroundInterface
+}) => {
   const {
     itb_headline,
     itb_copy,
@@ -22,8 +26,9 @@ const IconsWTextAndBackgroundBlock = ({ block }: { block: IconsWTextAndBackgroun
   useEffect(() => {
     function listenToScroll() {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop
-      const initialHeight = 10
-      const height = winScroll - initialHeight
+      let height = winScroll - 60
+
+      height = (-1 * height) / 5
       setScrolled(height)
     }
 
@@ -33,81 +38,41 @@ const IconsWTextAndBackgroundBlock = ({ block }: { block: IconsWTextAndBackgroun
 
   return (
     <div className={`${styles.root}`}>
-      <div className={`${styles.contentWrapper} container`}>
-        <div className={`${styles.headline} typo-h3`}>{itb_headline}</div>
-        <div
-          className={`${styles.copy} typo-p sm:ml-8 sm:mr-8 md:ml-80 md:mr-80`}
-        >
-          {parse(itb_copy || '')}
-        </div>
-        <div className={styles.gridWrapper}>
-          <div
-            className={`${styles.iconGrid1} sm:flex-col md:grid md:grid-cols-3`}
-          >
-            {itb_icons.map((icon: any, key: number) => {
-              if (key <= 2) {
-                return (
-                  <div className={styles.iconWrapper}>
-                    <div className={styles.iconImage}>
-                      <Image
-                        src={`${icon.icon.permalink}`}
-                        width={130}
-                        height={130}
-                      />
-                    </div>
-                    <div className={`${styles.iconText} typo-p`}>
-                      {' '}
-                      {icon.copy}
-                    </div>
-                  </div>
-                )
-              }
-              return null
-            })}
+      <div className="container default-grid">
+        <div className="col-span-full xl:col-span-10 xl:col-start-2 xxl:col-span-8 xxl:col-start-3">
+          <h3 className="typo-h3">{itb_headline}</h3>
+          <div className={`${styles.copy} typo-p`}>{parse(itb_copy || '')}</div>
+          <div className={`${styles.iconGrid}`}>
+            {itb_icons.map((icon: any) => (
+              <div className={styles.iconWrapper}>
+                <Image
+                  src={`${icon.icon.permalink}`}
+                  width={130}
+                  height={130}
+                />
+                <p className="typo-p">{icon.copy}</p>
+              </div>
+            ))}
           </div>
-          <div
-            className={`${styles.iconGrid2} sm:flex-col md:grid md:grid-cols-2`}
-          >
-            {itb_icons.map((icon: any, key: number) => {
-              if (key > 2) {
-                return (
-                  <div className={styles.iconWrapper}>
-                    <div className={styles.iconImage}>
-                      <Image
-                        src={`${icon.icon.permalink}`}
-                        width={130}
-                        height={130}
-                      />
-                    </div>
-                    <div className={`${styles.iconText} typo-p`}>
-                      {' '}
-                      {icon.copy}
-                    </div>
-                  </div>
-                )
-              }
-              return null
-            })}
+
+          <div>
+            <Button href={itb_cta_url} title={itb_cta_title} />
           </div>
         </div>
-        <div className={styles.ctaWrapper}>
-          <Button href={itb_cta_url} title={itb_cta_title} />
-        </div>
-        <div
-          className={`${styles.background} block`}
-          style={{
-            top: scrolled ? (-1 * scrolled) / 3 : 0,
-          }}
-        >
-          <Image
-            src={BackgroundImage}
-            width={5291}
-            height={2862}
-            objectFit="cover"
-            layout="fill"
-            className={styles.bdImage}
-          />
-        </div>
+      </div>
+      <div
+        className={`${styles.background}`}
+        style={{
+          top: scrolled || 0,
+        }}
+      >
+        <Image
+          src={BackgroundImage}
+          width={5291}
+          height={2862}
+          objectFit="cover"
+          layout="fill"
+        />
       </div>
     </div>
   )
