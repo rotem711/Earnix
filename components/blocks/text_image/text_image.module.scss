@@ -24,22 +24,16 @@
   @screen md {
     direction: rtl;
   }
-  @screen lg {
-  }
-  @screen xl {
-  }
 }
 
 .imageWrapper {
-  height: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: 1rem;
-  & > span {
-    width: 100% !important;
-    @screen lg {
-      aspect-ratio: 649 / 417;
-    }
-  }
+
   .image {
     border-radius: 1rem;
   }
@@ -69,9 +63,7 @@
 }
 
 .headline {
-  width: 80%;
   margin-bottom: 2rem;
-  margin-top: 2rem;
 
   @screen md {
     margin-top: 0;

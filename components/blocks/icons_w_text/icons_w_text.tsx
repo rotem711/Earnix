@@ -24,10 +24,10 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
     )}
     <div className="col-span-full xxl:col-span-8 xxl:col-start-3">
       <div
-        className={`${styles.iconGrid} md:grid md:gap-x-24 md:grid-cols-${block.ict_icons.length}`}
+        className={`${styles.iconGrid} md:grid md:gap-x-24 md:grid-cols-${block.ict_icons.length} lg:grid-cols-${block.ict_icons.length}`}
       >
         {block.ict_icons.map((icon) => (
-          <div className={styles.iconWrapper} key={icon.text}>
+          <div className={`${styles.iconWrapper} col-span-1`} key={icon.text}>
             <div className={styles.iconImage}>
               <Image
                 src={icon.icon.permalink}

@@ -45,7 +45,7 @@ const TextImageBlock: FunctionComponent<{ block: TextImageInterface }> = ({
             height={block.ti_image.height}
             blurDataURL={block.ti_image.placeholder}
             placeholder="blur"
-            objectFit="cover"
+            objectFit="contain"
             className={styles.image}
           />
           {block.ti_overlay_icon && (
