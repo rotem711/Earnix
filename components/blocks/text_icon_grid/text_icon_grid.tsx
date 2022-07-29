@@ -8,43 +8,49 @@ import LinkIcon from './link_icon/link_icon'
 
 export const typename = 'Set_Replicator_BlockTextIconGrid'
 
-const TextIconGridBlock:FunctionComponent<{ block: TextIconGridInterface }> = ({ block }) => (
-  <div
-    className={`${styles.root} container grid grid-cols-12`}
-  >
-    <div className={`${styles.contentWrapper} col-start-1 col-span-12 xxl:col-start-3 xxl:col-span-8`}>
-      <div className={`${styles.headline} typo-h3`}>
-        {block.tig_headline}
-      </div>
+const TextIconGridBlock: FunctionComponent<{
+  block: TextIconGridInterface
+}> = ({ block }) => (
+  <div className={`${styles.root} container grid grid-cols-12`}>
+    <div
+      className={`${styles.contentWrapper} col-start-1 col-span-12 xxl:col-start-3 xxl:col-span-8`}
+    >
+      <div className={`${styles.headline} typo-h3`}>{block.tig_headline}</div>
       <div className={styles.itemsWrapper}>
         {block.tig_items.map(({
-          copy, heading, icon, link,
+          copy,
+          heading,
+          icon,
+          link,
         }) => (
-          <div
-            key={heading}
-            className={styles.tigItem}
-          >
+          <div key={heading} className={styles.tigItem}>
             <div className={styles.iconWrapper}>
               <div className={styles.icon}>
-                <Image src={icon.permalink} width={icon.width} height={icon.height} />
+                <Image
+                  src={icon.permalink}
+                  width={icon.width}
+                  height={icon.height}
+                />
               </div>
             </div>
             <div className={`${styles.heading} typo-h5`}>
               {heading}
+              {link && (
+                <Link href={link}>
+                  <a className={styles.linkAnchorTop}>
+                    <LinkIcon />
+                  </a>
+                </Link>
+              )}
+            </div>
+            <div className={`${styles.copy}`}>{parse(copy || '')}</div>
+            {link && (
               <Link href={link}>
-                <a className={styles.linkAnchorTop}>
+                <a className={styles.linkAnchorBottom}>
                   <LinkIcon />
                 </a>
               </Link>
-            </div>
-            <div className={`${styles.copy}`}>
-              {parse(copy)}
-            </div>
-            <Link href={link}>
-              <a className={styles.linkAnchorBottom}>
-                <LinkIcon />
-              </a>
-            </Link>
+            )}
           </div>
         ))}
       </div>

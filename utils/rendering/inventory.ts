@@ -52,6 +52,20 @@ import { typename as ImpactBlockTypename } from '../../components/blocks/impact/
 import ImpactBlockQuery from '../../components/blocks/impact/impact.graphql'
 import { typename as SolutionBlockTypename } from '../../components/blocks/solution/solution'
 import SolutionBlockQuery from '../../components/blocks/solution/solution.graphql'
+import { typename as LocationTeaserBlockTypename } from '../../components/blocks/location_teaser/location_teaser'
+import LocationTeaserBlockQuery from '../../components/blocks/location_teaser/location_teaser.graphql'
+import { typename as CtaSimpleDividerBlockTypename } from '../../components/blocks/cta_simple_divider/cta_simple_divider'
+import CtaSimpleDividerBlockQuery from '../../components/blocks/cta_simple_divider/cta_simple_divider.graphql'
+import { typename as SimpleLocationGridBlockTypename } from '../../components/blocks/simple_location_grid/simple_location_grid'
+import SimpleLocationGridBlockQuery from '../../components/blocks/simple_location_grid/simple_location_grid.graphql'
+import { typename as HeroWithAnimatedLinesBlockTypename } from '../../components/blocks/hero_with_animated_lines/hero_with_animated_lines'
+import HeroWithAnimatedLinesBlockQuery from '../../components/blocks/hero_with_animated_lines/hero_with_animated_lines.graphql'
+import { typename as DepartmentTeaserBlockTypename } from '../../components/blocks/department_teaser/department_teaser'
+import DepartmentTeaserBlockQuery from '../../components/blocks/department_teaser/department_teaser.graphql'
+import { typename as CopyWithBackgroundDividerBlockTypename } from '../../components/blocks/copy_with_background_divider/copy_with_background_divider'
+import CopyWithBackgroundDividerBlockQuery from '../../components/blocks/copy_with_background_divider/copy_with_background_divider.graphql'
+import { typename as SimpleHeadlineCopyBlockTypename } from '../../components/blocks/simple_headline_copy/simple_headline_copy'
+import SimpleHeadlineCopyBlockQuery from '../../components/blocks/simple_headline_copy/simple_headline_copy.graphql'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -258,6 +272,55 @@ const blocks:Block[] = [
     typename: SolutionBlockTypename,
     extraQueries: undefined,
     layouts: ['spotlight'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/location_teaser/location_teaser')),
+    query: LocationTeaserBlockQuery,
+    typename: LocationTeaserBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/cta_simple_divider/cta_simple_divider')),
+    query: CtaSimpleDividerBlockQuery,
+    typename: CtaSimpleDividerBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/simple_location_grid/simple_location_grid')),
+    query: SimpleLocationGridBlockQuery,
+    typename: SimpleLocationGridBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/hero_with_animated_lines/hero_with_animated_lines')),
+    query: HeroWithAnimatedLinesBlockQuery,
+    typename: HeroWithAnimatedLinesBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/department_teaser/department_teaser')),
+    query: DepartmentTeaserBlockQuery,
+    typename: DepartmentTeaserBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/copy_with_background_divider/copy_with_background_divider')),
+    query: CopyWithBackgroundDividerBlockQuery,
+    typename: CopyWithBackgroundDividerBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+  {
+    component: dynamic(() => import('../../components/blocks/simple_headline_copy/simple_headline_copy')),
+    query: SimpleHeadlineCopyBlockQuery,
+    typename: SimpleHeadlineCopyBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
   },
 
   // ##HYGEN_START##
