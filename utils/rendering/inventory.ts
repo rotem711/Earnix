@@ -67,6 +67,17 @@ import CopyWithBackgroundDividerBlockQuery from '../../components/blocks/copy_wi
 import { typename as SimpleHeadlineCopyBlockTypename } from '../../components/blocks/simple_headline_copy/simple_headline_copy'
 import SimpleHeadlineCopyBlockQuery from '../../components/blocks/simple_headline_copy/simple_headline_copy.graphql'
 
+import { typename as LinkBoxGridBlockTypename } from '../../components/blocks/link_box_grid/link_box_grid'
+import LinkBoxGridBlockQuery from '../../components/blocks/link_box_grid/link_box_grid.graphql'
+import { typename as GalleryTextBlockTypename } from '../../components/blocks/gallery_text/gallery_text'
+import GalleryTextBlockQuery from '../../components/blocks/gallery_text/gallery_text.graphql'
+import { typename as GalleryDividerBlockTypename } from '../../components/blocks/gallery_divider/gallery_divider'
+import GalleryDividerBlockQuery from '../../components/blocks/gallery_divider/gallery_divider.graphql'
+import { typename as ImageHeroBlockTypename } from '../../components/blocks/image_hero/image_hero'
+import ImageHeroBlockQuery from '../../components/blocks/image_hero/image_hero.graphql'
+import { typename as CareerHeroBlockTypename } from '../../components/blocks/career_hero/career_hero'
+import CareerHeroBlockQuery from '../../components/blocks/career_hero/career_hero.graphql'
+
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
 
@@ -319,6 +330,46 @@ const blocks:Block[] = [
     component: dynamic(() => import('../../components/blocks/simple_headline_copy/simple_headline_copy')),
     query: SimpleHeadlineCopyBlockQuery,
     typename: SimpleHeadlineCopyBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/link_box_grid/link_box_grid')),
+    query: LinkBoxGridBlockQuery,
+    typename: LinkBoxGridBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/gallery_text/gallery_text')),
+    query: GalleryTextBlockQuery,
+    typename: GalleryTextBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/gallery_divider/gallery_divider')),
+    query: GalleryDividerBlockQuery,
+    typename: GalleryDividerBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/image_hero/image_hero')),
+    query: ImageHeroBlockQuery,
+    typename: ImageHeroBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/career_hero/career_hero')),
+    query: CareerHeroBlockQuery,
+    typename: CareerHeroBlockTypename,
     extraQueries: undefined,
     layouts: ['page'],
   },

@@ -60,6 +60,8 @@ const HeroBlock: FunctionComponent<{ block: HeroInterface }> = ({ block }) => {
             <Image
               layout="fill"
               objectFit="cover"
+              blurDataURL={block.hero_background_image.placeholder}
+              placeholder="blur"
               width={
                 isMobile && block.hero_background_image_responsive
                   ? block.hero_background_image_responsive.width
