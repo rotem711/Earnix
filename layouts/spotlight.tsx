@@ -8,6 +8,7 @@ import SpotlightEntry from 'interfaces/spotlightEntry'
 import Header from '../components/generic/header/header'
 import Footer from '../components/generic/footer/footer'
 import DevGrid from '../components/generic/dev_grid/dev_grid'
+import SpotlightHero from '../components/blocks/spotlight_hero/spotlight_hero'
 
 const Spotlight = ({
   entry,
@@ -40,8 +41,12 @@ const Spotlight = ({
       </Head>
       <main>
         <DevGrid />
-        <Header nav={nav} data={header} darkMode />
-        {/* {"TODO: ADD HEADER COMPONENT HERE"} */}
+        <Header nav={nav} data={header} darkMode={false} />
+        <SpotlightHero
+          logo={entry.customer_logo}
+          description={entry.description}
+          title={entry.title}
+        />
         <Repeater blocks={entry.spotlight_replicator} />
       </main>
 

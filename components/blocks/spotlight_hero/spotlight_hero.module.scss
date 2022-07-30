@@ -1,0 +1,93 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  min-height: 81.2rem;
+  color: theme('colors.white');
+  mix-blend-mode: normal;
+  background: linear-gradient(270deg, rgba(7, 43, 64, 0) -100%, #072B40 100%),
+              rgba(2,43,60,0.86);
+
+  @screen md {
+    min-height: 53.4rem;
+  }
+
+  @screen lg {
+    min-height: fit-content;
+  }
+}
+
+.contentWrapper {
+  padding: 26.1rem 1rem 18.7rem;
+
+  @screen md {
+    padding: 22.3rem 0 9.1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @screen lg {
+    padding: 22.9rem 0 8.1rem;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 4.8rem;
+
+  @screen md {
+    width: calc(50% - 1.2rem);
+    margin-top: 8.8rem;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  @screen lg {
+    margin-top: 6.4rem;
+  }
+
+  @screen xl {
+    width: calc((100% / 12 * 5) - 1.2rem);
+    margin-top: 4.3rem;
+  }
+
+  @screen xxl {
+    width: calc((100% / 8 * 3) - 1.2rem);
+  }
+}
+
+.logoAndDescription {
+  @screen md {
+    width: calc(50% - 1.2rem);
+  }
+
+  @screen xl {
+    width: calc((100% / 12 * 5) - 1.2rem);
+    margin-right: calc(100% / 12);
+  }
+
+  @screen xxl {
+    margin-right: 0;
+    width: calc((100% / 8 * 4) - 1.2rem);
+  }
+}
+
+.logo {
+  max-width: 22.1rem;
+  margin: 0 auto 0.8rem;
+
+  @screen lg {
+    margin-bottom: 3.2rem;
+    max-width: 24.8rem;
+  }
+
+  @screen lg {
+    max-width: 28.6rem;
+  }
+}
+
+.description {
+  p {
+    @include typo-p;
+  }
+}
