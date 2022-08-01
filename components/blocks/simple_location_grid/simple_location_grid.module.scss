@@ -1,5 +1,49 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+  background-color: theme("colors.black-20");
+  .block_wrapper {
+    padding-top: 5.6rem;
+    padding-bottom: 5.6rem;
+    @screen md {
+      padding-top: 8.9rem;
+      padding-bottom: 8.9rem;
+    }
+  }
+
+  .block_title {
+    @apply text-center;
+    @include typo-h4;
+    font-weight: 700;
+    color: black;
+  }
+
+  .location {
+    margin-top: 5.6rem;
+  }
+
+  .location_name {
+    @apply text-center;
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    @screen md {
+      @include typo-h4;
+      font-weight: 700;
+    }
+  }
+
+  .location_phone {
+    @apply text-center;
+    color: black;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    @screen md {
+      @include typo-h6;
+    }
+  }
 }
