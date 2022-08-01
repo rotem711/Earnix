@@ -77,6 +77,7 @@ import { typename as ImageHeroBlockTypename } from '../../components/blocks/imag
 import ImageHeroBlockQuery from '../../components/blocks/image_hero/image_hero.graphql'
 import { typename as CareerHeroBlockTypename } from '../../components/blocks/career_hero/career_hero'
 import CareerHeroBlockQuery from '../../components/blocks/career_hero/career_hero.graphql'
+import ssrGetJobs from '../../components/blocks/career_hero/ssrGetJobs'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -87,6 +88,7 @@ interface Block {
   extraQueries: string[],
   typename: string,
   layouts: string[],
+  ssrFunctions?: any[],
 }
 
 const blocks:Block[] = [
@@ -372,6 +374,7 @@ const blocks:Block[] = [
     typename: CareerHeroBlockTypename,
     extraQueries: undefined,
     layouts: ['page'],
+    ssrFunctions: [ssrGetJobs],
   },
 
   // ##HYGEN_START##

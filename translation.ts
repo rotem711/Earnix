@@ -50,6 +50,12 @@ const Translation = {
   SEARCHPLACEHOLDER: {
     en_US: 'Search',
   },
+  JOBS_HEADLINE: {
+    en_US: '$x jobs in $y locations',
+  },
+  POSITIONS: {
+    en_US: 'Positions',
+  },
 }
 
 const translations = (lang): { [key: string]: string } => {

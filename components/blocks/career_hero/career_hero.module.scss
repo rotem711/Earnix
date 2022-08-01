@@ -2,4 +2,150 @@
 
 .root {
   // add your styles here
+  padding-top: 15rem;
+  padding-bottom: 5.6rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  h1 {
+    span {
+      display: block;
+    }
+  }
+
+  &.largeVersion {
+    min-height: 80vh;
+  }
+
+  :global {
+    h1 {
+      color: theme('colors.white');
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .isCentered {
+      @screen md {
+        text-align: center !important;
+      }
+    }
+  }
+
+  .imageVideoWrapper,
+  .orangeGradient,
+  .blueGradient {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .imageVideoWrapper {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .orangeGradient,
+  .blueGradient {
+    height: 100%;
+    mix-blend-mode: normal;
+  }
+
+  .orangeGradient {
+    width: 100%;
+    background: $orangeGradient;
+    z-index: 20;
+
+    @screen lg {
+      width: 76.56%;
+    }
+
+    @screen xl {
+      width: 68.88%;
+    }
+
+    @screen xxl {
+      width: 64.167%;
+    }
+  }
+
+  .blueGradient {
+    opacity: 0.55;
+    width: 100%;
+    background-color: theme('colors.blue-100');
+    z-index: 10;
+  }
+
+  .contentWrapper {
+    height: 100%;
+    position: relative;
+    z-index: 30;
+  }
+
+  .headline {
+    text-align: center;
+
+    @screen md {
+      text-align: left;
+    }
+  }
+
+  .copyBackground {
+    padding: 2.4rem;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      opacity: 0.72;
+      background-color: theme('colors.green-90');
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      border-radius: 2rem;
+    }
+  }
+
+  .copy {
+    &__default,
+    &__background {
+      text-align: center;
+      color: theme('colors.white');
+
+      @screen md {
+        text-align: left;
+      }
+    }
+
+    &__default {
+      margin-top: 1.6rem;
+
+      @screen lg {
+        margin-top: 3.2rem;
+      }
+    }
+
+    &__background {
+      margin-top: 3.2rem;
+
+      @screen md {
+        margin-top: 2.4rem;
+      }
+
+      @screen lg {
+        margin-top: 3.4rem;
+      }
+    }
+  }
 }

@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "test": "yarn install",
-    "dev": "TAILWIND_MODE=watch next dev",
-    "build": "TAILWIND_MODE=build next build",
-    "start": "next start",
+    "dev": "TAILWIND_MODE=watch NODE_OPTIONS=\"--insecure-http-parser\" next dev",
+    "build": "NODE_OPTIONS=\"--insecure-http-parser\" TAILWIND_MODE=build next build",
+    "start": "NODE_OPTIONS=\"--insecure-http-parser\" next start",
     "export": "next build && next export",
     "lint": "eslint components/**/*.tsx components/**/*.ts pages/**/*.tsx utils/**/*.ts",
     "typecheck": "tsc",
@@ -27,6 +27,7 @@
     "isomorphic-dompurify": "^0.20.0",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^28.1.2",
+    "meilisearch": "^0.27.0",
     "next": "12.2.0",
     "normalize.css": "^8.0.1",
     "npm": "^8.13.2",
@@ -35,6 +36,7 @@
     "react-dom": "18.2.0",
     "react-player": "^2.10.1",
     "sass": "^1.53.0",
+    "slugify": "^1.6.5",
     "swiper": "^8.3.1",
     "tailwindcss": "^3.1.4"
   },

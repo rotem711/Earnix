@@ -42,6 +42,18 @@ export const getStaticPropsWrapper = (
     }
   })
 
+  data.entry.replicator = await Promise.all((data.entry.replicator || [])
+    .map(async (module, index) => {
+      const blockItem = Object.values(blockInventory).find(
+        (b) => b.typename === module.__typename,
+      )
+
+      if (blockItem && blockItem.ssrFunctions) {
+        data.entry.replicator[index].ssr = await Promise.all(blockItem.ssrFunctions.map((f) => f()))
+      }
+      return data.entry.replicator[index]
+    }))
+
   const extraQueriesResult = await Promise.all(
     extraQueries.map((extraQuery) => gql(
       extraQuery,
@@ -84,13 +96,13 @@ export const getStaticPropsWrapper = (
 
   // add modules to object
   resultData.entry.replicator = modifiedModules
-
   return {
     props: {
       ...resultData,
       translations: translations('en_US'),
       // globals: d.data,
     },
+    revalidate: 60 * 60,
   }
 }
 
