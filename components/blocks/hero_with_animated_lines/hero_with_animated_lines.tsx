@@ -7,9 +7,13 @@ export const typename = 'Set_Replicator_BlockHeroWithAnimatedLines'
 const HeroWithAnimatedLinesBlock: FunctionComponent<{
   block: HeroWithAnimatedLinesInterface
 }> = ({ block }) => (
-  <div className={`${styles.root} container`}>
-    Herowithanimatedlines Block:
-    {block.type}
+  <div className={`${styles.root}`}>
+    <div className="container grid grid-cols-12 default-grid">
+      <div className={`${styles.contentWrapper} col-start-1 col-span-12`}>
+        <div className={`${styles.headline} typo-h2`}>{block.hwal_headline}</div>
+        <div className={`${styles.copy} typo-p`}>{block.hwal_copy}</div>
+      </div>
+    </div>
   </div>
 )
 

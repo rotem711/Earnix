@@ -1,5 +1,64 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
-  // add your styles here
+  background-image: url('../../../public/assets/bgimagelines.png');
+  background-color: #1F4352;
+  color: theme('colors.white');
+}
+
+.contentWrapper {
+  padding-top: 16.8rem;
+  padding-bottom: 8.1rem;
+
+  @screen md {
+    padding-top: 20rem;
+    padding-bottom: 12.4rem;
+  }
+
+  @screen lg {
+    padding-top: 20.2rem;
+    padding-bottom: 10.2rem;
+    @apply col-start-2 col-span-10
+  }
+
+  @screen xl {
+    padding-top: 20.1rem;
+    padding-bottom: 10.3rem;
+    @apply col-start-3 col-span-8
+  }
+
+  @screen xxl {
+    padding-top: 19.4rem;
+    @apply col-start-4 col-span-6
+  }
+}
+
+.headline {
+  margin-bottom: 1.6rem;
+  text-align: center;
+
+  @screen xl {
+    margin-bottom: 2.2rem;
+  }
+
+  @screen xxl {
+    max-width: 74.6rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.copy {
+  text-align: center;
+
+  @screen xxl {
+    max-width: 74.6rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  p {
+    @include typo-p;
+  }
 }
