@@ -1,15 +1,21 @@
 import React, { FunctionComponent } from 'react'
+import dynamic from 'next/dynamic'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 import styles from './impact.module.scss'
 import ImpactInterface from './impact.interface'
 import Button from '../../generic/button/button'
 
+const ArticleShare = dynamic(
+  () => import('../../generic/atoms/article_share/article_share'),
+  { ssr: false },
+)
+
 export const typename = 'Set_Replicator_BlockImpact'
 
 const ImpactBlock:FunctionComponent<{ block: ImpactInterface }> = ({ block }) => (
   <div
-    className={`${styles.root} container grid grid-cols-12`}
+    className={`${styles.root} container grid grid-cols-12 default-grid`}
   >
     <div className={`${styles.contentWrapper} col-start-1 col-span-12 xxl:col-start-3 xxl:col-span-8`}>
       <div className={`${styles.icons}`}>
@@ -39,6 +45,9 @@ const ImpactBlock:FunctionComponent<{ block: ImpactInterface }> = ({ block }) =>
       <div className={`${styles.copy} typo-h6`}>{parse(block.im_copy)}</div>
       <div className={styles.buttonWrapper}>
         <Button href={block.im_cta_url} title={block.im_cta_title} />
+      </div>
+      <div className={`${styles.articleShareWrapper}`}>
+        <ArticleShare />
       </div>
     </div>
   </div>

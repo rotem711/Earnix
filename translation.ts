@@ -50,6 +50,9 @@ const Translation = {
   SEARCHPLACEHOLDER: {
     en_US: 'Search',
   },
+  SHAREARTICLE: {
+    en_US: 'Share article',
+  },
   JOBS_HEADLINE: {
     en_US: '$x jobs in $y locations',
   },

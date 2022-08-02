@@ -15,22 +15,24 @@
       "e e e e e e e e"
       "h h h h h i i i"
       "c c c c c i i i"
-      "b b b b b b b b";
+      "b b b b b b b b"
+      "s s s s s s s s";
   }
 
   @screen lg {
-    padding: 7.2rem 0 4.8rem 0;
+    padding: 7.2rem 0 9.6rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
       "e e e e e e e e e e e e"
       "h h h h h h . i i i i i"
       "c c c c c c . i i i i i"
-      "b b b b b b b b b b b b";
+      "b b b b b b b b b b b b"
+      "s s s s s s s s s s s s";
   }
 
   @screen xl {
-    padding: 9.6rem 0 4rem 0;
+    padding: 9.6rem 0;
   }
 }
 
@@ -142,4 +144,25 @@
 
 .buttonWrapper {
   grid-area: b;
+
+  @screen md {
+    margin-bottom: 5.1rem;
+  }
+
+  @screen lg {
+    margin-bottom: 4.7rem;
+  }
+
+  @screen xl {
+    margin-bottom: 3.9rem;
+  }
+}
+
+.articleShareWrapper {
+  grid-area: s;
+  display: none;
+
+  @screen md {
+    display: block;
+  }
 }
