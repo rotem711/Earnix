@@ -1,5 +1,85 @@
 @import '../../../styles/variables';
 
 .root {
-  // add your styles here
+  color: theme('colors.white');
+}
+
+.contentWrapper {
+  background-image: url('../../../public/assets/bgimagelines.png');
+  background-color: theme('colors.blue-100');
+  border-radius: 16px;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @screen md {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.4rem 4.4rem;
+    align-items: center;
+  }
+
+  @screen lg {
+    padding: 2.4rem 3.2rem;
+  }
+
+  @screen xl {
+    padding: 2.4rem 6.7rem 2.4rem 4rem;
+  }
+
+  &WithButton {
+    @screen md {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3.1rem 3.2rem;
+    }
+
+    @screen lg {
+      padding: 3.1rem 3.7rem 3.1rem 4rem;
+    }
+
+    @screen xxl {
+      padding-right: 3.8rem;
+    }
+  }
+}
+
+.logoWrapper {
+  margin: 0 auto 1.6rem;
+  width: fit-content;
+  height: fit-content;
+
+  @screen md {
+    margin: 0 4rem 0 0;
+  }
+
+  @screen lg {
+    margin-right: 3.2rem;
+  }
+
+  @screen lg {
+    margin-right: 6.2rem;
+  }
+}
+
+.headline {
+  text-align: center;
+  width: 100%;
+
+  &WithButton {
+    width: inherit;
+
+    @screen md {
+      text-align: left;
+    }
+  }
+}
+
+.buttonWrapper {
+  margin: 1.6rem auto 0;
+
+  @screen md {
+    margin: 0 0 0 4rem;
+  }
 }
