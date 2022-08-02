@@ -35,4 +35,9 @@ export interface Job {
   company_name: string;
   position_url: string;
   questionnaires: any[];
+  details: {
+    name: string;
+    order: number;
+    value: string;
+  }[]
 }

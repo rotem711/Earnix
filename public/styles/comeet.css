@@ -1,0 +1,413 @@
+@font-face {
+  font-family: "HelveticaLTPro-Bold";
+  src: url(https://earnix.com/wp-content/themes/earnix/dist/fonts/HelveticaLTPro-Bold.ttf) format("truetype"), url(https://earnix.com/wp-content/themes/earnix/dist/fonts/HelveticaLTPro-Bold.woff) format("woff"), url(https://earnix.com/wp-content/themes/earnix/dist/fonts/HelveticaLTPro-Bold.woff2) format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.form_dark {
+  padding: 9px 7px 9px 44px;
+}
+.form-horizontal {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+/* #jobFormDiv .form-group:not(.field-resume):focus-within label{ */
+#jobFormDiv .form-group:not(.field-resume) label{
+    opacity: .65;
+    /* transform: scale(.85) translateY(-2.5rem) translateX(.15rem); */
+    transform: scale(.85) translateY(-3.0rem) translateX(.15rem);
+}
+#jobFormDiv{
+	font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+}
+#jobFormDiv .form-group div.col-xs-12 {
+	padding: 0 !important;
+	order: -1;
+}
+.focusHighlight:focus{
+	border:0 !important;
+	    border-bottom: 1px solid #FFFFFF !important;
+}
+@media only screen and (max-width: 600px) {
+  .form_dark {
+    padding: 43px 12px 20px 14px;
+  }
+  #jobFormDiv .form-group {
+      width: 100% !important;
+  }
+}
+
+.form_dark .form-wrap {
+  background: #022B3C;
+  border-radius: 38px;
+  text-align: center;
+  padding: 38px 0 24px;
+}
+
+@media only screen and (max-width: 400px) {
+  .form_dark .form-wrap {
+    border-radius: 28px;
+    padding-bottom: 50px;
+  }
+}
+
+.form_dark .form-wrap h3 {
+  font-size: 35px;
+  line-height: 44px;
+  color: #fff;
+  font-family: "HelveticaLTPro-Light";
+  letter-spacing: .3px;
+  letter-spacing: 1px;
+  margin-bottom: -1px;
+}
+
+@media only screen and (max-width: 400px) {
+  .form_dark .form-wrap h3 {
+    margin-bottom: 14px;
+  }
+}
+
+.form_dark .form-wrap p {
+  font-size: 18px;
+  line-height: 26px;
+  color: #fff;
+  margin: 0 auto 1rem;
+  width: 73%;
+}
+
+@media only screen and (max-width: 400px) {
+  .form_dark .form-wrap p {
+    margin-bottom: 30px;
+  }
+}
+
+.form_dark .form-wrap p.pp, .privacyPolicy, .privacyPolicy a {
+  font-size: 11.0421px !important;
+  line-height: 26px;
+  color: #fff;
+  margin: 24px auto 11px;
+      margin: 10px auto -10px;
+    text-align: center;
+}
+#jobFormDiv .applyButton{
+	    font-size: 18px!important;
+    line-height: 28px!important;
+    border-radius: 30px!important;
+    background: #f34d2d!important;
+    color: #fff!important;
+    border: none!important;
+    box-shadow: none!important;
+    padding: 11px 47px!important;
+}
+@media only screen and (max-width: 400px) {
+  .form_dark .form-wrap p.pp, .privacyPolicy, .privacyPolicy a {
+    font-size: 14px !important;
+    line-height: 26px;
+    margin: 10px auto 39px;
+  }
+}
+
+#jobFormDiv .form-group {
+    width: 73%;
+    margin: 0 auto 23px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    -webkit-order: 0;
+    -ms-order: 0;
+    order: 0;
+}
+#jobFormDiv .form-group.field-resume {
+    -webkit-order: 1;
+    -ms-order: 1;
+    order: 1;
+}
+#jobFormDiv .form-group.privacy-policy-2 {
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+}
+#jobFormDiv .form-group.submit-button {
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+}
+
+@media only screen and (max-width: 400px) {
+  .form-group {
+    width: 88%;
+    margin-bottom: 25px;
+  }
+}
+
+.form-group-attach {
+  width: 73%;
+  margin: 30px auto 19px;
+}
+
+@media only screen and (max-width: 400px) {
+.form-group-attach {
+    margin: 50px auto 10px;
+    width: 75%;
+  }
+}
+
+.form-group-attach input {
+  position: relative;
+  z-index: 0;
+  padding: 8px 0 !important;
+  display: none;
+}
+
+.form-group-attach label {
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  border-radius: 30px;
+  padding: 8px 0;
+  height: auto;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+.form-group-attach label {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 12px 0;
+  }
+}
+
+#jobFormDiv .form-control {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  border-radius: 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  height: auto;
+  padding: 10px;
+
+  -webkit-box-shadow: 0 0 0 30px #022B3C inset !important;
+  -webkit-text-fill-color: white !important;
+  margin-top: 7px;
+}
+
+/* #jobFormDiv .form-control[name=email] {
+    -webkit-box-shadow: 0 0 0 30px #022B3C inset !important;
+    -webkit-text-fill-color: white !important;
+    margin-top: 7px;
+} */
+
+@media only screen and (max-width: 600px) {
+  #jobFormDiv .form-control {
+    padding: 7px;
+  }
+}
+
+#jobFormDiv .form-group:not(.field-resume) label {
+	position: absolute;
+        /* top: -5px; */
+    left: 0;
+    height: 100%;
+    padding: 1rem .75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 14px 0;
+  transition: 0.5s;
+      transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+}
+
+@media only screen and (max-width: 400px) {
+  #jobFormDiv label {
+	  position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem .75rem;
+    /* pointer-events: none; */
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.form_dark .form-wrap .btn-primary {
+  padding: 11px 26px !important;
+}
+#jobFormDiv .form-group.field-resume{
+	    /* margin: 30px auto 19px; */
+	    margin: 0px auto 19px;
+}
+#jobFormDiv .form-group.field-resume label{
+	    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border-radius: 30px;
+    padding: 8px 0;
+    height: auto;
+    cursor: pointer;
+	    position: static;
+		    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+}
+#jobFormDiv .form-group.field-resume .clickableLink{
+	  display:none;
+    /* display: block; */
+    color: #fff !important;
+    margin: 0 auto;
+    padding: 8px 0 !important;
+    border: none;
+}
+#jobFormDiv .form-group.field-resume input{
+	    position: relative;
+    z-index: 0;
+    padding: 8px 0 !important;
+    display: none;
+}
+
+#jobFormDiv .form-group.field-resume .col-xs-9.col-sm-9 {
+    width: 100% !important;
+    padding: 0 !important;
+}
+#jobFormDiv .form-group.field-resume .col-xs-3.col-sm-3 {
+    display: none;
+}
+#jobFormDiv .applyButton{
+    text-transform: none;
+    font-family: HelveticaLTPro-Bold;
+    max-width: 215px;
+    padding: 11px 24px!important;
+    margin: 0 auto;
+    display: block;
+}
+
+#jobFormDiv .form-group {
+  position: relative;
+}
+#ng-app .wrapper {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+}
+
+#field-resume-aria-desc {
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border-radius: 30px;
+    /* padding: 8px 0; */
+    height: auto;
+    cursor: pointer;
+    position: static;
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+}
+#jobFormDiv .removeButton, #questionnairesDiv .removeButton {
+    color: #fff;
+}
+#jobFormDiv .secondary, #questionnairesDiv .secondary {
+    padding: 12px 0;
+    display: block;
+}
+#jobFormDiv h3,
+#jobFormDiv p {
+    color: #fff;
+}
+footer.formFooter {
+    margin-right: 20px;
+    /* margin: 0 auto;
+    text-align: center;
+    width: 100% !important; */
+}
+
+#jobFormDiv .heyTitle {
+    color: #f24625 !important;
+}
+
+/* #jobFormDiv .form-group .form-control:valid {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+} */
+/* #jobFormDiv .form-group .form-control,
+#jobFormDiv .form-group .form-select {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 0.75rem;
+}
+#jobFormDiv .form-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  #jobFormDiv .form-group > label {
+    transition: none;
+  }
+}
+#jobFormDiv .form-group .form-control::-webkit-input-placeholder {
+  color: transparent;
+}
+#jobFormDiv .form-group .form-control::-moz-placeholder {
+  color: transparent;
+}
+#jobFormDiv .form-group .form-control::placeholder {
+  color: transparent;
+}
+#jobFormDiv .form-group .form-control:not(:-moz-placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+#jobFormDiv .form-group .form-control:focus,
+#jobFormDiv .form-group .form-control:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+  color: #900;
+}
+#jobFormDiv .form-group .form-control:-webkit-autofill {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+#jobFormDiv .form-group .form-select {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+#jobFormDiv .form-group .form-control:not(:-moz-placeholder-shown) ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+#jobFormDiv .form-group .form-control:focus ~ label,
+#jobFormDiv .form-group .form-control:not(:placeholder-shown) ~ label,
+#jobFormDiv .form-group .form-select ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  color: yellow;
+}
+#jobFormDiv .form-group .form-control:-webkit-autofill ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+} */

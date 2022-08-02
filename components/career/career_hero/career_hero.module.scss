@@ -52,14 +52,27 @@
 
 .copy {
   text-align: center;
-
+  display: flex;
+  justify-content: center;
+  gap: 5.4rem;
   @screen xxl {
     max-width: 74.6rem;
     margin-right: auto;
     margin-left: auto;
   }
-
-  p {
-    @include typo-p;
+  span {
+    display: block;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      height: 1.4rem;
+      width: 1.4rem;
+      border-radius: 50%;
+      left: -2.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: theme('colors.orange-100');
+    }
   }
 }

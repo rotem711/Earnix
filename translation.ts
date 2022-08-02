@@ -56,6 +56,9 @@ const Translation = {
   POSITIONS: {
     en_US: 'Positions',
   },
+  JOIN_OUR_TEAM: {
+    en_US: 'Join our team',
+  },
 }
 
 const translations = (lang): { [key: string]: string } => {

@@ -10,7 +10,7 @@ const client = new MeiliSearch({
 })
 
 export default async function handler(_, response: NextApiResponse) {
-  const URL = `https://www.comeet.co/careers-api/2.0/company/${process.env.COMEET_COMPANY_ID}/positions?token=${process.env.COMEET_API_KEY}`
+  const URL = `https://www.comeet.co/careers-api/2.0/company/${process.env.NEXT_PUBLIC_COMEET_COMPANY_ID}/positions?token=${process.env.COMEET_API_KEY}`
   const res = await fetch(URL)
   const jobs: Job[] = await res.json()
   const index = client.index('jobs')
