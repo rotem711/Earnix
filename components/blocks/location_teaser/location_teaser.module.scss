@@ -1,5 +1,133 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+}
+
+.contentWrapper {
+  text-align: center;
+  padding: 8rem 0;
+
+  @screen lg {
+    padding: 9.8rem 0 9.6rem;
+  }
+
+  @screen xl {
+    padding: 9.6rem 0;
+  }
+
+  @screen xxl {
+    @apply col-start-3 col-span-8
+  }
+}
+
+.headline {
+  margin-bottom: 1.6rem;
+
+  @screen md {
+    margin: 0 auto 1.6rem;
+    max-width: 45.5rem;
+  }
+
+  @screen lg {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.copy {
+  margin-bottom: 3.2rem;
+
+  @screen md {
+    margin: 0 auto 3.2rem;
+    max-width: 57.8rem;
+  }
+
+  @screen xl {
+    margin-bottom: 4rem;
+    max-width: 65.5rem;
+  }
+
+  p {
+    @include typo-h6
+  }
+}
+
+.locationsWrapper {
+  @screen md {
+    display: flex;
+  }
+}
+
+.location {
+  position: relative;
+  min-height: 21.9rem;
+  margin-bottom: 1.6rem;
+  border-radius: 1.6rem;
+  padding: 6.6rem 5.2rem;
+  color: theme('colors.white');
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @screen md {
+    padding: 2.1rem 3.1rem;
+    margin: 0 1.6rem 0 0;
+    min-height: 13.1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @screen lg {
+    padding: 5.6rem 4.4rem 4.3rem;
+    margin: 0 2.3rem 0 0;
+    min-height: 18.6rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @screen xl {
+    padding: 7.2rem 5.7rem 6.4rem;
+    margin: 0 3rem 0 0;
+    min-height: 24rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.locationName {
+  margin-bottom: 1.6rem;
+
+  @screen lg {
+    margin-bottom: 1.1rem;
+  }
+
+  @screen lg {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.locationCopy {
+  p {
+    @include typo-p
+  }
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  img {
+    border-radius: 1.6rem;
+  }
 }
