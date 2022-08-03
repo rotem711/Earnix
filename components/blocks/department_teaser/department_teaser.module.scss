@@ -3,3 +3,134 @@
 .root {
   // add your styles here
 }
+
+.contentWrapper {
+  text-align: center;
+  padding: 8rem 0;
+
+  @screen lg {
+    padding: 9.6rem 0;
+  }
+
+  @screen xxl {
+    @apply col-start-3 col-span-8
+  }
+}
+
+.headline {
+  margin-bottom: 3.2rem;
+
+  @screen lg {
+    margin-bottom: 4rem;
+  }
+}
+
+.departmentsWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.department {
+  border-radius: 1.6rem;
+  background-color: theme('colors.green-90');
+  color: theme('colors.white');
+  min-height: 12rem;
+  width: calc(50% - 0.8rem);
+  padding: 3.6rem 0.5rem;
+  margin-bottom: 1.6rem;
+
+  &:nth-child(2n) {
+    margin-left: 1.6rem;
+  }
+
+  &:last-child {
+    margin: 0 auto;
+  }
+
+  @screen md {
+    padding: 3.6rem 0.5rem;
+    width: calc(50% - 1.2rem);
+    margin-bottom: 2.4rem;
+
+    &:nth-child(2n) {
+      margin-left: 2.4rem;
+    }
+
+    &:nth-last-child(-n + 3) {
+      width: calc((100% / 3) - (1.6rem / 3 * 2));
+      margin: 0 1.6rem 0 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @screen lg {
+    min-height: 11.8rem;
+    padding: 3.4rem 0.6rem;
+    width: calc((100% / 4) - (2.4rem / 4 * 3));
+    margin-right: 2.4rem;
+    margin-bottom: 1.8rem;
+
+    &:nth-child(2n) {
+      margin-left: 0;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 3) {
+      width: calc((100% / 3) - (2.4rem / 3 * 2));
+      margin: 0 2.4rem 0 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @screen xl {
+    min-height: 15.2rem;
+    padding: 4.4rem 0.7rem;
+    width: calc((100% / 4) - (3rem / 4 * 3));
+    margin-right: 3rem;
+    margin-bottom: 2.4rem;
+
+    &:nth-child(2n) {
+      margin-left: 0;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 3) {
+      width: calc((100% / 3) - (2.4rem / 3 * 2));
+      margin: 0 2.4rem 0 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.departmentLabel {
+  margin: 0 auto;
+  max-width: 11.8rem;
+
+  @screen md {
+    max-width: 27.6rem;
+  }
+
+  @screen md {
+    max-width: 24.4rem;
+  }
+}
+
+.jobsInLocations {
+  margin-top: 0.8rem
+}
