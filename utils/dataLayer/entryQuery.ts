@@ -119,6 +119,12 @@ export const getStaticPathsWrapper = (collection: string, filter: any = undefine
             title
             slug
             uri
+            ... on Entry_Newsroom_Newsroom {
+              newsroom_types {
+                title
+                slug
+              }
+            }
           }
         }
       }
@@ -136,7 +142,7 @@ export const getStaticPathsWrapper = (collection: string, filter: any = undefine
   }
   const paths = res.data.entries.data.map((e) => {
     return {
-      params: { slug: collection === 'pages' ? e.uri?.substring(1).split('/') || e.slug : e.slug },
+      params: { ...e, slug: collection === 'pages' ? e.uri?.substring(1).split('/') || e.slug : e.slug, type: e.newsroom_types?.slug },
     }
   })
 
