@@ -2,7 +2,7 @@ export interface Location {
   name: string;
   country: string;
   city: string;
-  state?: any;
+  state: string;
   postal_code?: any;
   street_name: string;
   arrival_instructions?: any;
@@ -16,14 +16,14 @@ export interface Job {
   name: string;
   department: string;
   email: string;
-  email_alias?: any;
+  location: Location;
   url_comeet_hosted_page: string;
   url_active_page: string;
-  employment_type?: any;
+  employment_type: string;
+  internal_use_custom_id?: any;
+  email_alias?: any;
   experience_level?: any;
   uid: string;
-  location: Location;
-  internal_use_custom_id?: any;
   is_consent_needed: boolean;
   referrals_reward?: any;
   is_reward: boolean;

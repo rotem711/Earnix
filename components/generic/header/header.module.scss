@@ -50,11 +50,11 @@
     input {
       padding: 0.5rem;
       margin-right: 2rem;
-      border: 1px solid theme("colors.black-20");
+      border: 1px solid theme('colors.black-20');
 
       &,
       &::placeholder {
-        color: theme("colors.black-100");
+        color: theme('colors.black-100');
       }
     }
   }
@@ -80,11 +80,15 @@
     justify-content: flex-end;
     align-items: center;
 
-    & > li {
+    &__listItem {
       @include mainMenuLinkDecoration(theme('colors.orange-100'));
 
       color: theme('colors.white');
       margin-left: 4rem;
+
+      &--forDarkElements {
+        color: theme('colors.black');
+      }
 
       .headroom--not-top & {
         color: theme('colors.black-100');

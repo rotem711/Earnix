@@ -1,4 +1,5 @@
 export default interface ButtonInterface {
-    href: string,
+    href?: string,
     title: string,
+    onClick?: () => void,
 }

@@ -44,11 +44,17 @@ const Translation = {
   SUBSCRIBEBLOG: {
     en_US: 'Subscribe to our blog',
   },
+  LOAD_MORE: {
+    en_US: 'Load More',
+  },
   MONTHS: {
     en_US: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
   },
   SEARCHPLACEHOLDER: {
     en_US: 'Search',
+  },
+  EARNIX_BLOG: {
+    en_US: 'Earnix Blog',
   },
   SHAREARTICLE: {
     en_US: 'Share article',

@@ -24,6 +24,7 @@ export default `
       id
       title
       slug
+      date
       uri
       seo {
         description

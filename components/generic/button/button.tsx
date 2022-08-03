@@ -7,7 +7,20 @@ const Button = (data : ButtonInterface) => {
   const {
     href = '',
     title = '',
+    onClick,
   } = data
+
+  if (onClick) {
+    return (
+      <button
+        className={`${styles.root}`}
+        onClick={onClick}
+        type="button"
+      >
+        {title}
+      </button>
+    )
+  }
 
   return (
     <Link href={href || ''}>

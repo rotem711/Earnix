@@ -1,0 +1,18 @@
+.root {
+  .image {
+    width: 100%;
+    aspect-ratio: 746 / 488;
+    overflow: hidden;
+    border-radius: 1.6rem;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+  .tag {
+    border: 1px solid theme('colors.black-50');
+    border-radius: 100rem;
+    padding: 0.8rem 1.6rem;
+    text-transform: uppercase;
+  }
+}
