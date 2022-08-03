@@ -12,6 +12,7 @@ export default `
       id
       title
       slug
+      date
       seo {
         description
         og_description
@@ -42,6 +43,10 @@ export default `
         blurb
         cover_image {
           ...CMSAsset
+        }
+        blog_topic {
+          title
+          id
         }
         content {
           ... on Set_Content_Image {
@@ -124,6 +129,7 @@ const articleDetailFragment = `
     id
     uri
     slug
+    title
     blog_topic {
       title
       id
@@ -179,10 +185,43 @@ query page {
       }
     }
   }
-  articles: entries(collection: "blog") {
+  articles: entries(collection: "blog", limit: 5) {
     data {
       ...ArticleDetail
     }
+    total
+  }
+  featured: entries(collection: "blog", filter: { featured: true }, limit: 3) {
+    data {
+      ...ArticleDetail
+    }
+    total
+  }
+  industries: terms(taxonomy: "blog_industry") {
+    data {
+      id
+      title
+      slug
+    }
+  }
+  topics: terms(taxonomy: "blog_topic") {
+    data {
+      id
+      title
+      slug
+    }
   }
 }
+`
+export const lazyArticlesQuery = `
+  ${AssetFragment}
+  ${articleDetailFragment}
+  query Articles($limit: Int, $filter: JsonArgument) {
+    articles: entries(collection: "blog", limit: $limit, filter: $filter) {
+      data {
+        ...ArticleDetail
+      }
+      total
+    }
+  }
 `

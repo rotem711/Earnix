@@ -41,6 +41,7 @@ const HeaderBlock = ({
   const [navIsOpen, setNavIsOpen] = useState(false)
   const [invertColors, setInvertColors] = useState(false)
   const router = useRouter()
+  const [displayDarkElements, setDisplayDarkElements] = useState(false)
   let headroom
 
   useEffect(() => {
@@ -71,6 +72,9 @@ const HeaderBlock = ({
     setHeaderHeight(headerRef.current.clientHeight)
     setWindowHeight(window.innerHeight)
   }, [])
+  useEffect(() => {
+    setDisplayDarkElements(navIsOpen || !navOnTop || !!darkMode)
+  }, [navIsOpen, navOnTop, darkMode])
 
   useEffect(() => {
     if (darkMode) {
@@ -162,19 +166,15 @@ const HeaderBlock = ({
           <a href="/">
             <Image
               src={
-                navIsOpen || !navOnTop || darkMode
+                displayDarkElements
                   ? logo_dark.permalink
                   : logo_light.permalink
               }
               width={
-                navIsOpen || !navOnTop || darkMode
-                  ? logo_dark.width
-                  : logo_light.width
+                displayDarkElements ? logo_dark.width : logo_light.width
               }
               height={
-                navIsOpen || !navOnTop || darkMode
-                  ? logo_dark.height
-                  : logo_light.height
+                displayDarkElements ? logo_dark.height : logo_light.height
               }
             />
           </a>
@@ -197,7 +197,14 @@ const HeaderBlock = ({
           style={isMobile ? mobileMenuStyle : undefined}
         >
           {links.map((item) => (
-            <li key={item.text ?? item.nav_title}>
+            <li
+              className={
+                displayDarkElements
+                  ? `${styles.megaMenu__listItem} ${styles['megaMenu__listItem--forDarkElements']}`
+                  : styles.megaMenu__listItem
+              }
+              key={item.text ?? item.nav_title}
+            >
               {item.type === 'simple_link' && (
                 <Link href={item.link}>
                   <a

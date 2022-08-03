@@ -128,11 +128,15 @@
     justify-content: flex-end;
     align-items: center;
 
-    & > li {
+    &__listItem {
       @include mainMenuLinkDecoration(theme('colors.orange-100'));
 
       color: theme('colors.white');
       margin-left: 4rem;
+
+      &--forDarkElements {
+        color: theme('colors.black');
+      }
 
       .headroom--not-top & {
         color: theme('colors.black-100');

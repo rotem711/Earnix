@@ -1,0 +1,25 @@
+.featuredContent {
+  border-radius: 1.6rem;
+
+  &__featuredArticlesContainer {
+    border-right: 0.1rem solid theme('colors.black-20');
+    padding: 0 1.6rem 1.6rem 2.4rem;
+
+    &:last-child {
+      border: none;
+    }
+
+    @screen sm {
+      min-width: 24rem;
+    }
+
+    @screen md {
+      min-width: auto;
+    }
+  }
+
+  &__hr {
+    border-top-color: theme('colors.black-20');
+    margin: 1.6rem 0;
+  }
+}

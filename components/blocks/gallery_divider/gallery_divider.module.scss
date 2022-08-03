@@ -1,5 +1,36 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+  .block_wrapper {
+    @apply flex;
+  }
+
+  .image_wrapper {
+    & + .image_wrapper {
+      margin-left: 1.5rem;
+
+      @screen md {
+        margin-left: 1.6rem;
+      }
+
+      @screen lg {
+        margin-left: 2.3rem;
+      }
+
+      @screen xl {
+        margin-left: 3rem;
+      }
+    }
+
+    @screen md {
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+    }
+  }
+
+  .image {
+    border-radius: 1.6rem;
+  }
 }

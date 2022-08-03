@@ -1,5 +1,131 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+  .block_title {
+    @apply text-center;
+    @include typo-h4;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 1.6rem;
+    @screen md {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  .event_card_wrapper {
+    @apply flex flex-wrap;
+
+    @screen md {
+      @apply flex-nowrap;
+    }
+  }
+
+  .event_card {
+    @apply relative;
+    background-color: theme("colors.green-100");
+    border-radius: 16px;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    width: 100%;
+
+    & + .event_card {
+      @screen md {
+        margin-left: 1.6rem;
+      }
+
+      @screen lg {
+        margin-left: 2.3rem;
+      }
+
+      @screen xl {
+        margin-left: 3rem;
+      }
+    }
+
+    @screen md {
+      padding-top: 3.1rem;
+      padding-bottom: 3.1rem;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+    }
+
+    @screen lg {
+      padding-top: 5.2rem;
+      padding-bottom: 5.2rem;
+    }
+
+    @screen xl {
+      padding-top: 7.2rem;
+      padding-bottom: 7.2rem;
+    }
+  }
+
+  .event_card_bg {
+    @apply absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.27;
+    z-index: 0;
+  }
+
+  .main_label {
+    @apply text-center;
+    @include typo-h2;
+    color: white;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+    z-index: 1;
+
+    @screen md {
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+
+    @screen lg {
+      @include typo-h2;
+      line-height: 5rem;
+    }
+
+    @screen xl {
+      line-height: 5.6rem;
+    }
+  }
+
+  .description {
+    @apply text-center;
+    z-index: 1;
+    color: white;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.05rem;
+    @screen md {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      letter-spacing: 0;
+    }
+
+    @screen lg {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+
+    @screen xl {
+      @include typo-h6;
+    }
+  }
+
+  .cta {
+    @apply text-center mx-auto;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: theme("colors.orange-100");
+  }
 }

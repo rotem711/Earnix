@@ -1,0 +1,36 @@
+.dropdown {
+  &__icon {
+    &--rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__optionsContainer {
+    border-top: 0.8rem solid theme('colors.orange-100');
+    min-width: 25rem;
+    padding: 3.2rem 2.4rem;
+    right: 0;
+    top: 4.4rem;
+    left: auto;
+    z-index: 5;
+    @screen sm {
+      left: 0;
+    }
+
+    @screen md {
+      left: auto;
+    }
+  }
+
+  &__optionsTitle {
+    border-bottom: 0.2rem solid theme('colors.black-5');
+    font-weight: 600;
+    opacity: 0.7;
+  }
+
+  &__optionsGroup {
+    border-bottom: 0.2rem solid theme('colors.black-5');
+    opacity: 0.7;
+    padding: 0 0 0 2.4rem;
+  }
+}

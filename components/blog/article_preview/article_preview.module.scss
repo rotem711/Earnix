@@ -1,0 +1,57 @@
+.articlePreview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @screen sm {
+    padding-bottom: 1.6rem;
+    width: 27rem;
+  }
+
+  @screen md {
+    width: auto;
+  }
+
+  &--FEATURED {
+    align-items: flex-start;
+    display: grid;
+    flex-direction: col;
+    width: auto;
+
+    @screen sm {
+      display: flex;
+    }
+
+    @screen md {
+      display: grid;
+      flex-direction: row;
+    }
+
+    .articlePreview__textContainer {
+      order: 100;
+    }
+  }
+
+  &__description {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__image {
+    border-radius: 1.6rem;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__imageContainer {
+    justify-content: normal;
+    order: 200;
+  }
+
+  &__textContainer {
+    order: 300;
+  }
+}

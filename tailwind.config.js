@@ -24,6 +24,9 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    borderRadius: {
+      100: '100px',
+    },
     fontFamily: {
       sans: ['Helvetica Neue', 'sans-serif'],
     },
@@ -67,12 +70,11 @@ module.exports = {
       },
       width: {
         '3/8': '37.5%',
-      }
+      },
     },
   },
   variants: {
-    extend: {
-    },
+    extend: {},
   },
   plugins: [
     function ({ addComponents }) {

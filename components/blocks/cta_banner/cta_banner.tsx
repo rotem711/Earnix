@@ -14,6 +14,8 @@ const CtaBannerBlock: FunctionComponent<{ block: CtaBannerInterface }> = ({
       <Image
         src={block.ctab_ctaBackground.permalink}
         width={block.ctab_ctaBackground.width}
+        placeholder="blur"
+        blurDataURL={block.ctab_ctaBackground.placeholder}
         height={block.ctab_ctaBackground.height}
         alt={block.ctab_ctaBackground.alt}
         layout="fill"

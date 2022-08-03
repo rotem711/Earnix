@@ -1,5 +1,79 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
   // add your styles here
+  .block_wrapper {
+    padding-top: 4.9rem;
+    padding-bottom: 6.4rem;
+    @screen md {
+      padding-top: 6.4rem;
+      padding-bottom: 6.4rem;
+    }
+
+    @screen lg {
+      padding-top: 8rem;
+      padding-bottom: 6.5rem;
+    }
+  }
+
+  .block_title {
+    @include typo-h3;
+    font-weight: 700;
+    margin-top: 2.45rem;
+    @screen md {
+      margin-top: 0;
+    }
+  }
+
+  .block_copy {
+    @include typo-h6;
+    margin-top: 1.6rem;
+    @screen md {
+      margin-top: 2.4rem;
+    }
+  }
+
+  .image {
+    border-radius: 1.6rem;
+  }
+
+  .image_column {
+    @apply flex flex-col justify-center;
+    & + .image_column {
+      margin-left: 1.5rem;
+
+      @screen md {
+        margin-left: 1.4rem;
+      }
+
+      @screen lg {
+        margin-left: 2rem;
+      }
+
+      @screen xl {
+        margin-left: 3rem;
+      }
+    }
+  }
+
+  .image_wrapper {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+
+    @screen md {
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+    }
+
+    @screen lg {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    @screen xl {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
 }
