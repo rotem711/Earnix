@@ -4,6 +4,7 @@ import FooterQuery from 'components/generic/footer/footer.extraqueries.graphql'
 import blockInventory from '../utils/rendering/inventory'
 import AssetFragment from './fragments/asset'
 import nav from './fragments/nav'
+import notFound from './fragments/404'
 
 const fragments = Object.values(blockInventory)
   .filter((i) => i.layouts.includes('page'))
@@ -53,5 +54,6 @@ export default `
       }
     }
     ${nav}
+    ${notFound}
   }
 `

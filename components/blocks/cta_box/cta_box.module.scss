@@ -99,3 +99,14 @@
     background-color: theme('colors.black-5');
   }
 }
+
+.fullWidth {
+  @media screen and (max-width: 767px) {
+    padding: 0;
+
+    .innerContentWrapper,
+    .imageWrapper {
+      border-radius: 0;
+    }
+  }
+}

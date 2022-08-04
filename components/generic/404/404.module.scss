@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.root {
+  & > div {
+    &:nth-child(1) {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+
+      @screen md {
+        margin-bottom: 8rem;
+        display: block;
+        min-height: unset;
+      }
+    }
+
+    &:nth-child(2) {
+      @screen md {
+        padding-bottom: 8rem;
+      }
+    }
+  }
+}

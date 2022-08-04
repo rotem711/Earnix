@@ -63,3 +63,11 @@
     @include typo-p;
   }
 }
+
+.searchBox {
+  @include searchInput;
+
+  margin: 2.4rem auto 0;
+  width: 36rem;
+  max-width: 100%;
+}

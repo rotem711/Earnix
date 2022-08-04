@@ -1,35 +1,46 @@
 import React from 'react'
-import { getStaticPropsWrapper } from 'utils/dataLayer/entryQuery'
-import Translation from 'translation'
+import DevGrid from 'components/generic/dev_grid/dev_grid'
 import { GlobalSet } from 'interfaces/globals'
-import Header from '../components/generic/header/header'
-import PageQuery from '../queries/page'
-import { GlobalContextProvider } from './_app'
+import { GlobalContextProvider } from 'pages/_app'
+import { getStaticPropsWrapper } from 'utils/dataLayer/entryQuery'
 
-// pages/404.js
-/* eslint react/jsx-props-no-spreading: "off", curly: "error" */
-/* eslint react/prop-types: "off", curly: "error" */
+import pageQuery from 'queries/page'
+import NotFoundBlock from 'components/generic/404/404'
+import Header from '../components/generic/header/header'
+import Footer from '../components/generic/footer/footer'
+
 const Custom404 = ({
   nav,
-  globalSet,
+  globals,
   header,
+  footer,
+  translations,
+  notfound,
 }: {
   nav: any
-  globalSet: GlobalSet
-  header: any
-}) => {
-  const TranslationString = Translation('en_GB')
-  return (
-    <GlobalContextProvider
-      value={{ ...globalSet, ...{ translation: TranslationString } }}
-    >
-      <div>
-        <Header nav={nav} darkMode={false} data={header} />
-        404
-      </div>
-    </GlobalContextProvider>
-  )
-}
+  globals: GlobalSet
+  header
+  footer: any
+  translations: { [key: string]: string }
+  notfound: any
+}) => (
+  <GlobalContextProvider
+    value={{
+      ...globals,
+      translations,
+    }}
+  >
+    <div>
+      <main>
+        <DevGrid />
+        <Header nav={nav} data={header} darkMode={false} />
 
-export const getStaticProps = getStaticPropsWrapper(PageQuery, () => {})
+        <NotFoundBlock data={notfound} />
+      </main>
+
+      <Footer data={footer} />
+    </div>
+  </GlobalContextProvider>
+)
+export const getStaticProps = getStaticPropsWrapper(pageQuery, () => {})
 export default Custom404

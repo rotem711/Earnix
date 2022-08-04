@@ -63,6 +63,43 @@
   }
 }
 
+@mixin searchInput($isHeader: false) {
+  background-color: theme('colors.white');
+
+  @if $isHeader {    
+    @screen lg {
+      border-radius: 2.5rem;
+      overflow: hidden;
+    }
+  } @else {
+    border-radius: 2.5rem;
+    overflow: hidden;
+  }
+
+  & > div {
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    padding: 1.4rem;
+    margin-right: 2rem;
+    outline: none;
+
+    &,
+    &::placeholder {
+      color: theme('colors.black-100');
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0;
+    top: 0;
+  }
+}
+
 
 // fonts
 @mixin typo-h1 {
