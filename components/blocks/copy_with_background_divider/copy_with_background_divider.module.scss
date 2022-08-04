@@ -1,5 +1,81 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .root {
-  // add your styles here
+  position: relative;
+  color: theme('colors.white');
+}
+
+.imageFilterGreen {
+  background-color: theme('colors.green-90');
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.imageFilterBlack {
+  background-color: theme('colors.black-100');
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  mix-blend-mode: color;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.contentWrapper {
+  text-align: center;
+  padding: 5.6rem 0;
+
+  @screen md {
+    padding: 4.8rem 0;
+  }
+
+  @screen lg {
+    padding: 8rem 0;
+  }
+
+  @screen xxl {
+    @apply col-start-3 col-span-8
+  }
+}
+
+.headline {
+  margin-bottom: 3.2rem;
+
+  @screen md {
+    max-width: 45.5rem;
+    margin: 0 auto 3.2rem;
+  }
+
+  @screen lg {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.copy {
+  @screen xl {
+    margin: 0 auto;
+    max-width: 87.6rem;
+  }
+
+  p {
+    @include typo-h6;
+  }
 }
