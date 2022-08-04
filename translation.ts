@@ -23,6 +23,9 @@ const Translation = {
   FEATUREDPOST: {
     en_US: 'Featured Post',
   },
+  FOUNDRESULTS: {
+    en_US: 'Found %COUNT% Results',
+  },
   LATESTNEWS: {
     en_US: 'Latest News',
   },
@@ -31,6 +34,9 @@ const Translation = {
   },
   LATESTINSIGHT: {
     en_US: 'Latest Insight',
+  },
+  READMORE: {
+    en_US: 'Read more',
   },
   READMORETEASERSINGLE: {
     en_US: 'Link to highlight',
@@ -52,6 +58,9 @@ const Translation = {
   },
   SEARCHPLACEHOLDER: {
     en_US: 'Search',
+  },
+  SEARCHTERM: {
+    en_US: 'Search %TERM%',
   },
   EARNIX_BLOG: {
     en_US: 'Earnix Blog',

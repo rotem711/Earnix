@@ -29,6 +29,7 @@
     color: theme('colors.white');
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
+    position: relative;
 
     & > div {
       display: flex;
@@ -47,14 +48,61 @@
       @include linkDecoration(theme('colors.white'));
     }
 
-    input {
-      padding: 0.5rem;
-      margin-right: 2rem;
-      border: 1px solid theme('colors.black-20');
+    form {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      bottom: 0;
+      transform: translateY(100%);
+      background-color: theme('colors.white');
+      z-index: 200;
 
-      &,
-      &::placeholder {
-        color: theme('colors.black-100');
+      @screen lg {
+        width: 26.5rem;
+        border-radius: 2.5rem;
+        overflow: hidden;
+        left: unset;
+        right: 10%;
+      }
+
+      @screen xl {
+        right: 20%;
+      }
+
+      @screen xxl {
+        right: 15%;
+      }
+
+      & > div {
+        position: relative;
+      }
+
+      input {
+        width: 100%;
+        padding: 1.2rem;
+        margin-right: 2rem;
+        outline: none;
+
+        @screen lg {
+          border: 1px solid theme('colors.black-20');
+        }
+
+        &,
+        &::placeholder {
+          color: theme('colors.black-100');
+        }
+      }
+
+      button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+        @screen lg {
+          right: 0.2rem;
+        }
       }
     }
   }

@@ -1,8 +1,5 @@
 import React, {
-  createRef,
-  useContext,
-  useEffect,
-  useState,
+  createRef, useContext, useEffect, useState,
 } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -18,6 +15,8 @@ import NavInterface from '../nav/nav.interface'
 import Nav from '../nav/nav'
 import MenuOverlayItem from '../menu_overlay_item/menu_overlay_item'
 import HamburgerIcon from '../icons/hamburger'
+import SearchIconOrange from '../icons/search_orange'
+import SearchIconWhite from '../icons/search_white'
 
 const HeaderBlock = ({
   data,
@@ -37,10 +36,11 @@ const HeaderBlock = ({
   const [headerHeight, setHeaderHeight] = useState(0)
   const [windowHeight, setWindowHeight] = useState(0)
   const [navOnTop, setnavOnTop] = useState(true)
-  const [searchValue, seatSearchValue] = useState()
+  const [searchValue, setsearchValue] = useState('')
   const [searchIsOpen, setSearchIsOpen] = useState(false)
   const [navIsOpen, setNavIsOpen] = useState(false)
   const [invertColors, setInvertColors] = useState(false)
+  const router = useRouter()
   const [displayDarkElements, setDisplayDarkElements] = useState(false)
   let headroom
 
@@ -78,7 +78,9 @@ const HeaderBlock = ({
 
   useEffect(() => {
     if (darkMode) {
-      document.body.style.paddingTop = `${((headerHeight + 56) / 10).toString()}rem`
+      document.body.style.paddingTop = `${(
+        (headerHeight + 56) / 10
+      ).toString()}rem`
     } else {
       document.body.style.paddingTop = '0'
     }
@@ -100,14 +102,12 @@ const HeaderBlock = ({
     setSearchIsOpen(!searchIsOpen)
   }
 
-  const handleSearchInput = (e) => {
-    seatSearchValue(e.target.value)
-
-    console.log(searchValue)
+  const handleSearch = (e) => {
+    e.preventDefault()
+    router.push(`/search?q=${searchValue}`)
   }
 
   const isActiveLink = (href: string) => {
-    const router = useRouter()
     let pathNameToCheck
 
     if (href.indexOf('http://') === 0 || href.indexOf('https://') === 0) {
@@ -136,21 +136,25 @@ const HeaderBlock = ({
       <div className={`${styles.topbar} typo-tag-lower`}>
         <div className="container">
           {searchIsOpen && (
-            <input
-              type="text"
-              value={searchValue}
-              onChange={handleSearchInput}
-              placeholder={Globals.translations.SEARCHPLACEHOLDER}
-            />
+            <form onSubmit={handleSearch} className={`${isMobile ? 'container' : ''}`}>
+              <div className="typo-p">
+                <input
+                  type="text"
+                  value={searchValue}
+                  onChange={(e) => {
+                    setsearchValue(e.target.value)
+                  }}
+                  placeholder={Globals.translations.SEARCHPLACEHOLDER}
+                />
+                <button type="button" onClick={handleSearch}>
+                  <SearchIconOrange />
+                </button>
+              </div>
+            </form>
           )}
 
           <button type="button" onClick={toggleSearch}>
-            <Image
-              src="/assets/search.svg"
-              width="24"
-              height="24"
-              alt="Search Icon"
-            />
+            <SearchIconWhite />
           </button>
 
           <Nav nav={nav} />
