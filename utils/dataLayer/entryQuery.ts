@@ -49,7 +49,9 @@ export const getStaticPropsWrapper = (
       )
 
       if (blockItem && blockItem.ssrFunctions) {
-        data.entry.replicator[index].ssr = await Promise.all(blockItem.ssrFunctions.map((f) => f()))
+        data.entry.replicator[index].ssr = await Promise.all(
+          blockItem.ssrFunctions.map((f) => f({ props: module })),
+        )
       }
       return data.entry.replicator[index]
     }))

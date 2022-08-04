@@ -78,6 +78,9 @@ import ImageHeroBlockQuery from '../../components/blocks/image_hero/image_hero.g
 import { typename as CareerHeroBlockTypename } from '../../components/blocks/career_hero/career_hero'
 import CareerHeroBlockQuery from '../../components/blocks/career_hero/career_hero.graphql'
 import ssrGetJobs from '../../components/blocks/career_hero/ssrGetJobs'
+import { typename as OpenPositionsTeaserBlockTypename } from '../../components/blocks/open_positions_teaser/open_positions_teaser'
+import OpenPositionsTeaserBlockQuery from '../../components/blocks/open_positions_teaser/open_positions_teaser.graphql'
+import ssrGetFilteredJobs from '../../components/blocks/open_positions_teaser/open_positions_teaser.ssr'
 
 // ##HYGEN_IMPORT##
 // do not modify the above line since its used by hygen to generate the block list
@@ -375,6 +378,15 @@ const blocks:Block[] = [
     extraQueries: undefined,
     layouts: ['page'],
     ssrFunctions: [ssrGetJobs],
+  },
+
+  {
+    component: dynamic(() => import('../../components/blocks/open_positions_teaser/open_positions_teaser')),
+    query: OpenPositionsTeaserBlockQuery,
+    typename: OpenPositionsTeaserBlockTypename,
+    extraQueries: undefined,
+    layouts: ['page'],
+    ssrFunctions: [ssrGetFilteredJobs],
   },
 
   // ##HYGEN_START##
