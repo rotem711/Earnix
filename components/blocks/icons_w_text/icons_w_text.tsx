@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 import Button from 'components/generic/button/button'
-import AnimatedLines from 'components/generic/atoms/AnimatedLines/AnimatedLines'
+// import AnimatedLines from 'components/generic/atoms/AnimatedLines/AnimatedLines'
 import parse from 'html-react-parser'
 import styles from './icons_w_text.module.scss'
 import IconsWTextInterface from './icons_w_text.interface'
@@ -45,14 +45,14 @@ const IconsWTextBlock: FunctionComponent<{ block: IconsWTextInterface }> = ({
       <div className={styles.ctaWrapper}>
         <Button href={block.ict_cta_url} title={block.ict_cta_title} />
       </div>
-      <AnimatedLines
+      {/* <AnimatedLines
         variant="bottom"
         xInitialPosition={0}
         yInitialPosition={0}
         width={700}
         height={300}
         imageUrl={`${block.ict_background.permalink}`}
-      />
+      /> */}
     </div>
   </div>
 )

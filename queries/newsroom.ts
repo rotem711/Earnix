@@ -168,8 +168,8 @@ query page {
     ... on Entry_Pages_PageNewsroom {
       id
       csd_cta_url
+      csd_cta_title
       csd_headline
-      csd_link_text
       cta_banner
       hero_background
       hero_background_image {

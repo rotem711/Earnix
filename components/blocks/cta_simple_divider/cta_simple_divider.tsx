@@ -10,7 +10,7 @@ export const typename = 'Set_Replicator_BlockCtaSimpleDivider'
 const CtaSimpleDividerBlock: FunctionComponent<{
   block: CtaSimpleDividerInterface
 }> = ({ block }) => {
-  const isWithButton = block.csd_cta_url !== null && block.csd_link_text !== null
+  const isWithButton = block.csd_cta_url !== null && block.csd_cta_title !== null
 
   return (
     <div className={`${styles.root} container grid grid-cols-12 default-grid`}>
@@ -42,7 +42,7 @@ const CtaSimpleDividerBlock: FunctionComponent<{
         </div>
         {isWithButton && (
           <div className={`${styles.buttonWrapper}`}>
-            <Button href={block.csd_cta_url} title={block.csd_link_text} />
+            <Button href={block.csd_cta_url} title={block.csd_cta_title} />
           </div>
         )}
       </div>
