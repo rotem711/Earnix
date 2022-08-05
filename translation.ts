@@ -80,6 +80,9 @@ const Translation = {
   FIND_OUT_MORE: {
     en_US: 'Find out more >',
   },
+  VIEW_ALL: {
+    en_US: 'View all',
+  },
 }
 
 const translations = (lang): { [key: string]: string } => {

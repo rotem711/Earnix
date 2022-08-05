@@ -13,7 +13,7 @@ const Dropdown: React.FunctionComponent<DropdownInterface> = ({
   const { areOptionsVisible, handleDropdownClick, handleOptionSelection } = useDropdown({ onSelect })
 
   return (
-    <div className="relative">
+    <div>
       <div
         className="flex items-center gap-x-10 cursor-pointer"
         onClick={handleDropdownClick}

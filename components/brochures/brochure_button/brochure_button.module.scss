@@ -1,0 +1,14 @@
+.brochureButton {
+  background-color: transparent;
+  border: transparent;
+  color: theme('colors.orange-100');
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 4rem auto 0 auto;
+  text-align: center;
+
+  @screen lg {
+    margin-top: 8rem;
+  }
+}

@@ -129,6 +129,7 @@ const newsroomDetailFragment = `
     }
     author_name
     date
+    title
     blurb
     newsroom_types {
       id
@@ -201,6 +202,13 @@ query page {
       tv_vimeo_id
     }
   }
+  taxonomies: terms(taxonomy: "newsroom_types") {
+    data {
+      slug
+      id
+      title
+    }
+  }
   inTheNews: entries(collection: "newsroom", filter: {newsroom_types: {contains: "in-the-news"}}, limit: 3) {
     data {
       ...NewsRoomDetail
@@ -226,6 +234,7 @@ query page {
 // ${articleDetailFragment}
 export const topicOverviewQuery = `
 ${AssetFragment}
+${newsroomDetailFragment}
 query newsRoomTopic($slug: String) {
   ${HeaderQuery}
   ${FooterQuery}
@@ -258,19 +267,13 @@ query newsRoomTopic($slug: String) {
   taxonomy: terms(filter: { slug: $slug }, taxonomy: "newsroom_types") {
     data {
       slug
+      id
       title
     }
   }
   articles: entries(collection: "newsroom", filter: { newsroom_types: { contains: $slug }} ) {
     data {
-      ... on Entry_Newsroom_Newsroom {
-        id
-        permalink
-        newsroom_types {
-          title
-          slug
-        }
-      }
+      ...NewsRoomDetail
     }
   }
 }

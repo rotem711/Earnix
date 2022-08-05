@@ -1,0 +1,43 @@
+.newsroomPreview {
+  height: 100%;
+  &__card {
+    border-radius: 1.9rem;
+    box-shadow: 0 0 1.2rem theme('colors.black-15');
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    row-gap: 1.6rem;
+    @screen lg {
+      display: flex;
+    }
+  }
+
+  &__badge {
+    background-color: theme('colors.black-70p');
+    border-color: theme('colors.black-70p');
+    color: theme('colors.white');
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &__image {
+    border-radius: 1.6rem 1.6rem 0 0;
+  }
+
+  &__imageContainer {
+    span {
+      aspect-ratio: 358 / 250;
+    }
+  }
+
+  &__textContainer {
+    order: 100;
+    padding: 0 1.6rem 1.6rem 1.6rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}

@@ -11,6 +11,7 @@ import { topicOverviewQuery } from 'queries/newsroom'
 import React from 'react'
 import { getStaticPropsWrapper } from 'utils/dataLayer/entryQuery'
 import gql from 'utils/dataLayer/gql'
+import NewsroomPreview from 'components/generic/newsroom_preview/newsroom_preview'
 import Header from '../../../components/generic/header/header'
 import Footer from '../../../components/generic/footer/footer'
 
@@ -32,8 +33,8 @@ const Blog = ({
   header
   footer: any
   translations: { [key: string]: string }
-  articles: OverviewArticle[]
-  taxonomy: { data: { title: string, slug: string }[] }
+  articles: { data: OverviewArticle[] }
+  taxonomy: { data: { title: string; slug: string }[] }
 }) => {
   const activeTax = taxonomy.data[0]
   console.log(entry, articles, taxonomy)
@@ -56,8 +57,19 @@ const Blog = ({
         </Head>
         <main>
           <DevGrid />
-          <Header nav={nav} data={header} darkMode={false} />
-          <h1 className="my-100">{activeTax?.title}</h1>
+          <Header nav={nav} data={header} darkMode />
+          <div className="container mt-128">
+            <h1 className="text-orange-100 pt-64 typo-h2">
+              {activeTax?.title}
+            </h1>
+            <div className="default-grid gap-y-64">
+              {articles.data.map((article) => (
+                <div className="col-span-4">
+                  <NewsroomPreview key={article.id} article={article} />
+                </div>
+              ))}
+            </div>
+          </div>
         </main>
 
         <Footer data={footer} />
@@ -68,13 +80,16 @@ const Blog = ({
 
 export default Blog
 
-export const getStaticProps = getStaticPropsWrapper(topicOverviewQuery, (ctx) => {
-  return {
-    slug: ctx.params.type,
-  }
-})
+export const getStaticProps = getStaticPropsWrapper(
+  topicOverviewQuery,
+  (ctx) => {
+    return {
+      slug: ctx.params.type,
+    }
+  },
+)
 
-export const getStaticPaths = async ():Promise<GetStaticPathsResult> => {
+export const getStaticPaths = async (): Promise<GetStaticPathsResult> => {
   const query = `
     query NewsRoomTerms {
       terms(taxonomy: "newsroom_types") {

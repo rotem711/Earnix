@@ -43,5 +43,6 @@ export interface OverviewNewsroomArticle {
   cover_image: Asset
   author_name: string
   date: string
+  title: string
   blurb: string
 }

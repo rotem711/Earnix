@@ -14,7 +14,7 @@ import Head from 'next/head'
 import { GlobalContextProvider } from 'pages/_app'
 import { blogOverviewQuery, lazyArticlesQuery } from 'queries/blog'
 import React, { useState } from 'react'
-import { renderArticleDate } from 'utils/blog'
+import { renderDate } from 'utils/blog'
 import { getStaticPropsWrapper } from 'utils/dataLayer/entryQuery'
 import { useSWRQuery } from 'utils/dataLayer/gql'
 import Header from '../../components/generic/header/header'
@@ -78,7 +78,7 @@ const Blog = (props: {
   let featuredArticleDetails = {
     author: featured.data[0].author_name,
     badges: [...featured.data[0].blog_industry, ...featured.data[0].blog_topic],
-    date: renderArticleDate(featured.data[0].date),
+    date: renderDate(featured.data[0].date),
     description: featured.data[0].blurb,
     image: featured.data[0].cover_image,
     title: featured.data[0].title,
@@ -91,7 +91,7 @@ const Blog = (props: {
         ...dynamicArticles[0].blog_industry,
         ...dynamicArticles[0].blog_topic,
       ],
-      date: renderArticleDate(dynamicArticles[0].date),
+      date: renderDate(dynamicArticles[0].date),
       description: dynamicArticles[0].blurb,
       image: dynamicArticles[0].cover_image,
       title: dynamicArticles[0].title,
@@ -108,7 +108,7 @@ const Blog = (props: {
     return {
       author: article.author_name,
       badges: [...article.blog_industry, ...article.blog_topic],
-      date: renderArticleDate(article.date),
+      date: renderDate(article.date),
       description: article.blurb,
       image: article.cover_image,
       title: article.title,
@@ -139,7 +139,7 @@ const Blog = (props: {
                   {(topicFilter || industryFilter) && (
                     <span className="typo-tag">Filter results:</span>
                   )}
-                  <div className="flex flex-row items-center gap-x-16">
+                  <div className="flex flex-row gap-x-16 items-center relative">
                     {topicFilter ? (
                       <Badge
                         filled

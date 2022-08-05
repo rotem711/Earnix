@@ -53,6 +53,7 @@ module.exports = {
       'black-70': '#4D4D4D',
       'black-50': '#808080',
       'black-20': '#CCCCCC',
+      'black-15': 'rgba(0, 0, 0, 0.15)',
       'black-10': '#EEEEEE',
       'black-5': '#f2f2f2',
       'red-100': '#F42E2E',

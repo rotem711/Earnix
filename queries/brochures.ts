@@ -5,14 +5,13 @@ import nav from './fragments/nav'
 
 export default `
   ${AssetFragment}
-  query blog($slug: String) {
+  query brochures($slug: String) {
     ${HeaderQuery},
     ${FooterQuery},
-    entry(collection: "blog", slug: $slug) {
+    entry(collection: "brochures", slug: $slug) {
       id
       title
       slug
-      date
       seo {
         description
         og_description
@@ -32,21 +31,11 @@ export default `
         twitter_site
         twitter_title
       }
-      ... on Entry_Blog_Blog {
+      ... on Entry_Brochures_Brochures {
         id
-        author_about
-        author_image {
-          ...CMSAsset
-        }
-        author_name
-        author_title
         blurb
         cover_image {
           ...CMSAsset
-        }
-        blog_topic {
-          title
-          id
         }
         content {
           ... on Set_Content_Image {
@@ -73,7 +62,6 @@ export default `
             type
           }
         }
-        linkedin_profile
         related_articles {
           id
           title
@@ -124,37 +112,35 @@ export default `
   }
 `
 
-const articleDetailFragment = `
-  fragment ArticleDetail on Entry_Blog_Blog {
+const brochuresDetailFragment = `
+  fragment BrochuresDetail on Entry_Brochures_Brochures {
     id
     uri
     slug
-    title
-    blog_topic {
+    brochure_topic {
       title
       id
     }
-    blog_industry {
+    brochure_industry {
       id
       title
     }
     cover_image {
       ...CMSAsset
     }
-    author_name
     date
     blurb
   }
 `
 
-export const blogOverviewQuery = `
+export const brochuresOverviewQuery = `
 ${AssetFragment}
-${articleDetailFragment}
+${brochuresDetailFragment}
 query page {
   ${HeaderQuery}
   ${FooterQuery}
   ${nav}
-  entry(filter: { blueprint: "page_blog" }, collection: "pages") {
+  entry(filter: { blueprint: "page_brochures" }, collection: "pages") {
     id
     title
     slug
@@ -178,50 +164,17 @@ query page {
       twitter_site
       twitter_title
     }
-    ... on Entry_Pages_PageBlog {
+    ... on Entry_Pages_PageBrochures {
       id
       main_featured_item {
-        ...ArticleDetail
+        ...BrochuresDetail
       }
     }
   }
-  articles: entries(collection: "blog", limit: 5) {
+  brochures: entries(collection: "brochures") {
     data {
-      ...ArticleDetail
-    }
-    total
-  }
-  featured: entries(collection: "blog", filter: { featured: true }, limit: 3) {
-    data {
-      ...ArticleDetail
-    }
-    total
-  }
-  industries: terms(taxonomy: "blog_industry") {
-    data {
-      id
-      title
-      slug
-    }
-  }
-  topics: terms(taxonomy: "blog_topic") {
-    data {
-      id
-      title
-      slug
+      ...BrochuresDetail
     }
   }
 }
-`
-export const lazyArticlesQuery = `
-  ${AssetFragment}
-  ${articleDetailFragment}
-  query Articles($limit: Int, $filter: JsonArgument) {
-    articles: entries(collection: "blog", limit: $limit, filter: $filter) {
-      data {
-        ...ArticleDetail
-      }
-      total
-    }
-  }
 `

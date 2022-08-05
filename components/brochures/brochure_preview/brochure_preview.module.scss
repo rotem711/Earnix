@@ -1,0 +1,85 @@
+.brochurePreview {
+  &__card {
+    border-radius: 1.9rem;
+    box-shadow: 0 0 1.2rem theme('colors.black-15');
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    row-gap: 1.6rem;
+    width: 98%;
+
+    @screen md {
+      margin-top: 4rem;
+    }
+
+    @screen lg {
+      display: flex;
+    }
+
+    &--featured {
+      box-shadow: none;
+      margin-bottom: 6.4rem;
+      row-gap: 3.2rem;
+
+      @screen md {
+        margin-bottom: 4rem;
+        width: 100%;
+        flex-direction: row;
+      }
+
+      @screen lg {
+        display: grid;
+      }
+
+      .brochurePreview__descriptionContainer {
+        padding-bottom: 0.8rem;
+
+        @screen md {
+          padding-bottom: 2.4rem;
+        }
+      }
+
+      .brochurePreview__detailsContainer {
+        padding-bottom: 1.2rem;
+      }
+
+      .brochurePreview__image {
+        border-radius: 1.6rem;
+      }
+
+      .brochurePreview__imageContainer {
+        order: 200;
+      }
+
+      .brochurePreview__textContainer {
+        padding: 0;
+      }
+
+      .brochurePreview__titleContainer {
+        padding-bottom: 0.8rem;
+      }
+    }
+  }
+
+  &__badge {
+    background-color: theme('colors.black-70p');
+    border-color: theme('colors.black-70p');
+    color: theme('colors.white');
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &__image {
+    border-radius: 1.6rem 1.6rem 0 0;
+  }
+
+  &__imageContainer {
+    order: 50;
+  }
+
+  &__textContainer {
+    order: 100;
+    padding: 0 1.6rem 1.6rem 1.6rem;
+  }
+}

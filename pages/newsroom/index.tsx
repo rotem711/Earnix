@@ -14,6 +14,39 @@ import Footer from 'components/generic/footer/footer'
 import HeroBlock from 'components/blocks/hero/hero'
 import CtaSimpleDividerBlock from 'components/blocks/cta_simple_divider/cta_simple_divider'
 import TextVideoBlock from 'components/blocks/text_video/text_video'
+import NewsroomPreview from 'components/generic/newsroom_preview/newsroom_preview'
+import Link from 'next/link'
+
+const NewsroomType = ({
+  items,
+  title,
+  viewAll,
+  overviewLink,
+}: {
+  items: OverviewNewsroomArticle[]
+  title: string
+  viewAll: string
+  overviewLink: string | undefined
+}) => {
+  if (!items.length) return null
+  return (
+    <>
+      <h3 className="mb-40">{title}</h3>
+      <div className="flex gap-24 overflow-x-scroll md:overflow-visible lg:default-grid mb-40">
+        {items.map((pr) => (
+          <div className="min-w-[75vw] md:min-w-full col-span-4">
+            <NewsroomPreview key={pr.id} article={pr} />
+          </div>
+        ))}
+      </div>
+      <Link href={overviewLink}>
+        <a className="text-center w-full block typo-h5 text-orange-100 mb-64 hover:underline">
+          {viewAll}
+        </a>
+      </Link>
+    </>
+  )
+}
 
 const Blog = ({
   entry,
@@ -27,6 +60,7 @@ const Blog = ({
   industryRecognition,
   pressReleases,
   socialFeed,
+  taxonomies,
 }: {
   entry: EntryNewsroomOverview
   nav: any
@@ -39,8 +73,15 @@ const Blog = ({
   industryRecognition: { data: OverviewNewsroomArticle[] }
   pressReleases: { data: OverviewNewsroomArticle[] }
   socialFeed: { data: OverviewNewsroomArticle[] }
+  taxonomies: {
+    data: {
+      slug: string
+      title: string
+      id: string
+    }[]
+  }
 }) => {
-  console.log(entry, inTheNews, industryRecognition, pressReleases, socialFeed)
+  console.log(taxonomies)
   return (
     <GlobalContextProvider
       value={{
@@ -64,18 +105,73 @@ const Blog = ({
           {entry.title}
           <HeroBlock
             block={{
-              ...entry as any,
+              ...(entry as any),
               type: 'Hero',
             }}
           />
-          <CtaSimpleDividerBlock
-            block={entry as any}
-          />
-          <TextVideoBlock
-            block={entry as any}
-          />
+          <div className="container mt-100 md:mt-110">
+            <NewsroomType
+              items={pressReleases.data}
+              viewAll={translations.VIEW_ALL}
+              title={
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::press-releases',
+                )?.title
+              }
+              overviewLink={`/newsroom/${
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::press-releases',
+                )?.slug
+              }`}
+            />
+            <NewsroomType
+              items={inTheNews.data}
+              viewAll={translations.VIEW_ALL}
+              title={
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::in-the-news',
+                )?.title
+              }
+              overviewLink={`/newsroom/${
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::in-the-news',
+                )?.slug
+              }`}
+            />
+            <NewsroomType
+              items={industryRecognition.data}
+              viewAll={translations.VIEW_ALL}
+              title={
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::industry-recognition',
+                )?.title
+              }
+              overviewLink={`/newsroom/${
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::industry-recognition',
+                )?.slug
+              }`}
+            />
+          </div>
+          <CtaSimpleDividerBlock block={entry as any} />
+          <div className="container mt-64">
+            <NewsroomType
+              items={socialFeed.data}
+              viewAll={translations.VIEW_ALL}
+              title={
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::social-feed',
+                )?.title
+              }
+              overviewLink={`/newsroom/${
+                taxonomies.data.find(
+                  (t) => t.id === 'newsroom_types::social-feed',
+                )?.slug
+              }`}
+            />
+          </div>
+          <TextVideoBlock block={entry as any} />
         </main>
-
         <Footer data={footer} />
       </div>
     </GlobalContextProvider>

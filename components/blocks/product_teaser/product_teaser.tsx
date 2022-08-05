@@ -38,8 +38,6 @@ const ProductTeaserBlock: FunctionComponent<{
             <div className={`${styles.gear}`}>
               <Image
                 src="/assets/gear.svg"
-                blurDataURL={block.pt_ferris_wheel_center_icon.placeholder}
-                placeholder="blur"
                 width="60"
                 height="60"
                 layout="fill"
@@ -49,7 +47,7 @@ const ProductTeaserBlock: FunctionComponent<{
               <Image
                 src={block.pt_ferris_wheel_center_icon.permalink}
                 blurDataURL={block.pt_ferris_wheel_center_icon.placeholder}
-                placeholder="blur"
+                placeholder={block.pt_ferris_wheel_center_icon.placeholder ? 'blur' : 'empty'}
                 width={block.pt_ferris_wheel_center_icon.width}
                 height={block.pt_ferris_wheel_center_icon.height}
               />
@@ -61,7 +59,7 @@ const ProductTeaserBlock: FunctionComponent<{
                     key={item.text}
                     src={item.icon.permalink}
                     blurDataURL={item.icon.placeholder}
-                    placeholder="blur"
+                    placeholder={item.icon.placeholder ? 'blur' : 'empty'}
                     width={item.icon.width}
                     height={item.icon.height}
                   />

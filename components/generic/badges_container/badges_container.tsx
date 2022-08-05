@@ -12,13 +12,15 @@ const BadgesContainer: React.FunctionComponent<BadgesContainerInterface> = ({
     {values.map((value) => (
       <Badge
         onClick={() => {
-          const type = value.id.split('::')[1]
-          if (type === 'consumer') {
-            setTopicFilter(() => value.title)
+          const splitValue = value.id.split('::')
+          const triggerTopicFilter = ['blog_topic', 'brochure_topic'].indexOf(splitValue[0]) > -1
+          const triggerIndustryFilter = ['blog_industry', 'brochure_industry'].indexOf(splitValue[0]) > -1
+          if (triggerTopicFilter) {
+            setTopicFilter(() => splitValue[1])
             return
           }
-          if (type === 'insurance') {
-            setIndustryFilter(() => value.title)
+          if (triggerIndustryFilter) {
+            setIndustryFilter(() => splitValue[1])
           }
         }}
         text={value.title}

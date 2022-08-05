@@ -3,16 +3,18 @@ import BadgeInterface from './badge.interface'
 import styles from './badge.module.scss'
 
 const Badge: React.FunctionComponent<BadgeInterface> = ({
-  filled, onClick, text, value,
+  className, filled, onClick, text, value,
 }) => {
   const handleBadgeClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault()
-    onClick(undefined)
+    if (onClick) {
+      onClick(undefined)
+    }
   }
 
   return (
     <span
-      className={`typo-tag ${styles.badge} ${filled ? styles['badge--filled'] : ''}`}
+      className={`typo-tag ${className || ''} ${styles.badge} ${filled ? styles['badge--filled'] : ''}`}
       onClick={handleBadgeClick}
       role="presentation"
     >
