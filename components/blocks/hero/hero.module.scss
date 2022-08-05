@@ -2,11 +2,11 @@
 
 .hero_narrow_wrapper {
   @apply overflow-hidden;
-  margin-top: 16.8rem;
   border-radius: 1.6rem;
-  @screen sm {
-    margin-top: 17.8rem;
-  }
+  // margin-top: 16.8rem;
+  // @screen sm {
+  //   margin-top: 17.8rem;
+  // }
 
   @screen xl {
     border-radius: 2rem;

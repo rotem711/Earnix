@@ -39,7 +39,7 @@ const ArticlePreview: React.FunctionComponent<ArticlePreviewInterface> = ({
       </div>
       <div>
         <p className="typo-p">{date}</p>
-        <p className="typo-p">{`By ${author}`}</p>
+        {author && <p className="typo-p">{`By ${author}`}</p>}
       </div>
       <div>
         <p className={`${styles.articlePreview__description} typo-p`}>

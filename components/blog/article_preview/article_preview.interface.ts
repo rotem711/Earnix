@@ -3,7 +3,7 @@ import { Dispatch } from 'react'
 
 export default interface ArticlePreviewInterface {
   articleDetails: {
-    author: string
+    author?: string
     badges: {
       id: string
       title: string
