@@ -9,6 +9,7 @@ export const typename = 'Set_Replicator_BlockHero'
 
 const HeroBlock: FunctionComponent<{ block: HeroInterface }> = ({ block }) => {
   const isMobile = useIsMobile()
+  console.log(block)
 
   const headlineClasses = cn(
     'col-span-8',
@@ -29,88 +30,103 @@ const HeroBlock: FunctionComponent<{ block: HeroInterface }> = ({ block }) => {
   )
 
   return (
-    <div className={`${styles.root} ${block.hero_large_version ? styles.largeVersion : styles.smallVersion} overflow-hidden relative`}>
-      {(block.hero_background_image || block.hero_vimeo_id) && (
-        <div className={`${styles.imageVideoWrapper}`}>
-          <video
-            playsInline
-            preload="auto"
-            loop
-            autoPlay
-            muted
-            poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-            className={`${styles.video}`}
-            key={
-              isMobile && block.hero_vimeo_id_responsive
-                ? 'videoResponsive'
-                : 'videoDesktop'
-              }
-          >
-            <source
-              type="video/mp4"
-              src={
-                isMobile && block.hero_vimeo_id_responsive
-                  ? block.hero_vimeo_id_responsive
-                  : block.hero_vimeo_id
-                }
-            />
-          </video>
+    <div className={block.hero_narrow ? 'container' : ''}>
+      <div className={block.hero_narrow ? `default-grid ${styles.hero_narrow_wrapper} ` : ''}>
+        <div className={`${styles.root} ${block.hero_large_version ? styles.largeVersion : styles.smallVersion} overflow-hidden relative ${block.hero_narrow ? 'xxl:col-span-8 xxl:col-start-3 lg:col-span-12 md:col-span-8 col-span-4' : ''}`}>
+          {(block.hero_background_image || block.hero_vimeo_id) && (
+            <div className={`${styles.imageVideoWrapper}`}>
+              <video
+                playsInline
+                preload="auto"
+                loop
+                autoPlay
+                muted
+                poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                className={`${styles.video}`}
+                key={
+                  isMobile && block.hero_vimeo_id_responsive
+                    ? 'videoResponsive'
+                    : 'videoDesktop'
+                  }
+              >
+                <source
+                  type="video/mp4"
+                  src={
+                    isMobile && block.hero_vimeo_id_responsive
+                      ? block.hero_vimeo_id_responsive
+                      : block.hero_vimeo_id
+                    }
+                />
+              </video>
 
-          {(block.hero_background_type.value === 'image') && (
-            <Image
-              layout="fill"
-              objectFit="cover"
-              blurDataURL={block.hero_background_image.placeholder}
-              placeholder="blur"
-              width={
-                isMobile && block.hero_background_image_responsive
-                  ? block.hero_background_image_responsive.width
-                  : block.hero_background_image.width
-                }
-              height={
-                isMobile && block.hero_background_image_responsive
-                  ? block.hero_background_image_responsive.height
-                  : block.hero_background_image.height
-                }
-              src={
-                isMobile && block.hero_background_image_responsive
-                  ? block.hero_background_image_responsive.permalink
-                  : block.hero_background_image.permalink
-                }
-              alt={
-                isMobile && block.hero_background_image_responsive
-                  ? block.hero_background_image_responsive.alt
-                  : block.hero_background_image.alt
-                }
-            />
+              {(block.hero_background_type.value === 'image') && (
+                <Image
+                  layout="fill"
+                  objectFit="cover"
+                  blurDataURL={block.hero_background_image.placeholder}
+                  placeholder="blur"
+                  width={
+                    isMobile && block.hero_background_image_responsive
+                      ? block.hero_background_image_responsive.width
+                      : block.hero_background_image.width
+                    }
+                  height={
+                    isMobile && block.hero_background_image_responsive
+                      ? block.hero_background_image_responsive.height
+                      : block.hero_background_image.height
+                    }
+                  src={
+                    isMobile && block.hero_background_image_responsive
+                      ? block.hero_background_image_responsive.permalink
+                      : block.hero_background_image.permalink
+                    }
+                  alt={
+                    isMobile && block.hero_background_image_responsive
+                      ? block.hero_background_image_responsive.alt
+                      : block.hero_background_image.alt
+                    }
+                />
+              )}
+            </div>
           )}
+          {(block.hero_orange_gradient) && (
+            <div className={`${styles.orangeGradient}`} />
+          )}
+          {(block.hero_blue_gradient) && (
+            <div className={`${styles.blueGradient}`} />
+          )}
+          <div className={`${styles.contentWrapper} container grid grid-cols-8 lg:grid-cols-12 gap-x-15 content-center`}>
+            {block.hero_headline && (
+              <div
+                className={`${headlineClasses}`}
+              >
+                {
+                  block.hero_narrow && (
+                    <h2>
+                      {block.hero_headline}
+                    </h2>
+                  )
+                }
+                {
+                  !block.hero_narrow && (
+                    <h1>
+                      {block.hero_headline}
+                    </h1>
+                  )
+                }
+              </div>
+            )}
+            {block.hero_copy && (
+              <div
+                className={`${copyClasses}`}
+              >
+                <p className={`${block.hero_copy_background ? styles.copyBackground : ''}`}>
+                  {block.hero_copy}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
-      )}
-      {(block.hero_orange_gradient) && (
-        <div className={`${styles.orangeGradient}`} />
-      )}
-      {(block.hero_blue_gradient) && (
-        <div className={`${styles.blueGradient}`} />
-      )}
-      <div className={`${styles.contentWrapper} container grid grid-cols-8 lg:grid-cols-12 gap-x-15 content-center`}>
-        {block.hero_headline && (
-          <div
-            className={`${headlineClasses}`}
-          >
-            <h1>
-              {block.hero_headline}
-            </h1>
-          </div>
-        )}
-        {block.hero_copy && (
-          <div
-            className={`${copyClasses}`}
-          >
-            <p className={`${block.hero_copy_background ? styles.copyBackground : ''}`}>
-              {block.hero_copy}
-            </p>
-          </div>
-        )}
       </div>
     </div>
   )

@@ -1,11 +1,34 @@
 @import '../../../styles/variables';
 
+.hero_narrow_wrapper {
+  @apply overflow-hidden;
+  margin-top: 16.8rem;
+  border-radius: 1.6rem;
+  @screen sm {
+    margin-top: 17.8rem;
+  }
+
+  @screen xl {
+    border-radius: 2rem;
+  }
+}
+
 .root {
-  padding-top: 15rem;
-  padding-bottom: 5.6rem;
+  padding-top: 20rem;
+  padding-bottom: 20rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
+
+  @screen md {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  @screen lg {
+    padding-top: 15.2rem;
+    padding-bottom: 15.2rem;
+  }
 
   &.largeVersion {
     min-height: 80vh;
@@ -16,7 +39,7 @@
   }
 
   :global {
-    h1 {
+    h1, h2 {
       color: theme('colors.white');
       margin-top: 0;
       margin-bottom: 0;

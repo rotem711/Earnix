@@ -9,6 +9,7 @@ export default interface HeroInterface {
     hero_large_version: boolean,
     hero_orange_gradient: boolean,
     hero_vimeo_id: string,
+    hero_narrow: boolean,
     hero_vimeo_id_responsive: string,
     hero_blue_gradient: boolean,
     hero_background_image: Asset,

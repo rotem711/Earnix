@@ -10,6 +10,7 @@ fragment BlockHero on Set_Replicator_BlockHero {
     hero_vimeo_id
     hero_vimeo_id_responsive
     hero_blue_gradient
+    hero_narrow
     hero_background_image {
       ...CMSAsset
     }
