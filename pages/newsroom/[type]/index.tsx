@@ -12,6 +12,7 @@ import React from 'react'
 import { getStaticPropsWrapper } from 'utils/dataLayer/entryQuery'
 import gql from 'utils/dataLayer/gql'
 import NewsroomPreview from 'components/generic/newsroom_preview/newsroom_preview'
+import CtaSimpleDividerBlock from 'components/blocks/cta_simple_divider/cta_simple_divider'
 import Header from '../../../components/generic/header/header'
 import Footer from '../../../components/generic/footer/footer'
 
@@ -25,6 +26,7 @@ const Blog = ({
   translations,
   articles,
   taxonomy,
+  topics,
 }: {
   entry: EntryBlogOverview
   nav: any
@@ -35,9 +37,10 @@ const Blog = ({
   translations: { [key: string]: string }
   articles: { data: OverviewArticle[] }
   taxonomy: { data: { title: string; slug: string }[] }
+  topics: { data: { title: string; slug: string }[] }
 }) => {
   const activeTax = taxonomy.data[0]
-  console.log(entry, articles, taxonomy)
+  console.log(entry, articles, taxonomy, topics)
   return (
     <GlobalContextProvider
       value={{
@@ -58,17 +61,20 @@ const Blog = ({
         <main>
           <DevGrid />
           <Header nav={nav} data={header} darkMode />
-          <div className="container mt-128">
+          <div className="container mt-128 mb-124">
             <h1 className="text-orange-100 pt-64 typo-h2">
               {activeTax?.title}
             </h1>
-            <div className="default-grid gap-y-64">
+            <div className="default-grid gap-y-64 mb-80">
               {articles.data.map((article) => (
                 <div className="col-span-4">
                   <NewsroomPreview key={article.id} article={article} />
                 </div>
               ))}
             </div>
+            {taxonomy.data[0] && (
+              <CtaSimpleDividerBlock block={taxonomy.data[0] as any} />
+            )}
           </div>
         </main>
 

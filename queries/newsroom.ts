@@ -135,6 +135,11 @@ const newsroomDetailFragment = `
       id
       slug
     }
+    newsroom_topic {
+      id
+      slug
+      title
+    }
   }
 `
 
@@ -239,7 +244,7 @@ query newsRoomTopic($slug: String) {
   ${HeaderQuery}
   ${FooterQuery}
   ${nav}
-  entry(slug: "newsroom", collection: "pages") {
+  entry(collection: "pages", filter: {blueprint: "page_newsroom"}) {
     id
     title
     slug
@@ -265,6 +270,18 @@ query newsRoomTopic($slug: String) {
     }
   }
   taxonomy: terms(filter: { slug: $slug }, taxonomy: "newsroom_types") {
+    data {
+      slug
+      id
+      title
+      ... on Term_NewsroomTypes {
+        csd_cta_title
+        csd_cta_url
+        csd_headline
+      }
+    }
+  }
+  topics: terms(taxonomy: "newsroom_topic", limit: 500) {
     data {
       slug
       id
