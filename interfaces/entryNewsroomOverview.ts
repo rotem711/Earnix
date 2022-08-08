@@ -45,4 +45,13 @@ export interface OverviewNewsroomArticle {
   date: string
   title: string
   blurb: string
+  newsroom_types: {
+    id: string
+    slug: string
+  }
+  newsroom_topic: {
+    id: string
+    slug: string
+    title: string
+  }[]
 }

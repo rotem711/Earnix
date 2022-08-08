@@ -39,7 +39,7 @@ const Dropdown: React.FunctionComponent<DropdownInterface> = ({
             {`Select ${name}`}
           </p>
           {options.map((option) => (
-            <div className={styles.dropdown__optionsGroup}>
+            <div className={styles.dropdown__optionsGroup} key={option}>
               <p
                 className="typo-p py-12 cursor-pointer pb-16"
                 onClick={() => handleOptionSelection(option)}
